@@ -19,7 +19,7 @@ export type CardConfig = {
     stiffness: number;
     damping: number;
     mass: number;
-    type: string;
+    type: "spring";
     bounce?: number;
     duration?: number;
   };
@@ -31,38 +31,38 @@ const commonSpring = {
   damping: 60,
   mass: 1,
   type: "spring",
-};
+} as const;
 
 export const CARD_ONE_CONFIG: CardConfig = {
   spring: commonSpring,
   states: {
-    [CardState.Initial]: { scale: 0.8, y: 20, rotate: 0, rotateY: 0 },
+    [CardState.Initial]: { scale: 0.8, x: -30, y: 30, rotate: -10, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 170 },
     [CardState.LittleUp]: { scale: 1, y: 70 },
     [CardState.BackToCenter]: { scale: 1, y: -30, rotate: 1 },
-    [CardState.Flip]: { scale: 1, y: -60, x: -30, rotate: 4, rotateY: -180 },
+    [CardState.Flip]: { scale: 1, x: -50, y: 0, rotate: 0, rotateY: -180 },
   },
 };
 
 export const CARD_TWO_CONFIG: CardConfig = {
   spring: commonSpring,
   states: {
-    [CardState.Initial]: { scale: 0.8, y: 0, rotate: 0, rotateY: 0 },
+    [CardState.Initial]: { scale: 0.8, x: 0, y: 0, rotate: 0, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 210 },
     [CardState.LittleUp]: { scale: 1, y: 140 },
     [CardState.BackToCenter]: { scale: 1, y: 20, rotate: -2 },
-    [CardState.Flip]: { scale: 1, y: 0, x: 290, rotate: -3, rotateY: -180 },
+    [CardState.Flip]: { scale: 1, x: 290, y: 0, rotate: 0, rotateY: -180 },
   },
 };
 
 export const CARD_THREE_CONFIG: CardConfig = {
   spring: commonSpring,
   states: {
-    [CardState.Initial]: { scale: 0.8, y: -20, rotate: 0, rotateY: 0 },
+    [CardState.Initial]: { scale: 0.8, x: 30, y: -30, rotate: 10, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 270 },
     [CardState.LittleUp]: { scale: 1, y: 230 },
     [CardState.BackToCenter]: { scale: 1, y: 92, rotate: -2 },
-    [CardState.Flip]: { scale: 1, y: 52, x: 610, rotate: -7, rotateY: -180 },
+    [CardState.Flip]: { scale: 1, x: 630, y: 0, rotate: 0, rotateY: -180 },
   },
 };
 

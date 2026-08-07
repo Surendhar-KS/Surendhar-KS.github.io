@@ -1,6 +1,7 @@
 import ScrollExpand from "@/components/ScrollExpand";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
+import { ExperienceSection } from "../../components/ExperienceSection";
 import React, { useState } from "react";
 import svgPaths from "./svg-o196r9wbab";
 import imgPortraitOfPortfolioCreatorBackView from "./b550edd9ec0ab68267cf752d0fb3374f2541e97a.png";
@@ -3072,10 +3073,11 @@ function Main() {
       <HeroBioSections />
       <QuoteSection />
       <ServicesSection />
-      <ProjectsSection />
       <TechnologiesSection />
-        <TestimonialsSection1 />
-            <ContactSection />
+      <ProjectsSection />
+
+            <ExperienceSection />
+      <ContactSection />
     </div>
   );
 }

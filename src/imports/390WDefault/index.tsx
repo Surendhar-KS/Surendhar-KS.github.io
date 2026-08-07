@@ -1,6 +1,7 @@
 import ScrollExpand from "@/components/ScrollExpand";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
+import { ExperienceSection } from "../../components/ExperienceSection";
 import React, { useState } from "react";
 import svgPaths from "./svg-tdd3bumtl6";
 import imgPortraitOfPortfolioCreatorBackView from "./b550edd9ec0ab68267cf752d0fb3374f2541e97a.png";
@@ -3019,8 +3020,9 @@ function Main() {
       <TechnologiesSection />
       <ProjectsSection />
       <CraftedPrecisionSection />
-        <TestimonialsSection1 />
-            <ContactSection />
+
+            <ExperienceSection />
+      <ContactSection />
     </div>
   );
 }

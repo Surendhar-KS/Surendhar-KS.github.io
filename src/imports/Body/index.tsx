@@ -2,6 +2,7 @@ import ScrollExpand from "@/components/ScrollExpand";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ScrollFlipCard } from "@/components/ScrollFlipCard";
 import { motion } from "framer-motion";
+import { ExperienceSection } from "../../components/ExperienceSection";
 import React, { useState } from "react";
 import svgPaths from "./svg-kqz03hd2xf";
 import imgPortraitOfPortfolioCreatorBackView from "./b550edd9ec0ab68267cf752d0fb3374f2541e97a.png";
@@ -3475,12 +3476,13 @@ function Main() {
       <HeroBioSections />
       <QuoteSection />
       <ServicesSection />
-      <ProjectsSection />
       <TechnologiesSection />
-      <ScrollFlipCard />
+      <ProjectsSection />
       <CraftedPrecisionSection />
-        <TestimonialsSection1 />
-            <ContactSection />
+      <ScrollFlipCard />
+
+            <ExperienceSection />
+      <ContactSection />
     </div>
   );
 }

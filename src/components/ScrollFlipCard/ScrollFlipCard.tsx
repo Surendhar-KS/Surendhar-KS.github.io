@@ -13,7 +13,7 @@ import {
 } from "./scroll-flip.config";
 import { cardAssets } from "./cardAssets";
 
-const DEBUG = true;
+const DEBUG = false;
 
 // Helper component for Triggers
 const Trigger = ({
@@ -146,7 +146,7 @@ export const ScrollFlipCard = () => {
             initial={CARD_THREE_CONFIG.states[CardState.Initial]}
             animate={CARD_THREE_CONFIG.states[card3State]}
             transition={CARD_THREE_CONFIG.spring}
-            style={{ originX: 0, zIndex: 0, ...cardAssets[2].origin }}
+            style={{ ...cardAssets[2].origin }}
           >
             <CardWrap asset={cardAssets[2]} />
           </motion.div>
@@ -157,7 +157,7 @@ export const ScrollFlipCard = () => {
             initial={CARD_TWO_CONFIG.states[CardState.Initial]}
             animate={CARD_TWO_CONFIG.states[card2State]}
             transition={CARD_TWO_CONFIG.spring}
-            style={{ originX: 0, zIndex: 1, ...cardAssets[1].origin }}
+            style={{ ...cardAssets[1].origin }}
           >
             <CardWrap asset={cardAssets[1]} />
           </motion.div>
@@ -168,7 +168,7 @@ export const ScrollFlipCard = () => {
             initial={CARD_ONE_CONFIG.states[CardState.Initial]}
             animate={CARD_ONE_CONFIG.states[card1State]}
             transition={CARD_ONE_CONFIG.spring}
-            style={{ originX: 0, zIndex: 2, ...cardAssets[0].origin }}
+            style={{ ...cardAssets[0].origin }}
           >
             <CardWrap asset={cardAssets[0]} />
           </motion.div>
