@@ -1,0 +1,110 @@
+.sectionMain {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0px;
+  transform-style: preserve-3d;
+  width: 100%;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  /* Next.js doesn't natively support transformPerspective directly on the element via CSS without proper vendor prefixes or container setups, so we use standard perspective on the sticky parent */
+}
+
+.cardsWrapper {
+  position: relative;
+  width: 290px;
+  height: 400px;
+  transform-style: preserve-3d;
+}
+
+.cardMotionWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.triggersWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+.firstTrigger {
+  width: 100%;
+  height: 75vh;
+}
+
+.secondTriggersWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.littleUp1 { height: 50vh; flex: 1; }
+.littleUp2 { height: 30vh; flex: 1; }
+.littleUp3 { height: 18.25vh; flex: 1; }
+
+.thirdTriggersWrap {
+  display: flex;
+  width: 100%;
+}
+
+.backToCenter1 { height: 27.26vh; flex: 1; }
+.backToCenter2 { height: 33.875vh; flex: 1; }
+.backToCenter3 { height: 37.75vh; flex: 1; }
+
+.fourthTriggersWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.flip1 { height: 74.125vh; width: 400px; flex: none; }
+.flip2 { height: 60.1vh; width: 400px; flex: none; }
+.flip3 { height: 46.75vh; width: 400px; flex: none; }
+
+.spacer {
+  height: 50vh;
+  width: 100%;
+}
+
+/* Debug Mode Styles */
+.debugOverlay {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #0f0;
+  font-family: monospace;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 9999;
+  width: 300px;
+  pointer-events: none;
+}
+
+.debugTrigger {
+  border: 2px dashed rgba(255, 0, 0, 0.5);
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.debugTriggerActive {
+  border: 2px solid rgba(0, 255, 0, 0.8);
+  background: rgba(0, 255, 0, 0.3);
+}

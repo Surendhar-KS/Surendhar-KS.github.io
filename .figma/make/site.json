@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your professional portfolio with a visually appealing, easy-to-navigate profile designed to highlight your skills and achievements effectively.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

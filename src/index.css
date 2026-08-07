@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+/* Archivo — variable font payload resolved from the Figma design's font catalog.
+   One @font-face per imported face so the design's `font-['Archivo:Medium']`
+   family names resolve exactly. */
+@font-face {
+  font-family: 'Archivo:ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 800;
+}
+@font-face {
+  font-family: 'Archivo:Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 700;
+}
+@font-face {
+  font-family: 'Archivo:SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 600;
+}
+@font-face {
+  font-family: 'Archivo:Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 500;
+}
+@font-face {
+  font-family: 'Archivo:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 400;
+}
+@font-face {
+  font-family: 'Archivo:Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Archivo_wdth_wght__1') format('woff2');
+  font-variation-settings: 'wdth' 100, 'wght' 300;
+}
+
+/* 'Segoe UI:Regular' has no webfont payload; alias it to the platform UI stack
+   under the same family name the design references. */
+@font-face {
+  font-family: 'Segoe UI:Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Segoe UI'), local('Helvetica Neue'), local('Arial');
+}
+
+@theme {
+  --font-sans: 'Archivo:Regular', sans-serif;
+}
+
+/* The 390w frame's body carries a baked 9620px height that leaves dead space
+   below the footer. Let it flow so the page ends where the content does. */
+.mobile-portfolio > [data-name='390w default'],
+.mobile-portfolio > [data-name='390w default'] > [data-name='body'] {
+  position: relative;
+  inset: auto;
+  height: auto;
+}
+
+/* The interactive NavBar replaces the imported design's static nav pill. */
+.live-nav [data-name='div.framer-14q8xyt-container'] {
+  display: none;
+}
+
+/* The scroll-driven ScrollAvatar replaces the imported design's statically
+   placed portrait card; keep its layout space, hide only the visual. */
+.animated-avatar [data-name='Avatar Wrap'] {
+  visibility: hidden;
+}
+
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #faf7f3;
+}
