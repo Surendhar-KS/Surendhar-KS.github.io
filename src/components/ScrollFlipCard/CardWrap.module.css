@@ -1,6 +1,6 @@
 .cardWrapContainer {
-  height: 400px;
-  width: 290px;
+  height: 480px; /* Slight height increase to fit content comfortably */
+  width: 380px;
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
@@ -9,71 +9,174 @@
   position: relative;
 }
 
-.frontFace {
+.frontFace, .backFace {
   backface-visibility: hidden;
-  z-index: 2;
-  width: 308px;
-  height: 409px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.backFace {
-  backface-visibility: hidden;
-  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff; /* User requested "Clean white/off-white card surface" */
   border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.05); /* very subtle border */
+  border-top: 6px solid transparent; /* will be overridden by inline style */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  overflow: hidden;
+  padding: 32px;
 }
 
-.imageWrapper {
-  width: 418px;
-  height: 189px;
-  position: relative;
-  flex: none;
+.frontFace {
+  z-index: 2;
 }
 
-.image {
+.backFace {
+  z-index: 1;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.icon {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 15.84px;
+  object-fit: contain;
 }
 
 .textWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 32px;
 }
 
 .title {
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 24px;
-  color: white;
-  margin: 0;
-  text-align: center;
+  font-size: 20px;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.subtitles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
 }
 
 .subtitle {
   font-family: "Inter", sans-serif;
+  font-weight: 600; /* Prominent display */
+  font-size: 15px;
+  margin: 0;
+}
+
+.accentDivider {
+  height: 3px;
+  width: 24px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-family: "Inter", sans-serif;
   font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555555;
+  margin: 0 0 16px 0;
+}
+
+.footerWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footerIcon {
+  width: 16px;
+  height: 16px;
+  color: #888888;
+}
+
+.footerText {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+.sectionDivider {
+  height: 1px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 20px 0;
+}
+
+.badgesWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.badgeContainer {
+  /* Using specific dimensions as requested so two badges take equal visual area */
+  width: 120px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.credentialButton {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  margin: 10px 20px 0 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.credentialButton:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.linkIcon {
+  width: 16px;
+  height: 16px;
 }

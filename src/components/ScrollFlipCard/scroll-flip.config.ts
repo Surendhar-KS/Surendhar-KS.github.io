@@ -2,7 +2,6 @@ export enum CardState {
   Initial = "Initial",
   FirstTrigger = "FirstTrigger",
   LittleUp = "LittleUp",
-  BackToCenter = "BackToCenter",
   Flip = "Flip",
 }
 
@@ -39,7 +38,6 @@ export const CARD_ONE_CONFIG: CardConfig = {
     [CardState.Initial]: { scale: 0.8, x: -30, y: 30, rotate: -10, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 170 },
     [CardState.LittleUp]: { scale: 1, y: 70 },
-    [CardState.BackToCenter]: { scale: 1, y: -30, rotate: 1 },
     [CardState.Flip]: { scale: 1, x: -50, y: 0, rotate: 0, rotateY: -180 },
   },
 };
@@ -50,8 +48,7 @@ export const CARD_TWO_CONFIG: CardConfig = {
     [CardState.Initial]: { scale: 0.8, x: 0, y: 0, rotate: 0, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 210 },
     [CardState.LittleUp]: { scale: 1, y: 140 },
-    [CardState.BackToCenter]: { scale: 1, y: 20, rotate: -2 },
-    [CardState.Flip]: { scale: 1, x: 290, y: 0, rotate: 0, rotateY: -180 },
+    [CardState.Flip]: { scale: 1, x: 380, y: 0, rotate: 0, rotateY: -180 },
   },
 };
 
@@ -61,8 +58,7 @@ export const CARD_THREE_CONFIG: CardConfig = {
     [CardState.Initial]: { scale: 0.8, x: 30, y: -30, rotate: 10, rotateY: 0 },
     [CardState.FirstTrigger]: { scale: 0.9, y: 270 },
     [CardState.LittleUp]: { scale: 1, y: 230 },
-    [CardState.BackToCenter]: { scale: 1, y: 92, rotate: -2 },
-    [CardState.Flip]: { scale: 1, x: 630, y: 0, rotate: 0, rotateY: -180 },
+    [CardState.Flip]: { scale: 1, x: 810, y: 0, rotate: 0, rotateY: -180 },
   },
 };
 
@@ -72,11 +68,6 @@ export const triggersConfig = {
     littleUp1: "50vh",
     littleUp2: "30vh",
     littleUp3: "18.25vh",
-  },
-  thirdTriggers: {
-    backToCenter1: "27.26vh",
-    backToCenter2: "33.875vh",
-    backToCenter3: "37.75vh",
   },
   fourthTriggers: {
     flip1: "74.125vh",

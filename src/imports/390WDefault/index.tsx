@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 import { ExperienceSection } from "../../components/ExperienceSection";
 import React, { useState } from "react";
 import svgPaths from "./svg-tdd3bumtl6";
-import imgPortraitOfPortfolioCreatorBackView from "./b550edd9ec0ab68267cf752d0fb3374f2541e97a.png";
-import imgLIIjRx5GxRdY7UWw5WqIXicPoaPng from "./86e98e75f31dc3d192575e5967533d10ddc9ef97.png";
-import imgOldYsHb9RMavvQrkVrNy08ZxyePng from "./218635c007c233be003b0ffd27df2223950afb8e.png";
-import imgVnxqLcPHw9VbVzy6BDpZ8PUsaUPng from "./AI-Powered-Interview-Platform.png";
-import imgWgEhvRrQs62RgxlzrnXjj8Rr4Png from "./Portable-Micro-Plastic-Detection.png";
-import imgI3AzeVtkvdKbGl9Tx38TUdXEb0Png from "./Retail-Analytics-Dashboard.png";
-import img1C3ZqErGdc7PqPIbDxtBaD4VGiQPng from "./Smart-Bus-Live-Tracker.png";
-import imgManStandingNearBalcony from "./8f34107360d1ce5ea4d73a390d1a0ddc392b3cb1.png";
-import imgMg7SSqT3AUbDdMeyGynYfWvAwiPng from "./c65bd6c8851ffcac37adf418fcbfb26a5aec1596.png";
-import imgGrayscalePhotoOfMan from "./b7befdc431ddc280aed518368415eb77660cf4f6.png";
-import imgYceQcLz3ChOtgu2OZRjmfEKjYPng from "./cbf71e4022f3ddc84eb60bb6a194639bf7c42a36.png";
-import imgManStandingNearWhiteWall from "./d839c58fb36faf58b26b11dac0c27e05792a6d9c.png";
-import imgGN85DqTeMmVvE57UMiHhgeL4P4Png from "./956392cf6be7486afad9c12dec252937e601f8e2.png";
-import imgManInBlackButtonUpShirt from "./355e18cf9140ad4ecf78fd60f88b124293361c01.png";
-import imgWsYtug4CqmLiu4LwbMuqx7FdOyPng from "./b8bc820742a1f270d5676f3ea5fdd5d981b90474.png";
-import imgLxtBXj3G7Bloek83WxPy1ZUuw0QPng from "./bd176e96850d1a0b20af0bcedb44db2993048081.png";
-import imgIc9K42RYytbJtnRujXdcNxChScPng from "./7dbac7bf55bf3787aaddbca3d2e751df601529b7.png";
-import imgDiv from "./ad1e8761706b3265f8711a577d750ebe9be9f81d.png";
+const imgPortraitOfPortfolioCreatorBackView = "/images/portrait-of-portfolio-creator-back-view.png";;
+const imgLIIjRx5GxRdY7UWw5WqIXicPoaPng = "/images/liij-rx5-gx-rd-y7-uww5-wq-ixic-poa-png.png";;
+const imgOldYsHb9RMavvQrkVrNy08ZxyePng = "/images/old-ys-hb9-rmavv-qrk-vr-ny08-zxye-png.png";;
+const imgVnxqLcPHw9VbVzy6BDpZ8PUsaUPng = "/projects/project1.png";
+const imgWgEhvRrQs62RgxlzrnXjj8Rr4Png = "/projects/project2.png";
+const imgI3AzeVtkvdKbGl9Tx38TUdXEb0Png = "/projects/project3.png";
+const img1C3ZqErGdc7PqPIbDxtBaD4VGiQPng = "/projects/project4.png";
+const imgManStandingNearBalcony = "/images/man-standing-near-balcony.png";;
+const imgMg7SSqT3AUbDdMeyGynYfWvAwiPng = "/images/mg7-ssq-t3-aub-dd-mey-gyn-yf-wv-awi-png.png";;
+const imgGrayscalePhotoOfMan = "/images/grayscale-photo-of-man.png";;
+const imgYceQcLz3ChOtgu2OZRjmfEKjYPng = "/images/yce-qc-lz3-ch-otgu2-ozrjmf-ekj-ypng.png";;
+const imgManStandingNearWhiteWall = "/images/man-standing-near-white-wall.png";;
+const imgGN85DqTeMmVvE57UMiHhgeL4P4Png = "/images/gn85-dq-te-mm-vv-e57-umi-hhge-l4-p4-png.png";;
+const imgManInBlackButtonUpShirt = "/images/man-in-black-button-up-shirt.png";;
+const imgWsYtug4CqmLiu4LwbMuqx7FdOyPng = "/images/ws-ytug4-cqm-liu4-lwb-muqx7-fd-oy-png.png";;
+const imgLxtBXj3G7Bloek83WxPy1ZUuw0QPng = "/images/lxt-bxj3-g7-bloek83-wx-py1-zuuw0-qpng.png";;
+const imgIc9K42RYytbJtnRujXdcNxChScPng = "/images/ic9-k42-ryytb-jtn-ruj-xdc-nx-ch-sc-png.png";;
+const imgDiv = "/images/div.png";;
 type Component1Props = {
   className?: string;
   variant?: "1" | "7" | "8" | "9" | "13" | "14" | "15" | "16" | "17";
@@ -2070,9 +2070,13 @@ function H2FramerText4() {
 
 function DivFramer45Mpb() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full text-center gap-4 mb-8" data-name="Thoughts Header">
+    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full text-center gap-4" data-name="Thoughts Header">
       <h2 className="text-[40px] lg:text-[64px] font-semibold text-[color:var(--reveal-color,#111)] tracking-tight font-['Archivo:SemiBold',sans-serif]">Crafted with precision.</h2>
       <p className="text-[16px] lg:text-[20px] text-gray-500 font-['Archivo:Regular',sans-serif] max-w-[800px] leading-relaxed">A showcase of modern software, AI, and cloud solutions built for real-world impact.</p>
+      <div className="flex flex-col items-center mt-4 md:mt-6 mb-[-40px] md:mb-[-80px] gap-2 opacity-70">
+        <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-gray-400 font-semibold font-['Archivo',sans-serif]">Scroll</span>
+        <div className="w-[1px] h-[25px] md:h-[40px] bg-gradient-to-b from-gray-300 to-transparent" />
+      </div>
     </div>
   );
 }
@@ -2372,14 +2376,14 @@ function AllPostsCard() {
 }
 
 function DivFramer1Leqxa() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  const handleCardHover = (index) => {
+  const handleCardHover = (index: number) => {
     setHoveredIndex(index);
   };
 
@@ -2387,7 +2391,7 @@ function DivFramer1Leqxa() {
     setHoveredIndex(null);
   };
 
-  const isExpanded = (index) => {
+  const isExpanded = (index: number) => {
     if (expandedIndex !== null) {
       return expandedIndex === index;
     }
@@ -3068,7 +3072,7 @@ function DivFramer113Ci7D() {
 function Span33() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">H</p>
       </div>
     </div>
@@ -3078,7 +3082,7 @@ function Span33() {
 function Span34() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">o</p>
       </div>
     </div>
@@ -3088,7 +3092,7 @@ function Span34() {
 function Span35() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">m</p>
       </div>
     </div>
@@ -3098,7 +3102,7 @@ function Span35() {
 function Span36() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">e</p>
       </div>
     </div>
@@ -3147,7 +3151,7 @@ function Primary8() {
 function Span37() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">A</p>
       </div>
     </div>
@@ -3157,7 +3161,7 @@ function Span37() {
 function Span38() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">b</p>
       </div>
     </div>
@@ -3167,7 +3171,7 @@ function Span38() {
 function Span39() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">o</p>
       </div>
     </div>
@@ -3177,7 +3181,7 @@ function Span39() {
 function Span40() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">u</p>
       </div>
     </div>
@@ -3187,7 +3191,7 @@ function Span40() {
 function Span41() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">t</p>
       </div>
     </div>
@@ -3201,7 +3205,7 @@ function Span42() {
 function Span43() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">M</p>
       </div>
     </div>
@@ -3211,7 +3215,7 @@ function Span43() {
 function Span44() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">e</p>
       </div>
     </div>
@@ -3477,7 +3481,7 @@ function Primary11() {
 function Span58() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">C</p>
       </div>
     </div>
@@ -3487,7 +3491,7 @@ function Span58() {
 function Span59() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">o</p>
       </div>
     </div>
@@ -3497,7 +3501,7 @@ function Span59() {
 function Span60() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">n</p>
       </div>
     </div>
@@ -3507,7 +3511,7 @@ function Span60() {
 function Span61() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">t</p>
       </div>
     </div>
@@ -3517,7 +3521,7 @@ function Span61() {
 function Span62() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">a</p>
       </div>
     </div>
@@ -3527,7 +3531,7 @@ function Span62() {
 function Span63() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">c</p>
       </div>
     </div>
@@ -3537,7 +3541,7 @@ function Span63() {
 function Span64() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="span">
-      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex="0">
+      <div className="[word-break:break-word] cursor-pointer flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[16px] text-left text-shadow-[0px_19.2px_0px_#111] tracking-[-0.32px] whitespace-nowrap" role="button" style={{ fontVariationSettings: '"wdth" 100' }} tabIndex={0}>
         <p className="leading-[19.2px]">t</p>
       </div>
     </div>

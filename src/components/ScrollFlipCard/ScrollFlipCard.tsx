@@ -80,11 +80,6 @@ export const ScrollFlipCard = () => {
         if (num === "1") setCard1State(CardState.LittleUp);
         if (num === "2") setCard2State(CardState.LittleUp);
         if (num === "3") setCard3State(CardState.LittleUp);
-      } else if (id.startsWith("backToCenter")) {
-        const num = id.replace("backToCenter", "");
-        if (num === "1") setCard1State(CardState.BackToCenter);
-        if (num === "2") setCard2State(CardState.BackToCenter);
-        if (num === "3") setCard3State(CardState.BackToCenter);
       } else if (id.startsWith("flip")) {
         const num = id.replace("flip", "");
         if (num === "1") setCard1State(CardState.Flip);
@@ -103,21 +98,18 @@ export const ScrollFlipCard = () => {
   useEffect(() => {
     // Card 1
     if (activeTriggers.has("flip1")) setCard1State(CardState.Flip);
-    else if (activeTriggers.has("backToCenter1")) setCard1State(CardState.BackToCenter);
     else if (activeTriggers.has("littleUp1")) setCard1State(CardState.LittleUp);
     else if (activeTriggers.has("firstTrigger")) setCard1State(CardState.FirstTrigger);
     else setCard1State(CardState.Initial);
 
     // Card 2
     if (activeTriggers.has("flip2")) setCard2State(CardState.Flip);
-    else if (activeTriggers.has("backToCenter2")) setCard2State(CardState.BackToCenter);
     else if (activeTriggers.has("littleUp2")) setCard2State(CardState.LittleUp);
     else if (activeTriggers.has("firstTrigger")) setCard2State(CardState.FirstTrigger);
     else setCard2State(CardState.Initial);
 
     // Card 3
     if (activeTriggers.has("flip3")) setCard3State(CardState.Flip);
-    else if (activeTriggers.has("backToCenter3")) setCard3State(CardState.BackToCenter);
     else if (activeTriggers.has("littleUp3")) setCard3State(CardState.LittleUp);
     else if (activeTriggers.has("firstTrigger")) setCard3State(CardState.FirstTrigger);
     else setCard3State(CardState.Initial);
@@ -185,11 +177,7 @@ export const ScrollFlipCard = () => {
           <Trigger id="littleUp3" className={styles.littleUp3} onInView={handleInView} debug={DEBUG} />
         </div>
 
-        <div className={styles.thirdTriggersWrap}>
-          <Trigger id="backToCenter1" className={styles.backToCenter1} onInView={handleInView} debug={DEBUG} />
-          <Trigger id="backToCenter2" className={styles.backToCenter2} onInView={handleInView} debug={DEBUG} />
-          <Trigger id="backToCenter3" className={styles.backToCenter3} onInView={handleInView} debug={DEBUG} />
-        </div>
+
 
         <div className={styles.fourthTriggersWrap}>
           <Trigger id="flip1" className={styles.flip1} onInView={handleInView} debug={DEBUG} />

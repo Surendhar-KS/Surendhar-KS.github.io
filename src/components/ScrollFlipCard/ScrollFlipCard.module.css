@@ -23,8 +23,8 @@
 
 .cardsWrapper {
   position: relative;
-  width: 290px;
-  height: 400px;
+  width: 380px;
+  height: 480px;
   transform-style: preserve-3d;
 }
 
@@ -60,14 +60,6 @@
 .littleUp2 { height: 30vh; flex: 1; }
 .littleUp3 { height: 18.25vh; flex: 1; }
 
-.thirdTriggersWrap {
-  display: flex;
-  width: 100%;
-}
-
-.backToCenter1 { height: 27.26vh; flex: 1; }
-.backToCenter2 { height: 33.875vh; flex: 1; }
-.backToCenter3 { height: 37.75vh; flex: 1; }
 
 .fourthTriggersWrap {
   display: flex;
