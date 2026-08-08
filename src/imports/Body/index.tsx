@@ -1186,7 +1186,7 @@ function VnxqLcPHw9VbVzy6BDpZ8PUsaUPng() {
 
 function Image() {
   return (
-    <div className="content-stretch flex flex-col h-[401.38px] items-start justify-center relative rounded-[20px] shrink-0 w-[582px]" data-name="Image">
+    <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[20px] shrink-0 w-full" data-name="Image">
       <VnxqLcPHw9VbVzy6BDpZ8PUsaUPng />
     </div>
   );
@@ -1203,7 +1203,7 @@ function ImageWrap() {
 function H3FramerText4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h3.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[32px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[38.4px]">AI-Powered Interview Platform</p>
       </div>
     </div>
@@ -1221,7 +1221,7 @@ function DivFramerV4Eg3F() {
 function PFramerText18() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#111]/78 text-[16px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[22.4px]">Smart AI hiring platform.</p>
       </div>
     </div>
@@ -1249,14 +1249,13 @@ function ProjectCard() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Project Card">
       <ImageWrap />
-      <TitleDescription1 />
     </div>
   );
 }
 
 function DivFramer19XgbboContainer() {
   return (
-    <div className="absolute content-stretch flex flex-col inset-[0_598px_486.98px_0] items-start" data-name="div.framer-19xgbbo-container">
+    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[20px]" data-name="div.framer-19xgbbo-container">
       <ProjectCard />
     </div>
   );
@@ -1274,7 +1273,7 @@ function WgEhvRrQs62RgxlzrnXjj8Rr4Png() {
 
 function Image1() {
   return (
-    <div className="content-stretch flex flex-col h-[401.38px] items-start justify-center relative rounded-[20px] shrink-0 w-[582px]" data-name="Image">
+    <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[20px] shrink-0 w-full" data-name="Image">
       <WgEhvRrQs62RgxlzrnXjj8Rr4Png />
     </div>
   );
@@ -1291,7 +1290,7 @@ function ImageWrap1() {
 function H3FramerText5() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h3.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[38.4px]">Portable Microplastic Detection</p>
       </div>
     </div>
@@ -1309,7 +1308,7 @@ function DivFramerV4Eg3F1() {
 function PFramerText19() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[22.4px]">AI-based water analysis.</p>
       </div>
     </div>
@@ -1337,14 +1336,13 @@ function ProjectCard1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Project Card">
       <ImageWrap1 />
-      <TitleDescription2 />
     </div>
   );
 }
 
 function DivFramer19XgbboContainer1() {
   return (
-    <div className="absolute content-stretch flex flex-col inset-[0_0_486.98px_598px] items-start" data-name="div.framer-19xgbbo-container">
+    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[20px]" data-name="div.framer-19xgbbo-container">
       <ProjectCard1 />
     </div>
   );
@@ -1362,7 +1360,7 @@ function I3AzeVtkvdKbGl9Tx38TUdXEb0Png() {
 
 function Image2() {
   return (
-    <div className="content-stretch flex flex-col h-[401.38px] items-start justify-center relative rounded-[20px] shrink-0 w-[582px]" data-name="Image">
+    <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[20px] shrink-0 w-full" data-name="Image">
       <I3AzeVtkvdKbGl9Tx38TUdXEb0Png />
     </div>
   );
@@ -1379,7 +1377,7 @@ function ImageWrap2() {
 function H3FramerText6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h3.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[38.4px]">Retail Analytics Dashboard</p>
       </div>
     </div>
@@ -1397,7 +1395,7 @@ function DivFramerV4Eg3F2() {
 function PFramerText20() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[22.4px]">Data-driven business insights.</p>
       </div>
     </div>
@@ -1425,14 +1423,13 @@ function ProjectCard2() {
   return (
     <div className="content-stretch flex flex-col gap-[9.99px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Project Card">
       <ImageWrap2 />
-      <TitleDescription3 />
     </div>
   );
 }
 
 function DivFramer19XgbboContainer2() {
   return (
-    <div className="absolute content-stretch flex flex-col inset-[488.18px_598px_-1.2px_0] items-start" data-name="div.framer-19xgbbo-container">
+    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[20px]" data-name="div.framer-19xgbbo-container">
       <ProjectCard2 />
     </div>
   );
@@ -1450,7 +1447,7 @@ function Component1C3ZqErGdc7PqPIbDxtBaD4VGiQPng() {
 
 function Image3() {
   return (
-    <div className="content-stretch flex flex-col h-[401.38px] items-start justify-center relative rounded-[20px] shrink-0 w-[582px]" data-name="Image">
+    <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[20px] shrink-0 w-full" data-name="Image">
       <Component1C3ZqErGdc7PqPIbDxtBaD4VGiQPng />
     </div>
   );
@@ -1467,7 +1464,7 @@ function ImageWrap3() {
 function H3FramerText7() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h3.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[32px] tracking-[-0.64px] w-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[32px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[38.4px]">SmartBus Live Tracker</p>
       </div>
     </div>
@@ -1485,7 +1482,7 @@ function DivFramerV4Eg3F3() {
 function PFramerText21() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-white/78 text-[16px] tracking-[-0.64px] w-full drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#111]/78 text-[16px] tracking-[-0.64px] w-full " style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[22.4px]">Live public transport tracking.</p>
       </div>
     </div>
@@ -1513,14 +1510,13 @@ function ProjectCard3() {
   return (
     <div className="content-stretch flex flex-col gap-[9.99px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Project Card">
       <ImageWrap3 />
-      <TitleDescription4 />
     </div>
   );
 }
 
 function DivFramer19XgbboContainer3() {
   return (
-    <div className="absolute content-stretch flex flex-col inset-[488.18px_0_-1.2px_598px] items-start" data-name="div.framer-19xgbbo-container">
+    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[20px]" data-name="div.framer-19xgbbo-container">
       <ProjectCard3 />
     </div>
   );
@@ -1528,26 +1524,73 @@ function DivFramer19XgbboContainer3() {
 
 function DivFramer6Rbvdk() {
   return (
-    <div className="h-[960.35px] relative shrink-0 w-full" data-name="div.framer-6rbvdk">
-      <DivFramer19XgbboContainer />
-      <DivFramer19XgbboContainer1 />
-      <DivFramer19XgbboContainer2 />
-      <DivFramer19XgbboContainer3 />
+    <div className="relative flex flex-col h-full gap-[10vh] pb-[20vh] w-full max-w-[1000px] mx-auto items-center" data-name="div.framer-6rbvdk">
+      <motion.div 
+        initial={{ opacity: 0, y: 150, scale: 0.85 }} 
+        whileInView={{ opacity: 1, y: 0, scale: 1 }} 
+        viewport={{ once: false, margin: "-15%" }} 
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} 
+        className="sticky top-[15vh] w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+      >
+        <DivFramer19XgbboContainer />
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 150, scale: 0.85 }} 
+        whileInView={{ opacity: 1, y: 0, scale: 1 }} 
+        viewport={{ once: false, margin: "-15%" }} 
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} 
+        className="sticky top-[20vh] w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+      >
+        <DivFramer19XgbboContainer1 />
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 150, scale: 0.85 }} 
+        whileInView={{ opacity: 1, y: 0, scale: 1 }} 
+        viewport={{ once: false, margin: "-15%" }} 
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} 
+        className="sticky top-[25vh] w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+      >
+        <DivFramer19XgbboContainer2 />
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 150, scale: 0.85 }} 
+        whileInView={{ opacity: 1, y: 0, scale: 1 }} 
+        viewport={{ once: false, margin: "-15%" }} 
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} 
+        className="sticky top-[30vh] w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+      >
+        <DivFramer19XgbboContainer3 />
+      </motion.div>
     </div>
   );
 }
 
 function Container4() {
   return (
-    <ScrollReveal className="content-stretch flex flex-col gap-[60px] items-start justify-center max-w-[1180px] relative shrink-0 w-[1180px]" data-name="Container">
-      <div className="flex w-full flex-col items-start gap-3">
-        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--reveal-color,#111)]/70">Curated Project</div>
-        <div style={{ height: '700px', width: '100%', marginBottom: '20px' }}>
-          <ScrollExpand src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=2000&auto=format&fit=crop" mediaType="image" title="Built to scale" scrollHint="Scroll to expand" mediaZoom={1.35} useWindowScroll={true} />
+    <ScrollReveal className="content-stretch flex flex-col items-start justify-center max-w-[1180px] relative shrink-0 w-[1180px]" data-name="Container">
+      <div className="w-full relative">
+        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--reveal-color,#111)]/70 pt-[20px] pb-[20px]">Curated Project</div>
+        
+        <ScrollExpand 
+          src="/images/curated-projects-bg.png" 
+          mediaType="image" 
+          title="Built to scale" 
+          scrollHint="Scroll to expand" 
+          mediaZoom={1.35} 
+          scrollDistance={1.2} 
+          holdDistance={4.2} 
+          useWindowScroll={true} 
+        />
+
+        <div className="absolute top-[220vh] bottom-0 left-0 w-full z-10 flex flex-col gap-[60px] pointer-events-none">
+          <div className="pointer-events-auto">
+            <TitleButton />
+          </div>
+          <div className="pointer-events-auto flex-1 w-full h-full">
+            <DivFramer6Rbvdk />
+          </div>
         </div>
       </div>
-      <TitleButton />
-      <DivFramer6Rbvdk />
     </ScrollReveal>
   );
 }

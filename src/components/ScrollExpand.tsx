@@ -275,7 +275,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
           {title ? (
             <div
               ref={titleRef}
-              className="absolute inset-0 flex items-center justify-center m-0 px-[6%] text-center font-bold leading-none tracking-[-0.03em] text-white [font-size:var(--se-title-size)] [text-shadow:0_2px_24px_rgba(0,0,0,0.45)] pointer-events-none [will-change:opacity,transform]"
+              className="absolute inset-0 flex items-center justify-center m-0 px-[6%] text-center font-bold leading-none tracking-[-0.03em] text-[#111] [font-size:var(--se-title-size)] pointer-events-none [will-change:opacity,transform]"
             >
               {title}
             </div>
@@ -283,7 +283,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
           {scrollHint ? (
             <div
               ref={hintRef}
-              className="absolute inset-x-0 bottom-5 text-center text-[0.8125rem] tracking-[0.02em] text-white/55 pointer-events-none [will-change:opacity,transform]"
+              className="absolute inset-x-0 bottom-5 text-center text-[0.8125rem] tracking-[0.02em] text-[#111]/70 pointer-events-none [will-change:opacity,transform]"
             >
               {scrollHint}
             </div>
