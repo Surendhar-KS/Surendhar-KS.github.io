@@ -1,6 +1,8 @@
 import ScrollExpand from "@/components/ScrollExpand";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 import { ExperienceSection } from "../../components/ExperienceSection";
 import React, { useState } from "react";
 import svgPaths from "./svg-tdd3bumtl6";
@@ -224,7 +226,7 @@ function Title() {
       initial={{ y: 40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="relative flex flex-col items-center justify-center w-full my-8 md:my-0" 
+      className="relative flex flex-col items-center justify-center w-full mb-8 -mt-8 md:-mt-[80px]" 
       data-name="Title"
     >
       <div className="relative flex flex-col items-center">
@@ -243,7 +245,7 @@ function Title() {
           initial={{ color: '#d1d5db' }}
           animate={{ color: '#111111' }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[52px] md:text-[174px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-20 relative"
+          className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[52px] md:text-[174px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-0 relative"
         >
           SOFT<span className="ml-[0.06em]">W</span>ARE<br/>ENGINEER
         </motion.h1>
@@ -469,7 +471,7 @@ function Content() {
 
 function HeroBioSections() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Hero & Bio Sections">
+    <div id="about" className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Hero & Bio Sections">
       <StickyAvatarWrap />
       <Content />
     </div>
@@ -922,31 +924,62 @@ function DivFramerMg5C04Container() {
   );
 }
 
-function ServiceRow({ title, tags }: { title: string, tags: string[] }) {
+function ServiceRow({ title, tags, index }: { title: string, tags: string[], index: number }) {
   return (
-    <div className="bg-[#faf7f3] content-stretch flex flex-col lg:flex-row items-start lg:items-center justify-between min-h-[120px] overflow-clip py-[20px] lg:py-[40.8px] relative shrink-0 w-full gap-[20px] lg:gap-0">
-      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full lg:w-auto">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[28px] lg:text-[32px] tracking-[-0.56px] lg:tracking-[-0.64px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
-          <p className="leading-[33.6px] lg:leading-[38.4px]">{title}</p>
-        </div>
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      whileHover="hover"
+      className="bg-transparent hover:bg-white content-stretch flex flex-col lg:flex-row items-start lg:items-center justify-between overflow-clip px-[20px] py-[20px] lg:py-[40.8px] relative shrink-0 w-full gap-[20px] lg:gap-0 transition-colors duration-500 rounded-[24px] cursor-pointer group"
+    >
+      <motion.div 
+        variants={{ hover: { scale: 1.02, boxShadow: "0 20px 40px rgba(0,0,0,0.08)", y: -4 } }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 rounded-[24px] pointer-events-none"
+      />
+      
+      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full lg:w-auto z-10">
+        <motion.div 
+          variants={{ hover: { x: 10 } }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="[word-break:break-word] flex flex-row items-center gap-4 font-['Archivo:Medium',sans-serif] font-medium justify-start relative shrink-0 text-[color:var(--reveal-color,#111)] text-[24px] sm:text-[28px] lg:text-[32px] tracking-[-0.56px] lg:tracking-[-0.64px]" style={{ fontVariationSettings: '"wdth" 100' }}
+        >
+          <p className="leading-[1.2] lg:leading-[38.4px] text-left">{title}</p>
+          <motion.svg 
+            variants={{ hover: { opacity: 1, x: 0 }, initial: { opacity: 0, x: -10 } }}
+            initial="initial"
+            className="w-6 h-6 lg:w-8 lg:h-8 text-[#111] shrink-0"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </motion.svg>
+        </motion.div>
       </div>
-      <div aria-hidden className="absolute border-[rgba(0,0,0,0.1)] border-b-[0.8px] border-solid inset-0 pointer-events-none" />
-      <div className="content-stretch flex gap-[10px] flex-wrap items-center justify-start lg:justify-center relative shrink-0">
+      
+      <div aria-hidden className="absolute border-[rgba(0,0,0,0.1)] border-b-[0.8px] border-solid inset-x-[20px] bottom-0 pointer-events-none group-hover:opacity-0 transition-opacity duration-300" />
+      
+      <motion.div 
+        variants={{ hover: { x: -10 } }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="content-stretch flex gap-[10px] flex-wrap items-center justify-start lg:justify-center relative shrink-0 z-10"
+      >
         {tags.map((tag, i) => {
           const els = [
             <div key={`tag-${i}`} className="relative shrink-0">
-              <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] lg:text-[18px] text-[rgba(17,17,17,0.5)] tracking-[-0.72px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] lg:text-[18px] text-[rgba(17,17,17,0.5)] group-hover:text-[rgba(17,17,17,0.9)] tracking-[-0.72px] whitespace-nowrap transition-colors duration-300" style={{ fontVariationSettings: '"wdth" 100' }}>
                 <p className="leading-[25.2px]">{tag}</p>
               </div>
             </div>
           ];
           if (i < tags.length - 1) {
-            els.push(<div key={`dot-${i}`} className="bg-[#111] relative rounded-[89px] shrink-0 size-[4px]" />);
+            els.push(<div key={`dot-${i}`} className="bg-[#111] opacity-50 group-hover:opacity-100 relative rounded-[89px] shrink-0 size-[4px] transition-opacity duration-300" />);
           }
           return els;
         })}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -958,10 +991,10 @@ function ServicesCards() {
     { title: "Data Analytics", tags: ["Power BI", "SQL", "Python", "Business Intelligence"] }
   ];
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Services Cards">
+    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Services Cards">
       {services.map((s, i) => (
         <div key={i} className="content-stretch flex flex-col items-start w-full relative shrink-0">
-          <ServiceRow title={s.title} tags={s.tags} />
+          <ServiceRow index={i} title={s.title} tags={s.tags} />
         </div>
       ))}
     </div>
@@ -970,7 +1003,7 @@ function ServicesCards() {
 
 function ServicesSectionContainer() {
   return (
-    <div className="max-w-[1180px] relative shrink-0 w-full" data-name="Services Section → Container">
+    <div id="services" className="max-w-[1180px] relative shrink-0 w-full" data-name="Services Section → Container">
       <div className="flex flex-col justify-center max-w-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[40px] items-start justify-center max-w-[inherit] px-[20px] relative size-full">
           <DivFramer1Nuet6A />
@@ -1450,10 +1483,9 @@ function Container2() {
     <div className="flex-[1_0_0] max-w-[1180px] min-w-px relative" data-name="Container">
       <div className="flex flex-col justify-center max-w-[inherit] size-full">
         <div className="w-full relative px-[20px]">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--reveal-color,#111)]/70 pt-[20px] pb-[20px]">Curated Project</div>
-          
+        
           <ScrollExpand 
-            src="/images/curated-projects-bg.png" 
+            src="/images/build-to-scale-bg.png" 
             mediaType="image" 
             title="Built to scale" 
             scrollHint="Scroll to expand" 
@@ -1479,7 +1511,7 @@ function Container2() {
 
 function ProjectsSection() {
   return (
-    <div className="content-stretch flex items-center justify-center pt-[140px] relative shrink-0 w-full" data-name="Curated Projects Section">
+    <div id="projects" className="content-stretch flex items-center justify-center pt-[140px] relative shrink-0 w-full" data-name="Curated Projects Section">
       <Container2 />
     </div>
   );
@@ -3048,13 +3080,6 @@ function Container5() {
   );
 }
 
-function ContactSection() {
-  return (
-    <div className="content-stretch flex items-center justify-center pb-[80px] pt-[79.4px] relative shrink-0 w-full" data-name="Contact Section">
-      <Container5 />
-    </div>
-  );
-}
 
 function Main() {
   return (
@@ -3769,7 +3794,7 @@ function EndOfBodyStart() {
   return (
     <div className="bg-[#faf7f3] content-stretch flex flex-col items-center min-h-[780px] relative shrink-0 w-full" data-name="End of bodyStart">
       <Main />
-      <Phone />
+      <Footer />
       <DivFramerBcxrl8Container />
     </div>
   );
@@ -3958,27 +3983,43 @@ const icons = {
   vercel: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
 };
 
-function SkillIcon({ name, src }: { name: string, src: string }) {
+function SkillIcon({ name, src, index }: { name: string, src: string, index: number }) {
   return (
-    <div className="bg-[#faf7f3] rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.4)] border border-transparent flex flex-col items-center justify-center p-3 gap-2 size-[70px] transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.15] hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)] cursor-pointer hover:border-white/50 hover:z-20 relative group">
-      <img src={src} alt={name} className="size-[24px] object-contain transition-transform duration-300 group-hover:scale-110" />
-      <span className="text-[10px] font-semibold text-[color:var(--reveal-color,#111)] whitespace-nowrap transition-colors duration-300">{name}</span>
-    </div>
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-10px" }}
+      transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+      whileHover={{ y: -4, scale: 1.08 }}
+      className="bg-white rounded-2xl shadow-sm border border-[#111]/5 flex flex-col items-center justify-center p-3 gap-2 size-[72px] cursor-pointer hover:shadow-md hover:border-[#111]/10 relative group"
+    >
+      <img src={src} alt={name} className="size-[26px] object-contain transition-transform duration-300 group-hover:scale-110" />
+      <span className="text-[10px] font-semibold text-[#111]/80 whitespace-nowrap transition-colors duration-300 group-hover:text-[#111]">{name}</span>
+    </motion.div>
   );
 }
 
-function SkillBox({ title, description, skills }: { title: string, description: string, skills: { name: string, src: string }[] }) {
+function SkillBox({ title, description, skills, index }: { title: string, description: string, skills: { name: string, src: string }[], index: number }) {
   return (
-    <div className="bg-[#111] border border-[#222] shadow-[0_8px_30px_rgba(0,0,0,0.1)] rounded-3xl p-6 lg:p-8 flex flex-col items-start justify-between min-h-[350px] w-full transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_25px_50px_rgba(0,0,0,0.3)] hover:border-[#444] hover:z-10 group cursor-pointer relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-      <div className="flex flex-wrap gap-3 w-full relative z-10">
-        {skills.map((s, i) => <SkillIcon key={i} name={s.name} src={s.src} />)}
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="bg-white border border-[#111]/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] p-6 lg:p-8 flex flex-col items-start gap-8 w-full cursor-pointer relative overflow-hidden group"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#111]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"></div>
+      
+      <div className="flex flex-col gap-3 w-full relative z-10">
+        <h3 className="text-[22px] font-semibold text-[#111] tracking-tight font-['Archivo:SemiBold',sans-serif]">{title}</h3>
+        <p className="text-[15px] text-[#111]/60 font-['Archivo:Regular',sans-serif] leading-[1.6]">{description}</p>
       </div>
-      <div className="flex flex-col gap-2 mt-8 w-full relative z-10">
-        <h3 className="text-[20px] font-semibold text-white font-['Archivo:SemiBold',sans-serif] transition-colors duration-300">{title}</h3>
-        <p className="text-[14px] text-gray-400 font-['Archivo:Regular',sans-serif] leading-[20px] group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+
+      <div className="flex flex-wrap gap-3 w-full relative z-10 mt-auto">
+        {skills.map((s, i) => <SkillIcon key={i} index={i} name={s.name} src={s.src} />)}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -4030,16 +4071,22 @@ function TechnologiesSection() {
     ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center pt-[100px] pb-[92px] px-[20px] gap-[32px]" data-name="Technologies Section">
+    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px]" data-name="Technologies Section">
       <div className="mx-auto w-full max-w-[980px] text-center">
-        <h2 className="font-['Archivo:SemiBold',sans-serif] text-[38px] font-semibold tracking-[-0.96px] text-[color:var(--reveal-color,#111)] sm:text-[46px] lg:text-[72px] lg:tracking-[-1.44px] leading-[0.95]">
-          US Tools and Technologies
-        </h2>
+        <motion.h2 
+          initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="font-['Archivo:SemiBold',sans-serif] text-[38px] font-semibold tracking-[-0.96px] text-transparent bg-clip-text bg-gradient-to-br from-[#111] to-[#444] sm:text-[46px] lg:text-[72px] lg:tracking-[-1.44px] leading-[0.95]"
+        >
+          Tools and Technologies
+        </motion.h2>
       </div>
       <div className="w-full max-w-[1280px]">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 w-full">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
           {cards.map((c, i) => (
-            <SkillBox key={i} title={c.title} description={c.description} skills={c.skills} />
+            <SkillBox key={i} index={i} title={c.title} description={c.description} skills={c.skills} />
           ))}
         </div>
       </div>

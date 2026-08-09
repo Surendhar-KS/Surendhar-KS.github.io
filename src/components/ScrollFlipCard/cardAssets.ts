@@ -37,13 +37,14 @@ export const cardAssets: CardAsset[] = [
       "System Administrator (CSA)",
       "Certified Implementation Specialist – Data Foundations (CMDB & CSDM)"
     ],
-    description: "Platform administration and data foundation implementation expertise covering CMDB and CSDM on the ServiceNow ecosystem.",
+    description: "",
     issuer: "ServiceNow",
     year: "2026",
     badges: [
       "/badges/servicenow-csa.png", 
       "/badges/servicenow-cis-df.png"
     ],
+    credentialLink: "#",
     origin: { originX: 0, zIndex: 1 },
   },
   {

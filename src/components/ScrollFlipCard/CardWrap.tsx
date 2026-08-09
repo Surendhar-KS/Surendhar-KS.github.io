@@ -26,7 +26,7 @@ export const CardWrap: React.FC<CardWrapProps> = ({ asset }) => {
         
         <div className={styles.accentDivider} style={{ backgroundColor: asset.accentColor }}></div>
         
-        <p className={styles.description}>{asset.description}</p>
+        {asset.description && <p className={styles.description}>{asset.description}</p>}
         
         <div className={styles.footerWrap}>
           <svg className={styles.footerIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,18 +56,19 @@ export const CardWrap: React.FC<CardWrapProps> = ({ asset }) => {
         ))}
       </div>
       
-      {asset.credentialLink && (
-        <a href={asset.credentialLink} className={styles.credentialButton} style={{ borderColor: asset.accentColor, color: asset.accentColor }}>
-          View Credential
-          <svg className={styles.linkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
-      )}
     </>
   );
+
+  const credentialButton = asset.credentialLink ? (
+    <a href={asset.credentialLink} className={styles.credentialButton} style={{ borderColor: asset.accentColor, color: asset.accentColor }}>
+      View Credential
+      <svg className={styles.linkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  ) : null;
 
   return (
     <div className={styles.cardWrapContainer}>
@@ -91,6 +92,7 @@ export const CardWrap: React.FC<CardWrapProps> = ({ asset }) => {
       >
         <div className={styles.contentWrapper}>
           {content}
+          {credentialButton}
         </div>
       </motion.div>
     </div>
