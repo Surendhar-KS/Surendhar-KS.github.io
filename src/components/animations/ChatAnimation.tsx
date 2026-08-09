@@ -1,8 +1,73 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useTime, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 export default function ChatAnimation() {
+  const time = useTime();
+  // Scroll up infinitely: moves from 0 to -100% (or specific pixel amount) over 15 seconds
+  const yOffset = useTransform(time, [0, 15000], [0, -320], { clamp: false });
+
+  // A single set of chat bubbles (we'll duplicate it for infinite scroll)
+  const BubbleSet = () => (
+    <>
+      {/* Bubble 1 (White, Left) */}
+      <div className="w-[85%] self-start bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.05)] p-3 flex items-center justify-between border border-black/5">
+         <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative border border-gray-100 shrink-0">
+               <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
+            </div>
+            <div className="flex flex-col">
+               <span className="text-xs font-semibold text-black">Ryan Patel</span>
+               <span className="text-[10px] text-black/50">Shared final context</span>
+            </div>
+         </div>
+         <span className="text-[9px] text-black/40 shrink-0">Just Now</span>
+      </div>
+
+      {/* Bubble 2 (Blue, Right) */}
+      <div className="w-[85%] self-end bg-gradient-to-r from-[#37CAFF] to-[#00BBFF] rounded-xl shadow-[0_4px_24px_rgba(0,187,255,0.2)] p-3 flex items-center justify-between border border-[#1AC2FF]">
+         <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative border border-white/20 shrink-0">
+               <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
+            </div>
+            <div className="flex flex-col">
+               <span className="text-xs font-semibold text-white">Ryan Patel</span>
+               <span className="text-[10px] text-white/70">Shared final context</span>
+            </div>
+         </div>
+         <span className="text-[9px] text-white/60 shrink-0">Just Now</span>
+      </div>
+      
+      {/* Bubble 3 (White, Left) */}
+      <div className="w-[85%] self-start bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.05)] p-3 flex items-center justify-between border border-black/5">
+         <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative border border-gray-100 shrink-0">
+               <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
+            </div>
+            <div className="flex flex-col">
+               <span className="text-xs font-semibold text-black">Ryan Patel</span>
+               <span className="text-[10px] text-black/50">Shared final context</span>
+            </div>
+         </div>
+         <span className="text-[9px] text-black/40 shrink-0">Just Now</span>
+      </div>
+
+      {/* Bubble 4 (Blue, Right) */}
+      <div className="w-[85%] self-end bg-gradient-to-r from-[#37CAFF] to-[#00BBFF] rounded-xl shadow-[0_4px_24px_rgba(0,187,255,0.2)] p-3 flex items-center justify-between border border-[#1AC2FF]">
+         <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative border border-white/20 shrink-0">
+               <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
+            </div>
+            <div className="flex flex-col">
+               <span className="text-xs font-semibold text-white">Ryan Patel</span>
+               <span className="text-[10px] text-white/70">Shared final context</span>
+            </div>
+         </div>
+         <span className="text-[9px] text-white/60 shrink-0">Just Now</span>
+      </div>
+    </>
+  );
+
   return (
     <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#FAFEFF] via-[#B9E7FA] to-[#8BDEFC] flex flex-col items-center justify-center overflow-hidden">
        {/* Background Mosaic Image */}
@@ -10,50 +75,32 @@ export default function ChatAnimation() {
           src="/images/framer/mosaic-bg.png"
           alt="Mosaic Background"
           fill
-          className="object-cover opacity-60 mix-blend-overlay"
+          className="object-cover opacity-[0.15] mix-blend-multiply pointer-events-none"
        />
 
-       <div className="relative z-10 w-full max-w-[240px] flex flex-col gap-4 pt-8">
+       {/* Scrolling Container */}
+       <div className="relative z-10 w-full max-w-[280px] h-full overflow-hidden mask-image-vertical-fade flex justify-center">
           
-          {/* Bubble 1 (White) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5, type: 'spring', bounce: 0.3 }}
-            className="w-full bg-white rounded-lg shadow-[0_4px_24px_rgba(0,0,0,0.05)] p-3 flex items-center justify-between"
+          <motion.div 
+             style={{ y: yOffset }}
+             className="w-full flex flex-col gap-5 pt-[50%]" // The y-translation will loop smoothly
           >
-             <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full overflow-hidden relative border border-gray-100">
-                   <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
-                </div>
-                <div className="flex flex-col">
-                   <span className="text-xs font-semibold text-black">Ryan Patel</span>
-                   <span className="text-[10px] text-black/50">Shared final context</span>
-                </div>
+             {/* We render the set a few times to create a seamless infinite loop */}
+             <div className="flex flex-col gap-5 w-full">
+                <BubbleSet />
+                <BubbleSet />
+                <BubbleSet />
              </div>
-             <span className="text-[9px] text-black/40">Just Now</span>
-          </motion.div>
-
-          {/* Bubble 2 (Blue Gradient) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 1.0, duration: 0.5, type: 'spring', bounce: 0.3 }}
-            className="w-full bg-gradient-to-r from-[#37CAFF] to-[#00BBFF] rounded-lg shadow-[0_4px_24px_rgba(0,187,255,0.2)] p-3 flex items-center justify-between border border-[#1AC2FF]"
-          >
-             <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full overflow-hidden relative border border-white/20">
-                   <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
-                </div>
-                <div className="flex flex-col">
-                   <span className="text-xs font-semibold text-white">Ryan Patel</span>
-                   <span className="text-[10px] text-white/70">Shared final context</span>
-                </div>
-             </div>
-             <span className="text-[9px] text-white/60">Just Now</span>
           </motion.div>
           
        </div>
+       
+       <style dangerouslySetInnerHTML={{__html: `
+         .mask-image-vertical-fade {
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+         }
+       `}} />
     </div>
   );
 }
