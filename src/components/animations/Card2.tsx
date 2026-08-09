@@ -39,15 +39,6 @@ const CAROUSEL_ITEMS = [
         <path d="M 14.65 22.926 C 14.651 23.474 14.433 24 14.045 24.387 C 13.658 24.775 13.132 24.993 12.584 24.992 C 12.036 24.993 11.51 24.775 11.123 24.387 C 10.735 24 10.517 23.474 10.518 22.926 C 10.518 21.783 11.441 20.86 12.584 20.86 L 14.65 20.86 Z M 15.683 22.926 C 15.683 21.783 16.606 20.86 17.749 20.86 C 18.891 20.86 19.815 21.783 19.815 22.926 L 19.815 28.091 C 19.816 28.639 19.598 29.165 19.21 29.552 C 18.823 29.94 18.297 30.158 17.749 30.157 C 17.201 30.158 16.675 29.94 16.288 29.552 C 15.9 29.165 15.682 28.639 15.683 28.091 Z M 17.746 14.632 C 17.198 14.632 16.673 14.415 16.285 14.027 C 15.898 13.64 15.68 13.114 15.681 12.566 C 15.681 11.423 16.604 10.5 17.747 10.5 C 18.889 10.5 19.813 11.423 19.813 12.566 L 19.813 14.632 Z M 22.929 20.86 L 28.11 20.86 C 29.253 20.86 30.176 21.783 30.176 22.926 C 30.177 23.474 29.959 24 29.571 24.387 C 29.184 24.775 28.658 24.993 28.11 24.992 L 22.93 24.992 Z" fill="currentColor" />
       </svg>
     )
-  },
-  {
-    title: 'Control Room',
-    desc: 'Fine-tune workspace rules, permissions, and preferences in one place.',
-    icon: (
-      <svg viewBox="0 0 40 40" className="w-5 h-5">
-        <path d="M 16.717 3.492 L 10.847 8.073 L 4.844 3.493 L 4.851 3.5 L 4.851 9.914 L 10.781 14.594 L 16.717 10.095 Z M 18.26 2.377 L 16.719 3.492 L 16.719 10.094 L 21.569 6.37 L 21.569 4.127 C 21.569 4.127 20.981 0.923 18.26 2.377 Z M 16.719 10.093 L 16.719 18.656 L 20.437 18.656 C 20.437 18.656 21.494 18.547 21.571 17.341 L 21.571 6.369 Z M 0 6.377 L 0 17.349 C -0.003 18.009 0.481 18.57 1.134 18.664 L 4.852 18.664 L 4.843 9.906 L 0 6.376 Z" fill="currentColor" transform="translate(9.369 9.5)" />
-      </svg>
-    )
   }
 ];
 
@@ -62,74 +53,63 @@ export default function Card2() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full bg-[#F0FAF0] flex flex-col items-center justify-center overflow-hidden rounded-[11px]">
-       
-       <div className="relative z-10 w-full h-full flex flex-col items-center justify-between py-12 px-6">
+    <div className="absolute inset-0 w-full h-full bg-[#fcfdfd] flex flex-col items-center justify-center overflow-hidden">
+       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center py-6 px-6">
           
           {/* Top text content container */}
-          <div className="w-full flex-1 flex flex-col items-center justify-center relative">
-             <div className="w-[230px] h-[95px] bg-white rounded-[10px] shadow-[0_1px_2px_rgba(0,0,0,0.18)] p-4 relative overflow-hidden flex flex-col items-center justify-center text-center">
-                {/* 
-                  Omit mode="wait" so they crossfade smoothly overlapping each other.
-                  Using Y translation for a sliding effect that matches the screenshot exactly. 
-                */}
-                <AnimatePresence>
+          <div className="w-[240px] h-[90px] bg-white rounded-[10px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] p-4 relative overflow-hidden flex flex-col justify-center">
+             {CAROUSEL_ITEMS.map((item, idx) => {
+               // Calculate relative position for the scroll effect
+               let offset = idx - activeIndex;
+               if (offset < -1) offset += CAROUSEL_ITEMS.length;
+               if (offset > 1) offset -= CAROUSEL_ITEMS.length;
+
+               let y = offset * 40; // Pixel offset vertically
+               let opacity = offset === 0 ? 1 : (offset === 1 ? 0.3 : 0);
+               let scale = offset === 0 ? 1 : 0.95;
+
+               return (
                   <motion.div
-                    key={activeIndex}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="absolute inset-0 p-4 flex flex-col items-center justify-center text-center gap-1"
+                    key={idx}
+                    animate={{ y, opacity, scale }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute left-4 right-4 flex flex-col gap-0.5"
+                    style={{ pointerEvents: offset === 0 ? 'auto' : 'none' }}
                   >
-                     <h3 className="text-[14px] font-bold text-[#0C1410] tracking-tight leading-[1.1em]">{CAROUSEL_ITEMS[activeIndex].title}</h3>
-                     <p className="text-[10px] leading-[1.35em] text-[#0C1410]/60 px-1">{CAROUSEL_ITEMS[activeIndex].desc}</p>
+                     <h3 className="text-[14px] font-bold text-black tracking-tight">{item.title}</h3>
+                     <p className="text-[10px] leading-[1.35] text-black/60">{item.desc}</p>
                   </motion.div>
-                </AnimatePresence>
-             </div>
-             
-             {/* Dotted connector line */}
-             <div className="absolute top-[95px] w-[2px] h-[100px] border-l-2 border-dashed border-[#8AEF98]/80 shadow-[0_0_18px_rgba(5,222,34,0.28)]"></div>
+               );
+             })}
           </div>
+             
+          {/* Dotted connector line */}
+          <div className="w-[2px] h-14 border-l-[2px] border-dashed border-[#8AEF98] shadow-[0_0_12px_rgba(5,222,34,0.3)]"></div>
 
           {/* Bottom Nav Pill */}
-          <div className="relative border border-[rgba(5,222,34,0.2)] bg-gradient-to-b from-[rgba(5,222,34,0.33)] to-[rgba(5,222,34,0.4)] rounded-full p-2 flex items-center justify-center gap-3 mb-4 shadow-sm overflow-hidden z-20">
+          <div className="relative w-[230px] h-[52px] bg-[#B2F5C8] rounded-full flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(5,222,34,0.2)] overflow-hidden">
              
-             {/* Mosaic overlay inside the pill */}
-             <div className="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
-                 <Image src="/images/framer/mosaic-bg.png" alt="Mosaic" fill className="object-cover" />
+             {/* Mosaic Background overlay for the pill */}
+             <div className="absolute inset-0 opacity-[0.15] mix-blend-multiply pointer-events-none">
+                <Image src="/images/framer/mosaic-bg.png" alt="Mosaic" fill className="object-cover" />
              </div>
 
-             {/* Icons */}
              {CAROUSEL_ITEMS.map((item, i) => {
                const isActive = i === activeIndex;
                return (
                  <div 
                    key={i} 
-                   className="relative z-10 w-[36px] h-[36px] rounded-full flex items-center justify-center cursor-pointer"
+                   className="relative w-9 h-9 flex items-center justify-center cursor-pointer transition-all duration-300 z-10"
                    onClick={() => setActiveIndex(i)}
                  >
-                   {isActive ? (
-                      // Active: Dark Green border gradient holding the white circle
-                      <motion.div 
-                        layoutId="activeIconRing"
-                        className="absolute inset-0 rounded-full bg-gradient-to-b from-[#05DE22] to-[#04AF1B] flex items-center justify-center shadow-[0_0_10px_rgba(5,222,34,0.5)]"
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
-                      >
-                         <div className="w-[28px] h-[28px] bg-white rounded-full flex items-center justify-center relative">
-                            <svg viewBox="0 0 40 40" className="w-[18px] h-[18px] text-[#8AEF98]">
-                               {item.icon}
-                            </svg>
-                         </div>
-                      </motion.div>
-                   ) : (
-                      // Inactive: Just a white circle
-                      <div className="w-[28px] h-[28px] bg-white rounded-full flex items-center justify-center transition-all duration-300">
-                         <svg viewBox="0 0 40 40" className="w-[18px] h-[18px] text-[#8AEF98]">
-                            {item.icon}
-                         </svg>
-                      </div>
-                   )}
+                   {/* Background circle of the icon */}
+                   <motion.div
+                      layout
+                      className={`absolute inset-0 rounded-full transition-all duration-500 ${isActive ? 'bg-white shadow-[0_0_0_4px_rgba(74,222,128,0.5)] scale-110' : 'bg-white scale-100'}`}
+                   />
+                   <span className={`relative z-20 transition-colors duration-300 w-5 h-5 flex items-center justify-center ${isActive ? 'text-[#4ADE80]' : 'text-[#A7F3D0]'}`}>
+                     {item.icon}
+                   </span>
                  </div>
                )
              })}
