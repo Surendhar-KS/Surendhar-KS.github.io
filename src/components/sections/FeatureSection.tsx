@@ -50,7 +50,7 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-1 rounded-2xl bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
+            className="lg:col-span-1 rounded-[12px] bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
           >
             <div className="w-full flex justify-between items-center mb-6 relative z-10">
               <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Integrations</h3>
@@ -74,7 +74,7 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-1 rounded-2xl bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
+            className="lg:col-span-1 rounded-[12px] bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
           >
             <div className="w-full flex justify-between items-center mb-6 relative z-10">
               <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Collaboration</h3>
@@ -98,7 +98,7 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-1 rounded-2xl bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
+            className="lg:col-span-1 rounded-[12px] bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
           >
             <div className="w-full flex justify-between items-center mb-6 relative z-10">
               <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Execution</h3>
