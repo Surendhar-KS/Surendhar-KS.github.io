@@ -1,3 +1,4 @@
+'use client';
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -190,3 +191,4 @@ export const ScrollFlipCard = () => {
     </div>
   );
 };
+

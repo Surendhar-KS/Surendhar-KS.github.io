@@ -1,3 +1,4 @@
+'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -16,7 +17,7 @@ export default function ScrollReveal({ children, className, 'data-name': dataNam
   return (
     <motion.div
       ref={ref}
-      style={{ opacity, y, '--reveal-color': color } as React.CSSProperties}
+      style={{ opacity, y, '--reveal-color': color } as any as React.CSSProperties}
       className={className}
       data-name={dataName}
     >
@@ -24,3 +25,4 @@ export default function ScrollReveal({ children, className, 'data-name': dataNam
     </motion.div>
   );
 }
+

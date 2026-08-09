@@ -1,0 +1,172 @@
+'use client';
+import { motion } from "framer-motion";
+const icons = {
+    huggingface: "https://cdn.simpleicons.org/huggingface/FFD21E",
+    tensorflow: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
+    opencv: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
+    tesseract: "https://upload.wikimedia.org/wikipedia/commons/2/23/Tesseract_logo.png",
+
+  java: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+  sql: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  aws: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+  terraform: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg",
+  docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+  kubernetes: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
+  githubactions: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+  linux: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
+  vscode: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+  git: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  github: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+  postman: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+  supabase: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+  githubcopilot: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+  claude: "https://cdn.simpleicons.org/anthropic/111111",
+  cursor: "https://cdn.simpleicons.org/cursor/111111",
+  antigravity: "https://upload.wikimedia.org/wikipedia/commons/0/05/Google_Messages_logo.svg",
+  react: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  netlify: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg",
+  vercel: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+};
+
+function SkillIcon({ name, src, index }: { name: string, src: string, index: number }) {
+  return (
+    <motion.div 
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }
+      }}
+      whileHover={{ y: -8, scale: 1.05 }}
+      className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 flex flex-col items-center justify-center p-3 gap-2 size-[76px] cursor-pointer relative group transition-all duration-500 hover:shadow-[0_15px_30px_rgb(0,0,0,0.08)] hover:border-white/80 hover:bg-white/60"
+    >
+      {/* Pulsing ambient glow */}
+      <motion.div
+        animate={{ 
+          opacity: [0.4, 0.8, 0.4],
+          scale: [0.8, 1.1, 0.8]
+        }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+        className="absolute inset-0 bg-gradient-to-br from-transparent via-[#111]/[0.03] to-transparent rounded-[20px] pointer-events-none"
+      />
+      
+      {/* Floating icon */}
+      <motion.div
+        animate={{ y: [0, -3, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
+        className="relative z-10 flex flex-col items-center justify-center gap-2"
+      >
+        <img 
+          src={src} 
+          alt={name} 
+          className="size-[28px] object-contain transition-transform duration-500 group-hover:scale-[1.15] drop-shadow-sm group-hover:drop-shadow-md" 
+        />
+        <span className="text-[10px] font-bold text-[#111]/60 whitespace-nowrap transition-all duration-300 group-hover:text-[#111]">{name}</span>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function SkillBox({ title, description, skills, index }: { title: string, description: string, skills: {name: string, src: string}[], index: number }) {
+  return (
+    <motion.div 
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] } }
+      }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="bg-white/60 backdrop-blur-2xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] p-6 lg:p-8 flex flex-col items-start gap-8 w-full cursor-pointer relative overflow-hidden group"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#111]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"></div>
+      
+      <div className="flex flex-col gap-3 w-full relative z-10">
+        <h3 className="text-[22px] font-semibold text-[#111] tracking-tight font-['Archivo:SemiBold',sans-serif]">{title}</h3>
+        <p className="text-[15px] text-[#111]/60 font-['Archivo:Regular',sans-serif] leading-[1.6]">{description}</p>
+      </div>
+
+      <div className="flex flex-wrap gap-3 w-full relative z-10 mt-auto">
+        {skills.map((s, i) => <SkillIcon key={i} index={i} name={s.name} src={s.src} />)}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function TechnologiesSection() {
+  const cards = [
+    {
+      title: "Programming",
+      description: "Core languages for building robust software solutions.",
+      skills: [
+        { name: "Java", src: icons.java },
+        { name: "Python", src: icons.python },
+        { name: "SQL", src: icons.sql },
+        { name: "React", src: icons.react },
+        { name: "TypeScript", src: icons.typescript }
+      ]
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Cloud infrastructure, automation, and deployment at scale.",
+      skills: [
+        { name: "AWS", src: icons.aws },
+        { name: "Docker", src: icons.docker },
+        { name: "Git Actions", src: icons.githubactions },
+        { name: "Netlify", src: icons.netlify },
+        { name: "Vercel", src: icons.vercel }
+      ]
+    },
+    {
+      title: "Tools & Platform",
+      description: "Essential utilities and platforms for development.",
+      skills: [
+        { name: "VS Code", src: icons.vscode },
+        { name: "Git", src: icons.git },
+        { name: "GitHub", src: icons.github },
+        { name: "Postman", src: icons.postman },
+        { name: "Supabase", src: icons.supabase }
+      ]
+    },
+      {
+        title: "AI Assisted Dev",
+        description: "Modern AI tools to accelerate product development.",
+        skills: [
+          { name: "Copilot", src: icons.githubcopilot },
+          { name: "Claude", src: icons.claude },
+          { name: "Cursor", src: icons.cursor },
+          { name: "Antigravity", src: icons.antigravity }
+        ]
+      }
+    ];
+
+  return (
+    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px] relative overflow-hidden" data-name="Technologies Section">
+      {/* Background Mesh for Glassmorphism */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] bg-gradient-to-tr from-[#111]/[0.05] via-transparent to-[#111]/[0.05] rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="mx-auto w-full max-w-[980px] text-center">
+        <motion.h2 
+          initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="font-['Archivo:SemiBold',sans-serif] text-[38px] font-semibold tracking-[-0.96px] text-transparent bg-clip-text bg-gradient-to-br from-[#111] to-[#444] sm:text-[46px] lg:text-[72px] lg:tracking-[-1.44px] leading-[0.95]"
+        >
+          Tools and Technologies
+        </motion.h2>
+      </div>
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="w-full max-w-[1280px]"
+      >
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
+          {cards.map((c, i) => (
+            <SkillBox key={i} index={i} title={c.title} description={c.description} skills={c.skills} />
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+

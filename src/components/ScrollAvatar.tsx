@@ -1,6 +1,7 @@
+'use client';
 import { useEffect, useState } from 'react'
-import imgPortrait from '@/imports/Body/b550edd9ec0ab68267cf752d0fb3374f2541e97a.png'
-import imgPortraitBack from '@/imports/Body/b550edd9ec0ab68267cf752d0fb3374f2541.png'
+const imgPortrait = '/images/avatar-front.png';
+const imgPortraitBack = '/images/avatar-back.png';
 
 /** Scroll distance over which the avatar flips and settles (the hero pin length). */
 const PIN_LENGTH = 900
@@ -118,3 +119,4 @@ export default function ScrollAvatar() {
     </div>
   )
 }
+

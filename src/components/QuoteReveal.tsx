@@ -1,3 +1,4 @@
+'use client';
 import { useEffect } from 'react'
 
 /** Opacity the not-yet-revealed words sit at. */
@@ -77,3 +78,4 @@ export default function QuoteReveal() {
 
   return null
 }
+
