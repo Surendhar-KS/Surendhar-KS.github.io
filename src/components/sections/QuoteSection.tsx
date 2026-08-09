@@ -1,3 +1,4 @@
+'use client';
 import ScrollReveal from "../ScrollReveal";
 import { motion } from "framer-motion";
 
@@ -23,3 +24,4 @@ export default function QuoteSection() {
     </div>
   );
 }
+

@@ -1,3 +1,4 @@
+'use client';
 import { motion } from "framer-motion";
 import ScrollReveal from "../ScrollReveal";
 
@@ -51,3 +52,4 @@ export default function ProjectsSection() {
     </div>
   );
 }
+
