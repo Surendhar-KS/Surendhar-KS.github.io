@@ -92,7 +92,7 @@ export default function FeatureSection() {
             </div>
           </motion.div>
 
-          {/* Right Column */}
+          {/* Right Column (Oracle) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export default function FeatureSection() {
             className="lg:col-span-1 rounded-[12px] bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
           >
             <div className="w-full flex justify-between items-center mb-6 relative z-10">
-              <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Execution</h3>
+              <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Oracle Certified</h3>
             </div>
             
             <div className="w-full flex-1 flex items-center justify-center min-h-[250px] relative z-10">
@@ -109,9 +109,9 @@ export default function FeatureSection() {
             </div>
 
             <div className="w-full flex flex-col gap-3 mt-6 border-t border-black/5 pt-6 relative z-10">
-              <h4 className="text-xl font-medium text-black">Move Work Forward</h4>
+              <h4 className="text-xl font-medium text-black">Generative AI Professional</h4>
               <p className="text-black/60 leading-relaxed text-sm">
-                Take action, share context, and ship without delays.
+                Oracle Cloud Infrastructure certification demonstrating expertise in generative AI.
               </p>
             </div>
           </motion.div>
