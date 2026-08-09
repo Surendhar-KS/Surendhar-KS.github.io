@@ -24,8 +24,8 @@ export default function ChatAnimation() {
          <span className="text-[9px] text-black/40 shrink-0">Just Now</span>
       </div>
 
-      {/* Bubble 2 (Blue, Right) */}
-      <div className="w-[85%] self-end bg-gradient-to-r from-[#37CAFF] to-[#00BBFF] rounded-xl shadow-[0_4px_24px_rgba(0,187,255,0.2)] p-3 flex items-center justify-between border border-[#1AC2FF]">
+      {/* Bubble 2 (Green, Right) */}
+      <div className="w-[85%] self-end bg-gradient-to-r from-[#4ADE80] to-[#05DE22] rounded-xl shadow-[0_4px_24px_rgba(5,222,34,0.2)] p-3 flex items-center justify-between border border-[#4ADE80]">
          <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full overflow-hidden relative border border-white/20 shrink-0">
                <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
@@ -52,8 +52,8 @@ export default function ChatAnimation() {
          <span className="text-[9px] text-black/40 shrink-0">Just Now</span>
       </div>
 
-      {/* Bubble 4 (Blue, Right) */}
-      <div className="w-[85%] self-end bg-gradient-to-r from-[#37CAFF] to-[#00BBFF] rounded-xl shadow-[0_4px_24px_rgba(0,187,255,0.2)] p-3 flex items-center justify-between border border-[#1AC2FF]">
+      {/* Bubble 4 (Green, Right) */}
+      <div className="w-[85%] self-end bg-gradient-to-r from-[#4ADE80] to-[#05DE22] rounded-xl shadow-[0_4px_24px_rgba(5,222,34,0.2)] p-3 flex items-center justify-between border border-[#4ADE80]">
          <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full overflow-hidden relative border border-white/20 shrink-0">
                <Image src="/images/framer/ryan-avatar.png" alt="Ryan Patel" fill className="object-cover" />
@@ -69,7 +69,7 @@ export default function ChatAnimation() {
   );
 
   return (
-    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#FAFEFF] via-[#B9E7FA] to-[#8BDEFC] flex flex-col items-center justify-center overflow-hidden">
+    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#FAFFFA] via-[#B2F5C8] to-[#8AEF98] flex flex-col items-center justify-center overflow-hidden">
        {/* Background Mosaic Image */}
        <Image 
           src="/images/framer/mosaic-bg.png"

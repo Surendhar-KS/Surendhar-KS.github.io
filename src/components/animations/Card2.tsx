@@ -84,10 +84,10 @@ export default function Card2() {
           </div>
              
           {/* Dotted connector line */}
-          <div className="w-[2px] h-14 border-l-[2px] border-dashed border-[#8AEF98] shadow-[0_0_12px_rgba(5,222,34,0.3)]"></div>
+          <div className="w-[2px] h-14 border-l-[2px] border-dashed border-[#8BDEFC] shadow-[0_0_12px_rgba(0,187,255,0.3)]"></div>
 
           {/* Bottom Nav Pill */}
-          <div className="relative w-[230px] h-[52px] bg-[#B2F5C8] rounded-full flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(5,222,34,0.2)] overflow-hidden">
+          <div className="relative w-[230px] h-[52px] bg-[#B9E7FA] rounded-full flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,187,255,0.2)] overflow-hidden">
              
              {/* Mosaic Background overlay for the pill */}
              <div className="absolute inset-0 opacity-[0.15] mix-blend-multiply pointer-events-none">
@@ -105,9 +105,9 @@ export default function Card2() {
                    {/* Background circle of the icon */}
                    <motion.div
                       layout
-                      className={`absolute inset-0 rounded-full transition-all duration-500 ${isActive ? 'bg-white shadow-[0_0_0_4px_rgba(74,222,128,0.5)] scale-110' : 'bg-white scale-100'}`}
+                      className={`absolute inset-0 rounded-full transition-all duration-500 ${isActive ? 'bg-white shadow-[0_0_0_4px_rgba(0,187,255,0.5)] scale-110' : 'bg-white scale-100'}`}
                    />
-                   <span className={`relative z-20 transition-colors duration-300 w-5 h-5 flex items-center justify-center ${isActive ? 'text-[#4ADE80]' : 'text-[#A7F3D0]'}`}>
+                   <span className={`relative z-20 transition-colors duration-300 w-5 h-5 flex items-center justify-center ${isActive ? 'text-[#00BBFF]' : 'text-[#8BDEFC]'}`}>
                      {item.icon}
                    </span>
                  </div>
