@@ -147,11 +147,11 @@ export default function Card1() {
        <svg className="absolute w-[500px] h-[500px] top-[18%] left-1/2 -translate-x-1/2 pointer-events-none" viewBox="0 0 500 500">
           <defs>
              <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#FF7A59" stopOpacity="0" />
-                <stop offset="20%" stopColor="#FF7A59" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#FF7A59" stopOpacity="0.6" />
-                <stop offset="80%" stopColor="#FF7A59" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#FF7A59" stopOpacity="0" />
+                <stop offset="0%" stopColor="#FF9900" stopOpacity="0" />
+                <stop offset="20%" stopColor="#FF9900" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="#FF9900" stopOpacity="0.6" />
+                <stop offset="80%" stopColor="#FF9900" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#FF9900" stopOpacity="0" />
              </linearGradient>
           </defs>
           <circle cx="250" cy="250" r="210" fill="none" stroke="url(#orbitGrad)" strokeWidth="48" />
