@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Bubble = ({ isRight, name, message, icon, time }: { isRight: boolean, name: string, message: string, icon: React.ReactNode, time: string }) => (
-  <div className={`w-[85%] ${isRight ? 'self-end bg-gradient-to-r from-[#4ADE80] to-[#05DE22] border-[#4ADE80] shadow-[0_4px_24px_rgba(5,222,34,0.2)]' : 'self-start bg-white border-black/5 shadow-[0_4px_24px_rgba(0,0,0,0.05)]'} rounded-xl p-3 flex items-center justify-between border`}>
+  <div className={`w-[85%] ${isRight ? 'self-end bg-[#63E452] border-[#63E452] shadow-[0_4px_24px_rgba(99,228,82,0.3)]' : 'self-start bg-white border-black/5 shadow-[0_4px_24px_rgba(0,0,0,0.1)]'} rounded-xl p-3 flex items-center justify-between border`}>
     <div className="flex items-center gap-3">
-      <div className={`w-8 h-8 rounded-full overflow-hidden relative flex items-center justify-center shrink-0 text-sm ${isRight ? 'border border-white/20 bg-white/20 text-white' : 'border border-gray-100 bg-gray-50 text-black'}`}>
+      <div className={`w-8 h-8 rounded-full overflow-hidden relative flex items-center justify-center shrink-0 text-sm ${isRight ? 'border border-[#032D42]/20 bg-[#032D42]/10 text-[#032D42]' : 'border border-gray-100 bg-gray-50 text-black'}`}>
          {icon}
       </div>
       <div className="flex flex-col">
-         <span className={`text-xs font-semibold ${isRight ? 'text-white' : 'text-black'}`}>{name}</span>
-         <span className={`text-[10px] ${isRight ? 'text-white/70' : 'text-black/60'} leading-tight mt-0.5`}>{message}</span>
+         <span className={`text-xs font-semibold ${isRight ? 'text-[#032D42]' : 'text-black'}`}>{name}</span>
+         <span className={`text-[10px] ${isRight ? 'text-[#032D42]/80' : 'text-black/60'} leading-tight mt-0.5`}>{message}</span>
       </div>
     </div>
-    <span className={`text-[9px] shrink-0 ${isRight ? 'text-white/60' : 'text-black/40'} ml-2`}>{time}</span>
+    <span className={`text-[9px] shrink-0 ${isRight ? 'text-[#032D42]/60' : 'text-black/40'} ml-2`}>{time}</span>
   </div>
 );
 
@@ -47,13 +47,13 @@ const BubbleSet = () => (
 
 export default function ChatAnimation() {
   return (
-    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#FAFFFA] via-[#B2F5C8] to-[#8AEF98] flex flex-col items-center justify-center overflow-hidden">
+    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#032D42] via-[#21628A] to-[#3A459C] flex flex-col items-center justify-center overflow-hidden">
        {/* Background Mosaic Image */}
        <Image 
           src="/images/framer/mosaic-bg.png"
           alt="Mosaic Background"
           fill
-          className="object-cover opacity-[0.15] mix-blend-multiply pointer-events-none"
+          className="object-cover opacity-[0.05] mix-blend-plus-lighter pointer-events-none"
        />
 
        {/* Scrolling Container */}
