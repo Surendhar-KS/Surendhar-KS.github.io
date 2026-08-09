@@ -61,7 +61,7 @@ export default function ChatAnimation() {
           <div className="w-full pt-[80%]">
              <motion.div 
                 animate={{ y: ["0%", "-50%"] }}
-                transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
                 className="w-full flex flex-col h-max"
              >
                 {/* We render the set a few times to create a seamless infinite loop */}
