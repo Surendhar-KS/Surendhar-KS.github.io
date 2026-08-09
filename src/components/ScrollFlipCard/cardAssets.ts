@@ -12,6 +12,7 @@ export type CardAsset = {
   badgeTranslateY?: number;
   credentialLink?: string;
   credentialLinks?: { label: string; url: string }[];
+  skills?: string[];
   origin: { originX: number; zIndex: number };
 };
 
