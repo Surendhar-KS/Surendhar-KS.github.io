@@ -44,15 +44,28 @@ export default function FeatureSection() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
           
-          {/* Card 1 (Left Column) */}
+          {/* Left Column (Integrations) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-1 min-h-[460px] rounded-2xl bg-white shadow-sm border border-black/5 overflow-hidden flex flex-col relative group"
+            className="lg:col-span-1 rounded-2xl bg-white shadow-sm border border-black/5 flex flex-col justify-between py-8 px-6 group overflow-hidden relative"
           >
-             <Card1 />
+            <div className="w-full flex justify-between items-center mb-6 relative z-10">
+              <h3 className="text-lg font-medium text-black/40 uppercase tracking-wider">Integrations</h3>
+            </div>
+            
+            <div className="w-full flex-1 flex items-center justify-center min-h-[250px] relative z-10">
+               <Card1 />
+            </div>
+
+            <div className="w-full flex flex-col gap-3 mt-6 border-t border-black/5 pt-6 relative z-10">
+              <h4 className="text-xl font-medium text-black">Plug Into Your Stack</h4>
+              <p className="text-black/60 leading-relaxed text-sm">
+                Connect seamlessly with the tools your team already uses.
+              </p>
+            </div>
           </motion.div>
 
           {/* Middle Column */}
