@@ -17,7 +17,7 @@ export default function ScrollReveal({ children, className, 'data-name': dataNam
   return (
     <motion.div
       ref={ref}
-      style={{ opacity, y, '--reveal-color': color } as unknown as React.CSSProperties}
+      style={{ opacity, y, '--reveal-color': color } as React.CSSProperties}
       className={className}
       data-name={dataName}
     >

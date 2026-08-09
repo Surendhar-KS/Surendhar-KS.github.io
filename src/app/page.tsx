@@ -4,21 +4,21 @@ import QuoteSection from '@/components/sections/QuoteSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import TechnologiesSection from '@/components/sections/TechnologiesSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
-import { ScrollFlipCard } from '@/components/ScrollFlipCard'
+import CertificationSection from '@/components/sections/CertificationSection'
 import { ExperienceSection } from '@/components/ExperienceSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
 export default function NextPortfolio() {
   return (
-    <div className="animated-avatar live-nav min-h-screen w-full overflow-x-clip bg-white">
+    <div className="animated-avatar live-nav min-h-screen w-full overflow-x-clip bg-[#faf7f3]">
       <NavBar />
       <HeroBioSections />
       <QuoteSection />
       <ServicesSection />
       <TechnologiesSection />
       <ProjectsSection />
-      <ScrollFlipCard />
+      <CertificationSection />
       <ExperienceSection />
       <ContactSection />
       <Footer />

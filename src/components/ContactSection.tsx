@@ -61,7 +61,7 @@ const MagneticSocial = ({ href, children }: { href: string, children: React.Reac
 
 export default function ContactSection() {
   return (
-    <div id="contact" className="w-full flex justify-center py-24 md:py-32 px-6 relative overflow-hidden" data-name="Contact Section">
+    <div id="contact" className="w-full flex justify-center pt-24 md:pt-32 pb-24 md:pb-32 px-6 relative overflow-hidden" data-name="Contact Section">
       <div className="w-full max-w-[1180px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
         
         {/* Left Side: Title and Socials */}

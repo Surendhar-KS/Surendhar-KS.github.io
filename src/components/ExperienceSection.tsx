@@ -23,6 +23,36 @@ const experiences = [
   }
 ];
 
+const Character = ({ char, index, total, scrollYProgress }: { char: string, index: number, total: number, scrollYProgress: any }) => {
+  const start = index / total;
+  const end = start + (1 / total) * 1.5;
+  const opacity = useTransform(scrollYProgress, [start, end], [0.5, 1]);
+  return (
+    <motion.span style={{ opacity }} className="text-[#111]">
+      {char === " " ? "\u00A0" : char}
+    </motion.span>
+  );
+};
+
+const AnimatedHeader = ({ text }: { text: string }) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 85%", "start 40%"]
+  });
+
+  return (
+    <h2 
+      ref={ref}
+      className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-center tracking-tighter flex flex-wrap justify-center pb-2"
+    >
+      {text.split("").map((char, i) => (
+        <Character key={i} char={char} index={i} total={text.length} scrollYProgress={scrollYProgress} />
+      ))}
+    </h2>
+  );
+};
+
 const ExperienceCard = ({ exp, index }: { exp: typeof experiences[0]; index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
@@ -111,15 +141,7 @@ export const ExperienceSection: React.FC = () => {
       
       {/* Premium Title Reveal */}
       <div className="mb-24 flex justify-center overflow-hidden">
-        <motion.h2 
-          initial={{ y: "100%", opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-center tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#111] to-[#555]"
-        >
-          Experience.
-        </motion.h2>
+        <AnimatedHeader text="Experience." />
       </div>
       
       <div className="relative w-full" ref={containerRef}>
