@@ -50,8 +50,8 @@ export const CardWrap: React.FC<CardWrapProps> = ({ asset }) => {
       
       <div className={styles.badgesWrapper}>
         {asset.badges.map((badge, i) => (
-          <div key={i} className={styles.badgeContainer}>
-            <img src={badge} alt="badge" className={styles.badgeImage} />
+          <div key={i} className={styles.badgeContainer} style={{ transform: asset.badgeTranslateY ? `translateY(${asset.badgeTranslateY}px)` : 'none' }}>
+            <img src={badge} alt="badge" className={styles.badgeImage} style={{ transform: asset.badgeScale ? `scale(${asset.badgeScale})` : 'none' }} />
           </div>
         ))}
       </div>
@@ -59,16 +59,30 @@ export const CardWrap: React.FC<CardWrapProps> = ({ asset }) => {
     </>
   );
 
-  const credentialButton = asset.credentialLink ? (
-    <a href={asset.credentialLink} className={styles.credentialButton} style={{ borderColor: asset.accentColor, color: asset.accentColor }}>
-      View Credential
-      <svg className={styles.linkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </a>
-  ) : null;
+  const credentialButton = (
+    <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+      {asset.credentialLink && (
+        <a href={asset.credentialLink} target="_blank" rel="noopener noreferrer" className={styles.credentialButton} style={{ borderColor: asset.accentColor, color: asset.accentColor, flex: 1, justifyContent: 'center' }}>
+          View Credential
+          <svg className={styles.linkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      )}
+      {asset.credentialLinks && asset.credentialLinks.map((link, idx) => (
+        <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className={styles.credentialButton} style={{ borderColor: asset.accentColor, color: asset.accentColor, flex: 1, justifyContent: 'center', padding: '0 8px' }}>
+          {link.label}
+          <svg className={styles.linkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      ))}
+    </div>
+  );
 
   return (
     <div className={styles.cardWrapContainer}>

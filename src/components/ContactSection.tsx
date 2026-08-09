@@ -8,7 +8,7 @@ const FloatingInput = ({ label, type = 'text', textarea = false }: { label: stri
   const active = isFocused || value !== '';
 
   return (
-    <div className="relative w-full mb-6">
+    <div className="relative w-full mb-5">
       <motion.label
         initial={false}
         animate={{
@@ -27,7 +27,7 @@ const FloatingInput = ({ label, type = 'text', textarea = false }: { label: stri
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-8 pb-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all min-h-[140px] resize-y"
+          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all min-h-[130px] resize-y text-sm md:text-base"
         />
       ) : (
         <input
@@ -36,7 +36,7 @@ const FloatingInput = ({ label, type = 'text', textarea = false }: { label: stri
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-8 pb-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all"
+          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all text-sm md:text-base"
         />
       )}
     </div>
@@ -111,10 +111,10 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full relative z-10"
+          className="w-full max-w-[560px] justify-self-center lg:justify-self-end relative z-10"
         >
           {/* Glassmorphic Form Card */}
-          <div className="w-full bg-[#111] p-8 md:p-12 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-black/20 border border-white/10 relative overflow-hidden group">
+          <div className="w-full bg-[#111] p-8 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-black/20 border border-white/10 relative overflow-hidden group">
             {/* Animated subtle glow inside card */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px] pointer-events-none transition-transform duration-1000 group-hover:scale-150 group-hover:translate-x-10 group-hover:-translate-y-10" />
 

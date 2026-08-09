@@ -86,6 +86,7 @@ export default function Footer() {
               <QuickLink href="#about">About</QuickLink>
               <QuickLink href="#services">Services</QuickLink>
               <QuickLink href="#projects">Projects</QuickLink>
+              <QuickLink href="#certifications">Certifications</QuickLink>
               <QuickLink href="#contact">Contact</QuickLink>
             </div>
           </div>

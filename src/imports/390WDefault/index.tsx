@@ -324,12 +324,8 @@ function H2FramerText() {
 function PFramerText1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[22px] tracking-[-0.88px] w-full whitespace-pre-wrap" style={{ fontVariationSettings: '"wdth" 100' }}>
-        <p className="leading-[30.8px] mb-0">{`I'm Surendhar, a software developer `}</p>
-        <p className="leading-[30.8px] mb-0">{`focused on AI, cloud computing, and `}</p>
-        <p className="leading-[30.8px] mb-0">{`modern web technologies, building `}</p>
-        <p className="leading-[30.8px] mb-0">{`products that are fast, scalable, `}</p>
-        <p className="leading-[30.8px]">and user-centric.</p>
+      <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[color:var(--reveal-color,#111)] text-[22px] tracking-[-0.88px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <p className="leading-[30.8px] mb-0 text-balance">I'm Surendhar, a software developer focused on AI, cloud computing, and modern web technologies.</p>
       </div>
     </div>
   );
@@ -2146,9 +2142,9 @@ function DivFramer45Mpb() {
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full text-center gap-4" data-name="Thoughts Header">
       <h2 className="text-[40px] lg:text-[64px] font-semibold text-[color:var(--reveal-color,#111)] tracking-tight font-['Archivo:SemiBold',sans-serif]">Crafted with precision.</h2>
       <p className="text-[16px] lg:text-[20px] text-gray-500 font-['Archivo:Regular',sans-serif] max-w-[800px] leading-relaxed">A showcase of modern software, AI, and cloud solutions built for real-world impact.</p>
-      <div className="flex flex-col items-center mt-4 md:mt-6 mb-[-40px] md:mb-[-80px] gap-2 opacity-70">
+      <div className="flex flex-col items-center mt-16 md:mt-24 mb-[-80px] md:mb-[-120px] gap-2 opacity-70">
         <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-gray-400 font-semibold font-['Archivo',sans-serif]">Scroll</span>
-        <div className="w-[1px] h-[25px] md:h-[40px] bg-gradient-to-b from-gray-300 to-transparent" />
+        <div className="w-[1px] h-[35px] md:h-[50px] bg-gradient-to-b from-gray-300 to-transparent" />
       </div>
     </div>
   );
@@ -3795,7 +3791,6 @@ function EndOfBodyStart() {
     <div className="bg-[#faf7f3] content-stretch flex flex-col items-center min-h-[780px] relative shrink-0 w-full" data-name="End of bodyStart">
       <Main />
       <Footer />
-      <DivFramerBcxrl8Container />
     </div>
   );
 }
@@ -3986,15 +3981,36 @@ const icons = {
 function SkillIcon({ name, src, index }: { name: string, src: string, index: number }) {
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-10px" }}
-      transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-      whileHover={{ y: -4, scale: 1.08 }}
-      className="bg-white rounded-2xl shadow-sm border border-[#111]/5 flex flex-col items-center justify-center p-3 gap-2 size-[72px] cursor-pointer hover:shadow-md hover:border-[#111]/10 relative group"
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }
+      }}
+      whileHover={{ y: -8, scale: 1.05 }}
+      className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 flex flex-col items-center justify-center p-3 gap-2 size-[76px] cursor-pointer relative group transition-all duration-500 hover:shadow-[0_15px_30px_rgb(0,0,0,0.08)] hover:border-white/80 hover:bg-white/60"
     >
-      <img src={src} alt={name} className="size-[26px] object-contain transition-transform duration-300 group-hover:scale-110" />
-      <span className="text-[10px] font-semibold text-[#111]/80 whitespace-nowrap transition-colors duration-300 group-hover:text-[#111]">{name}</span>
+      {/* Pulsing ambient glow */}
+      <motion.div
+        animate={{ 
+          opacity: [0.4, 0.8, 0.4],
+          scale: [0.8, 1.1, 0.8]
+        }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+        className="absolute inset-0 bg-gradient-to-br from-transparent via-[#111]/[0.03] to-transparent rounded-[20px] pointer-events-none"
+      />
+      
+      {/* Floating icon */}
+      <motion.div
+        animate={{ y: [0, -3, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
+        className="relative z-10 flex flex-col items-center justify-center gap-2"
+      >
+        <img 
+          src={src} 
+          alt={name} 
+          className="size-[28px] object-contain transition-transform duration-500 group-hover:scale-[1.15] drop-shadow-sm group-hover:drop-shadow-md" 
+        />
+        <span className="text-[10px] font-bold text-[#111]/60 whitespace-nowrap transition-all duration-300 group-hover:text-[#111]">{name}</span>
+      </motion.div>
     </motion.div>
   );
 }
@@ -4002,12 +4018,12 @@ function SkillIcon({ name, src, index }: { name: string, src: string, index: num
 function SkillBox({ title, description, skills, index }: { title: string, description: string, skills: { name: string, src: string }[], index: number }) {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] } }
+      }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="bg-white border border-[#111]/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] p-6 lg:p-8 flex flex-col items-start gap-8 w-full cursor-pointer relative overflow-hidden group"
+      className="bg-white/60 backdrop-blur-2xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[24px] p-6 lg:p-8 flex flex-col items-start gap-8 w-full cursor-pointer relative overflow-hidden group"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#111]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"></div>
       
@@ -4071,7 +4087,9 @@ function TechnologiesSection() {
     ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px]" data-name="Technologies Section">
+    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px] relative overflow-hidden" data-name="Technologies Section">
+      {/* Background Mesh for Glassmorphism */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] bg-gradient-to-tr from-[#111]/[0.05] via-transparent to-[#111]/[0.05] rounded-full blur-[100px] pointer-events-none"></div>
       <div className="mx-auto w-full max-w-[980px] text-center">
         <motion.h2 
           initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
@@ -4083,13 +4101,18 @@ function TechnologiesSection() {
           Tools and Technologies
         </motion.h2>
       </div>
-      <div className="w-full max-w-[1280px]">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="w-full max-w-[1280px]"
+      >
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
           {cards.map((c, i) => (
             <SkillBox key={i} index={i} title={c.title} description={c.description} skills={c.skills} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

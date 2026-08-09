@@ -117,7 +117,7 @@ export const ScrollFlipCard = () => {
   }, [activeTriggers]);
 
   return (
-    <div className={styles.sectionMain}>
+    <div id="certifications" className={styles.sectionMain}>
       {DEBUG && (
         <div className={styles.debugOverlay}>
           <h3>DEBUG MODE</h3>

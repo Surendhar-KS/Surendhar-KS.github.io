@@ -5,10 +5,11 @@ type NavLink = { label: string; target: string }
 
 /** Dropdown links, pointed at the imported design's sections by their Figma names. */
 const LINKS: NavLink[] = [
-  { label: 'About Me', target: 'Bio Section' },
-  { label: 'Services', target: 'Services Section' },
-  { label: 'Projects', target: 'Projects Section' },
-  { label: 'Contact', target: 'Contact Section' },
+  { label: 'About Me', target: 'about' },
+  { label: 'Services', target: 'services' },
+  { label: 'Projects', target: 'projects' },
+  { label: 'Certifications', target: 'certifications' },
+  { label: 'Contact', target: 'contact' },
 ]
 
 /**
@@ -70,7 +71,7 @@ export default function NavBar() {
 
   const goTo = (target: string) => {
     setOpen(false)
-    const section = document.querySelector(`[data-name="${target}"]`)
+    const section = document.getElementById(target)
     section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
@@ -91,9 +92,7 @@ export default function NavBar() {
             type="button"
             onClick={() => {
               setOpen(false)
-              document
-                .querySelector('[data-name="Hero Section"]')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
             className="cursor-pointer font-['Archivo:SemiBold',sans-serif] text-[22px] font-semibold leading-[30.8px] tracking-[-0.88px] whitespace-nowrap text-[#faf7f3]"
             style={{ fontVariationSettings: '"wdth" 100' }}
