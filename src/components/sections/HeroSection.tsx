@@ -22,7 +22,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="absolute -left-6 md:-left-[115px] -top-8 md:-top-[60px] w-[55px] md:w-[110px] z-10"
             >
-              <img src="/images/star.png" alt="Star" className="w-full h-auto drop-shadow-2xl animate-pulse" />
+              <img src="/images/star.webp" alt="Star" className="w-full h-auto drop-shadow-2xl animate-pulse" />
             </motion.div>
             
             {/* Text */}
@@ -43,7 +43,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="absolute -right-6 md:-right-[115px] -bottom-6 md:-bottom-[50px] w-[50px] md:w-[100px] z-[50] drop-shadow-2xl"
             >
-              <img src="/images/lightning.png" alt="Lightning" className="w-full h-auto" />
+              <img src="/images/lightning.webp" alt="Lightning" className="w-full h-auto" />
             </motion.div>
           </div>
         </motion.div>

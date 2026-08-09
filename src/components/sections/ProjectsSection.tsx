@@ -6,22 +6,22 @@ import ScrollReveal from "../ScrollReveal";
 const projects = [
   { 
     id: 1, 
-    image: "/projects/project1.png", 
+    image: "/projects/project1.webp", 
     alt: "Project 1"
   },
   { 
     id: 2, 
-    image: "/projects/project2.png", 
+    image: "/projects/project2.webp", 
     alt: "Project 2"
   },
   { 
     id: 3, 
-    image: "/projects/project3.png", 
+    image: "/projects/project3.webp", 
     alt: "Project 3"
   },
   { 
     id: 4, 
-    image: "/projects/project4.png", 
+    image: "/projects/project4.webp", 
     alt: "Project 4"
   },
 ];
@@ -33,7 +33,7 @@ export default function ProjectsSection() {
         
         <div className="w-full relative">
           <ScrollExpand 
-            src="/images/build-to-scale-bg.png" 
+            src="/images/build-to-scale-bg.webp" 
             mediaType="image" 
             title="Built to scale" 
             scrollHint="Scroll to expand" 

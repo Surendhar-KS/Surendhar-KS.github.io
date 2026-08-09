@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react'
-const imgPortrait = '/images/avatar-front.png';
-const imgPortraitBack = '/images/avatar-back.png';
+const imgPortrait = '/images/avatar-front.webp';
+const imgPortraitBack = '/images/avatar-back.webp';
 
 /** Scroll distance over which the avatar flips and settles (the hero pin length). */
 const PIN_LENGTH = 900

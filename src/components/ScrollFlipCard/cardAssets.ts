@@ -32,7 +32,7 @@ export const cardAssets: CardAsset[] = [
     origin: { originX: 0, zIndex: 2 },
   },
   {
-    iconUrl: "/images/servicenow-logo-new.jpeg",
+    iconUrl: "/images/servicenow-logo-new.webp",
     iconBg: "#032D42", // ServiceNow Dark Blue/Greenish
     accentColor: "#00796B", // ServiceNow Teal Accent
     title: "ServiceNow Certified",
@@ -54,7 +54,7 @@ export const cardAssets: CardAsset[] = [
     origin: { originX: 0, zIndex: 1 },
   },
   {
-    iconUrl: "/images/oracle-logo-new.jpeg",
+    iconUrl: "/images/oracle-logo-new.webp",
     iconBg: "#C74634", // Oracle Red
     accentColor: "#C74634", // Oracle Accent
     title: "Oracle Cloud Infrastructure",
