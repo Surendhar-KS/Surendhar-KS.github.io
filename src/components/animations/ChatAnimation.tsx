@@ -57,22 +57,22 @@ export default function ChatAnimation() {
        />
 
        {/* Scrolling Container */}
-       <div className="relative z-10 w-full max-w-[280px] h-full overflow-hidden mask-image-vertical-fade flex justify-center">
-          
-          <motion.div 
-             animate={{ y: ["0%", "-50%"] }}
-             transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-             className="w-full flex flex-col pt-[50%]"
-          >
-             {/* We render the set a few times to create a seamless infinite loop */}
-             <div className="flex flex-col gap-5 w-full pb-5">
-                <BubbleSet />
-             </div>
-             <div className="flex flex-col gap-5 w-full pb-5">
-                <BubbleSet />
-             </div>
-          </motion.div>
-          
+       <div className="relative z-10 w-full max-w-[280px] h-full overflow-hidden mask-image-vertical-fade mx-auto">
+          <div className="w-full pt-[80%]">
+             <motion.div 
+                animate={{ y: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                className="w-full flex flex-col h-max"
+             >
+                {/* We render the set a few times to create a seamless infinite loop */}
+                <div className="flex flex-col gap-5 w-full pb-5">
+                   <BubbleSet />
+                </div>
+                <div className="flex flex-col gap-5 w-full pb-5">
+                   <BubbleSet />
+                </div>
+             </motion.div>
+          </div>
        </div>
        
        <style dangerouslySetInnerHTML={{__html: `
