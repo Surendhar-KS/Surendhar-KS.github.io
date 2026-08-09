@@ -26,9 +26,10 @@ export const cardAssets: CardAsset[] = [
     issuer: "Amazon Web Services",
     year: "2026",
     badges: [
-      "/badges/aws-cloud-practitioner.png"
+      "/badges/aws-cloud-practitioner.webp"
     ],
-    credentialLink: "/images/certificates/aws-cloud-practitioner.jpg",
+    credentialLink: "/images/certificates/aws-cloud-practitioner.webp",
+    skills: ["Cloud Concepts", "Security", "Technology", "Billing & Pricing"],
     origin: { originX: 0, zIndex: 2 },
   },
   {
@@ -44,13 +45,14 @@ export const cardAssets: CardAsset[] = [
     issuer: "ServiceNow",
     year: "2026",
     badges: [
-      "/badges/servicenow-csa.png", 
-      "/badges/servicenow-cis-df.png"
+      "/badges/servicenow-csa.webp", 
+      "/badges/servicenow-cis-df.webp"
     ],
     credentialLinks: [
-      { label: "CSA Cert", url: "/images/certificates/servicenow-csa.jpg" },
-      { label: "CIS-DF Cert", url: "/images/certificates/servicenow-cis-df.jpg" }
+      { label: "CSA Cert", url: "/images/certificates/servicenow-csa.webp" },
+      { label: "CIS-DF Cert", url: "/images/certificates/servicenow-cis-df.webp" }
     ],
+    skills: ["System Administration", "CMDB", "CSDM"],
     origin: { originX: 0, zIndex: 1 },
   },
   {
@@ -64,9 +66,10 @@ export const cardAssets: CardAsset[] = [
     year: "2025",
     badgeScale: 1.5,
     badges: [
-      "/badges/oracle-oci-architect-associate.png"
+      "/badges/oracle-oci-architect-associate.webp"
     ],
-    credentialLink: "/images/certificates/oracle-oci.jpg",
+    credentialLink: "/images/certificates/oracle-oci.webp",
+    skills: ["Generative AI", "Cloud Infrastructure", "Security", "Networking"],
     origin: { originX: 0, zIndex: 0 },
   },
 ];

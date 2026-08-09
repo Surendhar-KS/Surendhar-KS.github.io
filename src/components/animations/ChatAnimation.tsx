@@ -20,10 +20,10 @@ const Bubble = ({ isRight, name, message, icon, time }: { isRight: boolean, name
 const BubbleSet = () => (
   <>
     {/* Virtual Agent */}
-    <Bubble isRight={false} name="Ryan Patel" message="I need to reset my VPN password." icon={<Image src="/images/framer/ryan-avatar.png" alt="User" fill className="object-cover" />} time="10:01" />
+    <Bubble isRight={false} name="Ryan Patel" message="I need to reset my VPN password." icon={<Image src="/images/framer/ryan-avatar.webp" alt="User" fill className="object-cover" />} time="10:01" />
     <Bubble isRight={true} name="Virtual Agent" message="I can help! Verifying device..." icon="🤖" time="10:01" />
     <Bubble isRight={true} name="Virtual Agent" message="Password reset. Anything else?" icon="🤖" time="10:02" />
-    <Bubble isRight={false} name="Ryan Patel" message="No, thank you! That was fast." icon={<Image src="/images/framer/ryan-avatar.png" alt="User" fill className="object-cover" />} time="10:02" />
+    <Bubble isRight={false} name="Ryan Patel" message="No, thank you! That was fast." icon={<Image src="/images/framer/ryan-avatar.webp" alt="User" fill className="object-cover" />} time="10:02" />
     
     {/* Incident Management */}
     <Bubble isRight={false} name="INC0010234" message="Critical database latency detected." icon="🚨" time="10:15" />
@@ -50,7 +50,7 @@ export default function ChatAnimation() {
     <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#032D42] via-[#21628A] to-[#3A459C] flex flex-col items-center justify-center overflow-hidden">
        {/* Background Mosaic Image */}
        <Image 
-          src="/images/framer/mosaic-bg.png"
+          src="/images/framer/mosaic-bg.webp"
           alt="Mosaic Background"
           fill
           className="object-cover opacity-[0.05] mix-blend-plus-lighter pointer-events-none"

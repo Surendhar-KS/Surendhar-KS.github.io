@@ -132,7 +132,7 @@ export default function Card1() {
     <div className="absolute inset-0 w-full h-full bg-white flex flex-col items-center overflow-hidden">
        {/* Background Mosaic Image */}
        <Image 
-          src="/images/framer/mosaic-bg.png"
+          src="/images/framer/mosaic-bg.webp"
           alt="Mosaic Background"
           fill
           className="object-cover opacity-20 mix-blend-multiply"

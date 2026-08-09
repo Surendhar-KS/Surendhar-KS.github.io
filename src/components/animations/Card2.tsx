@@ -89,7 +89,7 @@ export default function Card2() {
              
              {/* Mosaic Background overlay for the pill */}
              <div className="absolute inset-0 opacity-[0.15] mix-blend-multiply pointer-events-none">
-                <Image src="/images/framer/mosaic-bg.png" alt="Mosaic" fill className="object-cover" />
+                <Image src="/images/framer/mosaic-bg.webp" alt="Mosaic" fill className="object-cover" />
              </div>
 
              {CAROUSEL_ITEMS.map((item, i) => {
