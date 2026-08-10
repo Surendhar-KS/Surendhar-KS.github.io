@@ -2,10 +2,24 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const FloatingInput = ({ label, type = 'text', textarea = false }: { label: string, type?: string, textarea?: boolean }) => {
+const FloatingInput = ({ 
+  label, 
+  name, 
+  type = 'text', 
+  textarea = false, 
+  required = false,
+  value,
+  onChange
+}: { 
+  label: string;
+  name: string;
+  type?: string;
+  textarea?: boolean;
+  required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState('');
-
   const active = isFocused || value !== '';
 
   return (
@@ -24,17 +38,21 @@ const FloatingInput = ({ label, type = 'text', textarea = false }: { label: stri
       
       {textarea ? (
         <textarea
+          name={name}
+          required={required}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all min-h-[130px] resize-y text-sm md:text-base"
         />
       ) : (
         <input
+          name={name}
           type={type}
+          required={required}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all text-sm md:text-base"
@@ -60,6 +78,44 @@ const MagneticSocial = ({ href, children }: { href: string, children: React.Reac
 };
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const submitData = new FormData();
+    submitData.append("access_key", "b6e73366-5802-4e45-a217-30aa5a7338b8");
+    submitData.append("name", formData.name);
+    submitData.append("email", formData.email);
+    submitData.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: submitData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <div id="contact" className="w-full flex justify-center pt-24 md:pt-32 pb-24 md:pb-32 px-6 relative overflow-hidden" data-name="Contact Section">
       <div className="w-full max-w-[1180px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
@@ -119,20 +175,68 @@ export default function ContactSection() {
             {/* Animated subtle glow inside card */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px] pointer-events-none transition-transform duration-1000 group-hover:scale-150 group-hover:translate-x-10 group-hover:-translate-y-10" />
 
-            <form className="relative z-10 flex flex-col w-full" onSubmit={(e) => e.preventDefault()}>
-              <FloatingInput label="Name" />
-              <FloatingInput label="Email" type="email" />
-              <FloatingInput label="Message" textarea />
+            <form className="relative z-10 flex flex-col w-full" onSubmit={onSubmit}>
+              <FloatingInput 
+                label="Name" 
+                name="name" 
+                required 
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <FloatingInput 
+                label="Email" 
+                name="email" 
+                type="email" 
+                required 
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <FloatingInput 
+                label="Message" 
+                name="message" 
+                textarea 
+                required 
+                value={formData.message}
+                onChange={handleChange}
+              />
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full mt-4 bg-white text-[#111] font-semibold text-lg py-4 rounded-xl border border-transparent hover:bg-transparent hover:border-white hover:text-white transition-colors duration-300 flex items-center justify-center gap-2"
+                disabled={status === "submitting"}
+                whileHover={status !== "submitting" ? { scale: 1.02 } : {}}
+                whileTap={status !== "submitting" ? { scale: 0.98 } : {}}
+                className={`w-full mt-4 bg-white text-[#111] font-semibold text-lg py-4 rounded-xl border border-transparent transition-all duration-300 flex items-center justify-center gap-2 ${
+                  status === "submitting" ? "opacity-70 cursor-not-allowed" : "hover:bg-transparent hover:border-white hover:text-white"
+                }`}
               >
-                Send Message
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                {status === "submitting" ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    Send Message
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  </>
+                )}
               </motion.button>
+              
+              {status === "success" && (
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-green-400 text-sm text-center mt-4"
+                >
+                  Message sent successfully!
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm text-center mt-4"
+                >
+                  {errorMessage}
+                </motion.p>
+              )}
             </form>
           </div>
         </motion.div>
