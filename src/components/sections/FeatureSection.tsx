@@ -47,20 +47,39 @@ export default function FeatureSection() {
           </motion.div>
           
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-[52px] font-medium tracking-tight text-black max-w-2xl leading-tight"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+            }}
+            className="text-4xl md:text-5xl lg:text-[52px] font-medium tracking-tight text-black max-w-2xl leading-tight flex flex-wrap justify-center gap-x-[0.2em] gap-y-2"
           >
-            Crafted with precision.
+            {"Crafted with precision.".split(" ").map((word, i) => (
+              <span key={i} className="overflow-hidden inline-flex">
+                <motion.span
+                  variants={{
+                    hidden: { y: "120%", opacity: 0, rotate: 5 },
+                    visible: { 
+                      y: "0%", 
+                      opacity: 1, 
+                      rotate: 0, 
+                      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } 
+                    }
+                  }}
+                  className="inline-block origin-bottom-left"
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
           </motion.h2>
           
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-black/60 max-w-2xl"
           >
             A showcase of modern software, AI, and cloud solutions built for real-world impact.

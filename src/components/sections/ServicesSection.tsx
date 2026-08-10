@@ -69,7 +69,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <div id="services" className="flex flex-col items-center justify-center w-full py-32 px-6 bg-[#111] relative">
+    <div id="services" className="flex flex-col items-center justify-center w-full py-32 px-6 bg-[#111] relative" data-theme="dark">
       <ScrollReveal className="w-full max-w-[1180px] flex flex-col gap-[60px] items-start justify-center">
         <div className="flex flex-col items-start relative shrink-0 w-full">
           <div className="flex items-start mb-[-0.4px] relative shrink-0">

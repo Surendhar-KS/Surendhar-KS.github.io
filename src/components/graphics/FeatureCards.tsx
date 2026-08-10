@@ -12,7 +12,7 @@ const imgOracleLogoDownloadFreePng1 = "/images/certificates/oracle-logo-1.png";
 const imgImage4 = "/images/certificates/badge-image-4.png";
 const imgImage5 = "/images/certificates/badge-image-5.png";
 const imgImage6 = "/images/certificates/badge-image-6.png";
-
+//saravedi santho 
 function Container2() {
   return (
     <div className="relative shrink-0" data-name="Container">
@@ -2547,7 +2547,7 @@ function Heading2() {
     <div className="relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
-          <p className="leading-[28px]">{`CSA & CAD`}</p>
+          <p className="leading-[28px]">{`CSA & CIS - DF`}</p>
         </div>
       </div>
     </div>

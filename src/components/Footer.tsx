@@ -65,6 +65,7 @@ export default function Footer() {
       id="footer"
       className="w-full bg-[#050505] relative overflow-hidden flex flex-col items-center justify-end min-h-[80vh] md:min-h-screen border-t border-white/5"
       data-name="Premium Footer"
+      data-theme="dark"
     >
       {/* Subtle Noise Overlay for texture */}
       <div 

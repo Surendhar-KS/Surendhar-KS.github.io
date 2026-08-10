@@ -139,7 +139,7 @@ export default function TechnologiesSection() {
     ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px] relative overflow-hidden" data-name="Technologies Section">
+    <div className="w-full flex flex-col items-center justify-center pt-[180px] pb-[92px] px-[20px] gap-[96px] relative overflow-hidden" data-name="Technologies Section" data-theme="dark">
       {/* Background Mesh for Glassmorphism */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] bg-gradient-to-tr from-[#111]/[0.05] via-transparent to-[#111]/[0.05] rounded-full blur-[100px] pointer-events-none"></div>
       <div className="mx-auto w-full max-w-[980px] text-center">
