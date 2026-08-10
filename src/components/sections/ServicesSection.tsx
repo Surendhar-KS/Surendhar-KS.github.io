@@ -5,10 +5,10 @@ import ScrollReveal from "../ScrollReveal";
 function ServiceRow({ title, tags, index }: { title: string, tags: string[], index: number }) {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 50, filter: "blur(8px)", scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.9, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       whileHover="hover"
       className="bg-transparent hover:bg-white content-stretch flex flex-col lg:flex-row items-start lg:items-center justify-between overflow-clip px-[20px] py-[20px] lg:py-[40.8px] relative shrink-0 w-full gap-[20px] lg:gap-0 transition-colors duration-500 rounded-[24px] cursor-pointer group"
     >
@@ -73,9 +73,26 @@ export default function ServicesSection() {
       <ScrollReveal className="w-full max-w-[1180px] flex flex-col gap-[60px] items-start justify-center">
         <div className="flex flex-col items-start relative shrink-0 w-full">
           <div className="flex items-start mb-[-0.4px] relative shrink-0">
-            <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-white text-[48px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
-              <p className="leading-[1] md:leading-[76px]">Services</p>
-            </div>
+            <motion.h2 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+              className="[word-break:break-word] flex flex-row overflow-hidden font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-white text-[48px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}
+            >
+              {Array.from("Services").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  variants={{
+                    hidden: { y: "100%", opacity: 0, rotate: 10, filter: "blur(4px)" },
+                    visible: { y: "0%", opacity: 1, rotate: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
+                  }}
+                  className="inline-block origin-bottom-left leading-[1.2] md:leading-[76px]"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.h2>
           </div>
         </div>
 

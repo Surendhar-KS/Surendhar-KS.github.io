@@ -114,24 +114,22 @@ export default function NavBar() {
   return (
     <div className="fixed left-1/2 top-[30px] z-50 flex justify-center -translate-x-1/2">
       <motion.nav
-        layout
         ref={navRef}
-        initial={{ y: -50, opacity: 0 }}
+        initial={{ y: -50, opacity: 0, width: 120, height: 48 }}
         animate={{ 
           y: 0, 
           opacity: 1,
           width: open ? 280 : 120,
+          height: open ? 284 : 48,
           borderRadius: open ? 32 : 32,
         }}
         transition={{ 
-          y: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-          opacity: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-          layout: { type: "spring", stiffness: 400, damping: 30 }
+          type: "spring", stiffness: 400, damping: 30 
         }}
         className={`flex flex-col items-center justify-start overflow-hidden shadow-2xl transition-colors duration-300 ${isOverDark ? 'bg-[#faf7f3]' : 'bg-[#000]'}`}
         data-name={open ? 'Opened' : 'Closed'}
       >
-        <motion.div layout className="flex items-center justify-between w-full h-[48px] px-[10px]">
+        <div className="flex items-center justify-between w-full h-[48px] px-[10px] shrink-0">
           <AnimatePresence mode="popLayout">
             {open ? (
               <motion.button
@@ -167,13 +165,12 @@ export default function NavBar() {
             )}
           </AnimatePresence>
 
-          <motion.button
-            layout
+          <button
             type="button"
             aria-expanded={open}
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((value) => !value)}
-            className={`relative flex h-[32px] w-[32px] cursor-pointer items-center justify-center overflow-hidden rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300 ${isOverDark ? 'bg-[#111]/10 hover:bg-[#111]/20' : 'bg-white/10 hover:bg-white/20'}`}
+            className={`relative flex h-[32px] w-[32px] cursor-pointer items-center justify-center overflow-hidden rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300 shrink-0 ${isOverDark ? 'bg-[#111]/10 hover:bg-[#111]/20' : 'bg-white/10 hover:bg-white/20'}`}
           >
             {open ? (
               <>
@@ -187,17 +184,17 @@ export default function NavBar() {
                 <span className={`size-[3px] rounded-full transition-colors duration-300 ${isOverDark ? 'bg-[#111]' : 'bg-[#faf7f3]'}`} />
               </div>
             )}
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ opacity: 0, height: 0, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, height: 'auto', filter: 'blur(0px)' }}
-              exit={{ opacity: 0, height: 0, filter: 'blur(8px)' }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full px-[12px] pb-[16px]"
+              initial={{ opacity: 0, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, filter: 'blur(8px)' }}
+              transition={{ duration: 0.3 }}
+              className="w-full px-[12px] pb-[16px] shrink-0"
             >
               <div className="flex flex-col items-start gap-[8px] pt-[8px]">
                 {LINKS.map((link, index) => (
