@@ -75,13 +75,13 @@ export default function ProjectsSection() {
                       top: `${15 + (index * 5)}vh`
                     }}
                   >
-                    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[20px]" data-name="div.framer-19xgbbo-container">
+                    <div className="relative content-stretch flex flex-col items-start w-full shadow-2xl rounded-[24px]" data-name="div.framer-19xgbbo-container">
                       <div className="content-stretch flex flex-col gap-[10px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Project Card">
-                        <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[20px] shrink-0 w-full" data-name="Image Wrap">
-                          <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[20px] shrink-0 w-full" data-name="Image">
-                            <div className="flex-[1_0_0] min-h-px relative rounded-[20px] w-full">
-                              <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[20px]">
-                                <img alt={project.alt} className="absolute h-full left-0 max-w-none top-0 w-full object-cover" src={project.image} />
+                        <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[24px] shrink-0 w-full" data-name="Image Wrap">
+                          <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[24px] shrink-0 w-full" data-name="Image">
+                            <div className="flex-[1_0_0] min-h-px relative rounded-[28px] w-full">
+                              <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[24px]">
+                                <img alt={project.alt} className="absolute h-full left-0 max-w-none top-0 w-full object-cover object-top" src={project.image} />
                               </div>
                             </div>
                           </div>

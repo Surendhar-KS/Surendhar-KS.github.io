@@ -72,8 +72,15 @@ export default function NavBar() {
 
   const goTo = (target: string) => {
     setOpen(false)
-    const section = document.getElementById(target)
-    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Small timeout ensures the menu closing animation doesn't disrupt scroll calculation
+    setTimeout(() => {
+      const section = document.getElementById(target)
+      if (section) {
+        const yOffset = -50; // Add some padding so the dynamic island doesn't cover the header
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 50)
   }
 
   return (

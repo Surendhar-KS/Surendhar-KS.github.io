@@ -60,7 +60,7 @@ export default function Card2() {
                // Calculate relative position for the scroll effect
                let offset = idx - activeIndex;
                if (offset < -1) offset += CAROUSEL_ITEMS.length;
-               if (offset > 1) offset -= CAROUSEL_ITEMS.length;
+               if (offset > 2) offset -= CAROUSEL_ITEMS.length;
 
                let y = offset * 40; // Pixel offset vertically
                let opacity = offset === 0 ? 1 : (offset === 1 ? 0.3 : 0);

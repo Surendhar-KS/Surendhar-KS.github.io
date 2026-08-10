@@ -19,9 +19,10 @@ export default function NextPortfolio() {
       <ServicesSection />
       <TechnologiesSection />
       <ProjectsSection />
-      <CertificationSection />
-      <ExperienceSection />
       <FeatureSection />
+      {/* <CertificationSection /> */}
+      <ExperienceSection />
+      
       <ContactSection />
       <Footer />
     </div>

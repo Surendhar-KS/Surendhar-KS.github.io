@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 const imgPortrait = '/images/avatar-front.webp';
 const imgPortraitBack = '/images/avatar-back.webp';
 
@@ -78,7 +79,13 @@ export default function ScrollAvatar() {
         perspective: '1600px',
       }}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="size-full"
+      >
+        <div
         className="relative size-full"
         style={{
           transform: `scale(${scale}) rotateY(${rotateY}deg)`,
@@ -116,6 +123,7 @@ export default function ScrollAvatar() {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
   )
 }
