@@ -1,23 +1,24 @@
 import ScrollReveal from "../ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function BioSection() {
   return (
-    <div className="flex h-[900px] w-full items-end justify-center relative shrink-0" data-name="Bio Section">
-      <ScrollReveal className="flex w-full max-w-[1180px] h-[479.2px] items-end justify-between pb-[20px] relative shrink-0 px-6 md:px-0">
+    <div className="flex min-h-[80vh] lg:h-[900px] pt-32 lg:pt-0 w-full lg:items-end items-center justify-center relative shrink-0" data-name="Bio Section">
+      <ScrollReveal className="flex flex-col lg:flex-row w-full max-w-[1180px] lg:h-[479.2px] items-start lg:items-end justify-between pb-[20px] gap-12 lg:gap-0 relative shrink-0 px-6 lg:px-0">
         
         {/* Left Side: Hey! I'm Surendhar... */}
-        <div className="flex flex-col h-full justify-between items-start max-w-[300px] w-[300px]">
-          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[48px] md:text-[76px] tracking-[-1.52px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="flex flex-col h-auto lg:h-full justify-between items-start w-full lg:max-w-[300px] lg:w-[300px] gap-6 lg:gap-0">
+          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[64px] lg:text-[76px] tracking-[-1.52px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
             Hey!
           </div>
-          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[18px] md:text-[22px] tracking-[-0.88px] leading-[1.4] text-balance" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[20px] lg:text-[22px] tracking-[-0.88px] leading-[1.4] text-balance" style={{ fontVariationSettings: '"wdth" 100' }}>
             I'm Surendhar, a software developer focused on AI, cloud computing, and modern web technologies.
           </div>
         </div>
 
         {/* Right Side: Paragraphs & Button */}
-        <div className="flex flex-col h-full justify-end items-start max-w-[360px] w-[360px] gap-8">
+        <div className="flex flex-col h-auto lg:h-full justify-end items-start w-full lg:max-w-[360px] lg:w-[360px] gap-8">
           <div className="flex flex-col gap-6 font-['Archivo:Regular',sans-serif] font-normal text-[#111] text-[16px] md:text-[18px] tracking-[-0.72px] leading-[1.4]" style={{ fontVariationSettings: '"wdth" 100' }}>
             <p>
               I design and develop AI-powered applications, full-stack web platforms, and cloud solutions that deliver real-world impact.

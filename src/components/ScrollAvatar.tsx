@@ -73,57 +73,59 @@ export default function ScrollAvatar() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed bottom-[20px] left-1/2 z-10 h-[228px] w-[200px]"
+      className="pointer-events-none fixed bottom-6 right-6 md:right-auto md:bottom-[20px] md:left-1/2 z-10 h-[150px] w-[130px] md:h-[228px] md:w-[200px]"
       style={{
-        transform: `translate(-50%, ${-release}px)`,
+        transform: `translateY(${-release}px)`,
         perspective: '1600px',
       }}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="size-full"
-      >
-        <div
-        className="relative size-full"
-        style={{
-          transform: `scale(${scale}) rotateY(${rotateY}deg)`,
-          transformOrigin: 'bottom center',
-          transformStyle: 'preserve-3d',
-        }}
-      >
-        {/* Front view */}
-        <div
-          className="absolute inset-0 overflow-hidden rounded-[20px] bg-white"
-          style={{ backfaceVisibility: 'hidden' }}
-          data-name="Portrait of portfolio creator – front view"
+      <div className="w-full h-full md:-translate-x-1/2">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="size-full"
         >
-          <img
-            alt="Portrait of Surendhar K, front view"
-            className="absolute left-0 top-[-8.79%] h-[117.57%] w-full max-w-none"
-            src={imgPortrait}
-          />
-        </div>
-        {/* Back view — mirrored the same way the imported Avatar - Back frame is */}
-        <div
-          className="absolute inset-0 overflow-hidden rounded-[20px] bg-white"
+          <div
+          className="relative size-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-[20px]"
           style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
+            transform: `scale(${scale}) rotateY(${rotateY}deg)`,
+            transformOrigin: 'bottom center',
+            transformStyle: 'preserve-3d',
           }}
-          data-name="Portrait of portfolio creator – back view"
         >
-          <div className="size-full">
+          {/* Front view */}
+          <div
+            className="absolute inset-0 overflow-hidden rounded-[20px] bg-white"
+            style={{ backfaceVisibility: 'hidden' }}
+            data-name="Portrait of portfolio creator – front view"
+          >
             <img
-              alt="Portrait of Surendhar K, back view"
+              alt="Portrait of Surendhar K, front view"
               className="absolute left-0 top-[-8.79%] h-[117.57%] w-full max-w-none"
-              src={imgPortraitBack}
+              src={imgPortrait}
             />
           </div>
+          {/* Back view — mirrored the same way the imported Avatar - Back frame is */}
+          <div
+            className="absolute inset-0 overflow-hidden rounded-[20px] bg-white"
+            style={{
+              backfaceVisibility: 'hidden',
+              transform: 'rotateY(180deg)',
+            }}
+            data-name="Portrait of portfolio creator – back view"
+          >
+            <div className="size-full">
+              <img
+                alt="Portrait of Surendhar K, back view"
+                className="absolute left-0 top-[-8.79%] h-[117.57%] w-full max-w-none"
+                src={imgPortraitBack}
+              />
+            </div>
+          </div>
         </div>
+        </motion.div>
       </div>
-      </motion.div>
     </div>
   )
 }

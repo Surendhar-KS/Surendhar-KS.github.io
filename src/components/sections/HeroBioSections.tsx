@@ -5,20 +5,27 @@ import ScrollAvatar from "../ScrollAvatar";
 
 export default function HeroBioSections() {
   return (
-    <div id="about" className="flex flex-col h-[1800px] items-center justify-center relative w-full" data-name="Hero & Bio Sections">
-      {/* Sticky Avatar Track */}
-      <div className="flex h-[1800px] items-start justify-center relative w-full" data-name="Sticky Avatar Wrap">
-        <div className="flex flex-col h-[900px] items-end justify-center w-full sticky top-0" data-name="Sticky Container">
-          {/* ScrollAvatar acts as the sticky layer that scales and flips */}
-          <ScrollAvatar />
+    <div id="about" className="relative w-full" data-name="Hero & Bio Sections">
+      
+      {/* Sticky Avatar Track (underneath) */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="sticky top-0 h-screen w-full flex flex-col items-center md:items-end justify-center">
+          <div className="pointer-events-auto w-full h-full flex items-center justify-center md:justify-end">
+            <ScrollAvatar />
+          </div>
         </div>
       </div>
 
-      {/* Content overlayed on the track */}
-      <div className="absolute flex flex-col items-center justify-start left-0 right-0 top-0 overflow-clip">
-        <HeroSection />
-        <BioSection />
+      {/* Content overlayed on the track, in natural document flow so heights are fluid */}
+      <div className="relative z-10 flex flex-col items-center justify-start w-full pointer-events-none">
+        <div className="w-full pointer-events-auto">
+          <HeroSection />
+        </div>
+        <div className="w-full pointer-events-auto">
+          <BioSection />
+        </div>
       </div>
+      
     </div>
   );
 }
