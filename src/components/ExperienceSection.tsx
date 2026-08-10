@@ -1,6 +1,6 @@
 'use client';
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const experiences = [
   {
@@ -23,142 +23,154 @@ const experiences = [
   }
 ];
 
-const Character = ({ char, index, total, scrollYProgress }: { char: string, index: number, total: number, scrollYProgress: any }) => {
-  const start = index / total;
-  const end = start + (1 / total) * 1.5;
-  const opacity = useTransform(scrollYProgress, [start, end], [0.5, 1]);
-  return (
-    <motion.span style={{ opacity }} className="text-[#111]">
-      {char === " " ? "\u00A0" : char}
-    </motion.span>
-  );
-};
-
-const AnimatedHeader = ({ text }: { text: string }) => {
-  const ref = useRef<HTMLHeadingElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 85%", "start 40%"]
-  });
-
-  return (
-    <h2 
-      ref={ref}
-      className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-center tracking-tighter flex flex-wrap justify-center pb-2"
-    >
-      {text.split("").map((char, i) => (
-        <Character key={i} char={char} index={i} total={text.length} scrollYProgress={scrollYProgress} />
-      ))}
-    </h2>
-  );
-};
-
-const ExperienceCard = ({ exp, index }: { exp: typeof experiences[0]; index: number }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  
-  return (
-    <div className="relative flex items-start gap-8 md:gap-16 group w-full" ref={cardRef}>
-      
-      {/* Timeline dot container */}
-      <div className="absolute left-[3px] md:left-[5px] top-8 z-20 flex items-center justify-center">
-        {/* Glow behind the dot */}
-        <motion.div 
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: [0, 2, 1.5], opacity: [0, 0.5, 0] }}
-          viewport={{ once: true, margin: "-40% 0px" }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute w-8 h-8 bg-[#111]/20 rounded-full pointer-events-none blur-sm"
-        />
-        
-        {/* Main solid dot */}
-        <motion.div 
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true, margin: "-40% 0px" }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="relative w-4 h-4 md:w-5 md:h-5 bg-[#111] rounded-full border-4 border-[#faf7f3] shadow-[0_0_15px_rgba(17,17,17,0.3)] transition-transform duration-500 group-hover:scale-150" 
-        />
-      </div>
-      
-      {/* Card content */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
-        whileHover={{ y: -5 }}
-        className="ml-10 md:ml-12 relative bg-white/60 backdrop-blur-xl rounded-[24px] p-6 md:p-8 w-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 overflow-hidden"
-      >
-        {/* Subtle hover gradient inside card */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4 border-b border-[#111]/5 pb-5">
-          <div className="flex flex-col gap-1">
-            <h3 className="font-bold text-xl md:text-2xl text-[#111] tracking-tight">{exp.role}</h3>
-            <span className="text-base md:text-lg text-[#111]/60 font-medium">{exp.company}</span>
-          </div>
-          <span className="inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-[#111]/5 text-xs md:text-sm text-[#111]/70 font-semibold tracking-wide whitespace-nowrap">
-            {exp.date}
-          </span>
-        </div>
-        
-        <ul className="relative z-10 flex flex-col gap-5">
-          {exp.bullets.map((bullet, idx) => (
-            <motion.li 
-              key={idx} 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 + (idx * 0.1) }}
-              className="flex items-start gap-3 text-[#111]/75 text-sm md:text-base leading-relaxed font-medium"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#111]/30 mt-2 shrink-0 transition-colors group-hover:bg-[#111]/60" />
-              {bullet}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
-    </div>
-  );
-};
-
 export const ExperienceSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Lock to prevent scroll-driven updates from fighting with click-driven updates
+  const isManualScrolling = useRef(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end center"]
+    offset: ["start start", "end end"]
   });
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
+  // Automatically switch tabs based on scroll position!
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (isManualScrolling.current) return; // Skip updates while smoothly scrolling via click
+    
+    const newIndex = latest >= 0.5 ? 1 : 0;
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex);
+    }
   });
+
+  const handleTabClick = (index: number) => {
+    setActiveIndex(index);
+    isManualScrolling.current = true;
+    
+    // Clear any existing timeout
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    
+    // Release the lock after smooth scroll completes (approx 800ms)
+    scrollTimeout.current = setTimeout(() => {
+      isManualScrolling.current = false;
+    }, 800);
+
+    if (!containerRef.current) return;
+    
+    // When clicking a tab, smoothly scroll the window to the correct trigger point in the 200vh track
+    const rect = containerRef.current.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // Ensure we scroll deep enough into the threshold
+    const targetY = scrollTop + rect.top + (index === 0 ? 0 : rect.height * 0.6);
+    
+    window.scrollTo({
+      top: targetY,
+      behavior: 'smooth'
+    });
+  };
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto py-32 px-6 font-['Archivo',sans-serif] relative">
-      
-      {/* Premium Title Reveal */}
-      <div className="mb-24 flex justify-center overflow-hidden">
-        <AnimatedHeader text="Experience." />
-      </div>
-      
-      <div className="relative w-full" ref={containerRef}>
-        
-        {/* Background Track Line */}
-        <div className="absolute left-[10px] md:left-[14px] top-8 bottom-8 w-[2px] bg-[#111]/10 rounded-full" />
-        
-        {/* Animated Glowing Progress Line */}
-        <motion.div 
-          style={{ scaleY: smoothProgress }}
-          className="absolute left-[10px] md:left-[14px] top-8 bottom-8 w-[2px] bg-gradient-to-b from-[#111] via-[#333] to-[#111] origin-top rounded-full shadow-[0_0_10px_rgba(17,17,17,0.5)]" 
-        />
-        
-        <div className="flex flex-col gap-12">
-          {experiences.map((exp, index) => (
-            <ExperienceCard key={index} exp={exp} index={index} />
-          ))}
+    <div id="experience" ref={containerRef} className="w-full bg-[#111] relative h-[200vh]" data-theme="dark">
+      {/* The sticky container locks to the screen for the duration of the 200vh scroll */}
+      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        <div className="max-w-[1180px] mx-auto px-6 w-full">
+          
+          {/* Title */}
+          <div className="mb-10 md:mb-16 flex items-center justify-center overflow-hidden">
+            <motion.h2 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+              className="flex flex-row overflow-hidden text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+            >
+              {Array.from("Experience.").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  variants={{
+                    hidden: { y: "100%", opacity: 0, rotate: 10, filter: "blur(4px)" },
+                    visible: { y: "0%", opacity: 1, rotate: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
+                  }}
+                  className={`inline-block origin-bottom-left leading-[1.2] ${letter === ' ' ? 'w-[1ch]' : ''}`}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.h2>
+          </div>
+
+          {/* Split Panel Layout */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 relative">
+            
+            {/* Left Navigation */}
+            <div className="w-full lg:w-[35%] flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 hide-scrollbar relative z-20">
+              {experiences.map((exp, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleTabClick(index)}
+                    className={`relative flex-shrink-0 px-6 py-5 text-left text-lg md:text-2xl font-semibold transition-colors duration-300 rounded-xl outline-none cursor-pointer ${
+                      isActive ? "text-[#111]" : "text-white/50 hover:text-white/80 hover:bg-white/[0.02]"
+                    }`}
+                  >
+                    {/* Active Indicator Glide */}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeExperienceTab"
+                        className="absolute inset-0 bg-white rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative z-10 block tracking-tight">{exp.company}</span>
+                  </button>
+                );
+              })}
+            </div>
+            
+            {/* Right Content Pane */}
+            <div className="w-full lg:w-[65%] min-h-[400px] relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 15, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -15, filter: "blur(8px)" }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full bg-white/[0.02] backdrop-blur-3xl rounded-[32px] p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10"
+                >
+                  <div className="flex flex-col gap-4 mb-10">
+                    <h3 className="font-extrabold text-3xl md:text-4xl text-white tracking-tight leading-tight">
+                      {experiences[activeIndex].role}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <span className="text-xl md:text-2xl text-white/60 font-medium tracking-wide">
+                        {experiences[activeIndex].company}
+                      </span>
+                      <span className="text-white/30 hidden md:block">•</span>
+                      <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white/10 text-sm md:text-base text-white/90 font-bold tracking-wide whitespace-nowrap backdrop-blur-md border border-white/10">
+                        {experiences[activeIndex].date}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <ul className="flex flex-col gap-6">
+                    {experiences[activeIndex].bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-4 text-white/75 text-base md:text-lg leading-relaxed font-medium">
+                        <div className="w-2 h-2 rounded-full bg-white/40 mt-2.5 shrink-0 shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
