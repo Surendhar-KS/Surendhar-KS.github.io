@@ -2,7 +2,7 @@ import svgPaths from "../../assets/svg-paths";
 import { imgContainer } from "../../assets/svg-link";
 import { createContext, useContext } from "react";
 
-export const CertContext = createContext<(() => void) | null>(null);
+export const CertContext = createContext<(() => void) | undefined>(undefined);
 
 const imgMosaicBackground = "/images/certificates/mosaic-background-1.png";
 const imgAwsCertifiedCloudPractitioner31 = "/images/certificates/aws-certified-cloud-practitioner.png";
