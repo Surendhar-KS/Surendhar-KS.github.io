@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { Spotlight } from '@/components/core/spotlight';
 
 const experiences = [
   {
@@ -141,9 +142,14 @@ export const ExperienceSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -15, filter: "blur(8px)" }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="w-full bg-white/[0.02] backdrop-blur-3xl rounded-[32px] p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10"
+                  className="w-full relative overflow-hidden rounded-[32px] p-[1px] group shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
                 >
-                  <div className="flex flex-col gap-4 mb-10">
+                  <Spotlight
+                    className='from-white/50 via-white/20 to-transparent blur-3xl'
+                    size={400}
+                  />
+                  <div className="relative h-full w-full rounded-[31px] bg-[#1a1a1a] p-8 md:p-12 border border-white/5">
+                    <div className="flex flex-col gap-4 mb-10">
                     <h3 className="font-extrabold text-3xl md:text-4xl text-white tracking-tight leading-tight">
                       {experiences[activeIndex].role}
                     </h3>
@@ -166,6 +172,7 @@ export const ExperienceSection: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>

@@ -28,7 +28,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <div id="projects" className="content-stretch flex items-center justify-center pt-[180px] pb-[10vh] lg:pb-[20vh] relative shrink-0 w-full" data-name="Curated Projects Section">
+    <div id="projects" className="content-stretch flex items-center justify-center pt-[60px] pb-[10vh] lg:pb-[20vh] relative shrink-0 w-full" data-name="Curated Projects Section">
       <ScrollReveal className="content-stretch flex flex-col items-start justify-center max-w-[1180px] relative shrink-0 w-full lg:w-[1180px] px-6 lg:px-0">
         
         <div className="w-full relative">
