@@ -40,7 +40,7 @@ export default function FeatureSection() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="px-4 py-1.5 rounded-full bg-white shadow-sm border border-black/5 flex items-center justify-center"
           >
             <span className="text-sm font-semibold tracking-widest text-black/60 uppercase">Certifications</span>
@@ -49,7 +49,7 @@ export default function FeatureSection() {
           <motion.h2 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: false, margin: "-10%" }}
             variants={{
               visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
             }}
@@ -78,7 +78,7 @@ export default function FeatureSection() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: false, margin: "-10%" }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-black/60 max-w-2xl"
           >
@@ -92,7 +92,7 @@ export default function FeatureSection() {
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1 }}
             className="w-full flex justify-center"
           >
@@ -104,7 +104,7 @@ export default function FeatureSection() {
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2 }}
             className="w-full flex justify-center"
           >
@@ -116,7 +116,7 @@ export default function FeatureSection() {
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.3 }}
             className="w-full flex justify-center"
           >
