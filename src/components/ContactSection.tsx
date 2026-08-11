@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { TextMorph } from '@/components/core/text-morph';
+import { GlowEffect } from '@/components/core/glow-effect';
 const FloatingInput = ({ 
   label, 
   name, 
@@ -170,9 +171,18 @@ export default function ContactSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-[560px] justify-self-center lg:justify-self-end relative z-10"
         >
-          {/* Glassmorphic Form Card */}
-          <div className="w-full bg-[#111] p-8 md:p-10 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-black/20 border border-white/10 relative overflow-hidden group">
-            {/* Animated subtle glow inside card */}
+          <div className="relative w-full rounded-[24px] md:rounded-[32px]">
+            <motion.div
+              className="pointer-events-none absolute inset-0 rounded-[inherit] z-0"
+              animate={{ opacity: status !== "idle" ? 1 : 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              <GlowEffect colors={['#0894FF', '#C959DD', '#FF2E54', '#FF9004']} duration={8} />
+            </motion.div>
+
+            {/* Glassmorphic Form Card */}
+            <div className="w-full bg-[#111] p-8 md:p-10 rounded-[inherit] shadow-2xl shadow-black/20 border border-white/10 relative overflow-hidden group z-10">
+              {/* Animated subtle glow inside card */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px] pointer-events-none transition-transform duration-1000 group-hover:scale-150 group-hover:translate-x-10 group-hover:-translate-y-10" />
 
             <form className="relative z-10 flex flex-col w-full" onSubmit={onSubmit}>
@@ -209,13 +219,11 @@ export default function ContactSection() {
                   status === "submitting" ? "opacity-70 cursor-not-allowed" : "hover:bg-transparent hover:border-white hover:text-white"
                 }`}
               >
-                {status === "submitting" ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send Message
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                  </>
+                <TextMorph>
+                  {status === "submitting" ? "Sending..." : "Send Message"}
+                </TextMorph>
+                {status !== "submitting" && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 )}
               </motion.button>
               
@@ -239,7 +247,8 @@ export default function ContactSection() {
               )}
             </form>
           </div>
-        </motion.div>
+        </div>
+      </motion.div>
       </div>
     </div>
   );

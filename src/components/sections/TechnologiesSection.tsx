@@ -1,10 +1,10 @@
 'use client';
 import { motion } from "framer-motion";
+import { InfiniteSlider } from '@/components/core/infinite-slider';
 const icons = {
     huggingface: "https://cdn.simpleicons.org/huggingface/FFD21E",
     tensorflow: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
     opencv: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
-    tesseract: "https://upload.wikimedia.org/wikipedia/commons/2/23/Tesseract_logo.png",
 
   java: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
   python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
@@ -165,6 +165,21 @@ export default function TechnologiesSection() {
           ))}
         </div>
       </motion.div>
+
+      {/* Infinite Logo Slider */}
+      <div className="w-full mt-8 relative z-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <InfiniteSlider gap={32} reverse duration={40}>
+          {Object.entries(icons).map(([name, src], idx) => (
+             <div key={idx} className="flex items-center justify-center size-[80px]">
+               <img 
+                 src={src} 
+                 alt={name} 
+                 className="size-[48px] object-contain opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" 
+               />
+             </div>
+          ))}
+        </InfiniteSlider>
+      </div>
     </div>
   );
 }
