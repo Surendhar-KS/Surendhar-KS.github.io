@@ -22,6 +22,39 @@ const FloatingInput = ({
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const active = isFocused || value !== '';
+  const overlayRef = React.useRef<HTMLDivElement>(null);
+
+  const handleScroll = (e: React.UIEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (overlayRef.current) {
+      overlayRef.current.scrollLeft = e.currentTarget.scrollLeft;
+      overlayRef.current.scrollTop = e.currentTarget.scrollTop;
+    }
+  };
+
+  const renderAnimatedText = () => (
+    <div 
+      ref={overlayRef}
+      className={`absolute inset-0 pointer-events-none px-4 pt-7 pb-3 z-20 overflow-hidden ${textarea ? 'whitespace-pre-wrap break-words' : 'whitespace-pre'} text-white text-sm md:text-base font-sans`} 
+      aria-hidden="true"
+    >
+      {value.split('').map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, scale: 0.5, y: 5 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
+            mass: 0.5
+          }}
+          className="inline-block"
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </motion.span>
+      ))}
+    </div>
+  );
 
   return (
     <div className="relative w-full mb-5">
@@ -32,33 +65,38 @@ const FloatingInput = ({
           scale: active ? 0.85 : 1,
           color: active ? '#ffffff' : '#9ca3af'
         }}
-        className="absolute left-4 top-4 origin-left pointer-events-none transition-colors z-20"
+        className="absolute left-4 top-4 origin-left pointer-events-none transition-colors z-30"
       >
         {label}
       </motion.label>
       
-      {textarea ? (
-        <textarea
-          name={name}
-          required={required}
-          value={value}
-          onChange={onChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all min-h-[130px] resize-y text-sm md:text-base"
-        />
-      ) : (
-        <input
-          name={name}
-          type={type}
-          required={required}
-          value={value}
-          onChange={onChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all text-sm md:text-base"
-        />
-      )}
+      <div className="relative w-full">
+        {renderAnimatedText()}
+        {textarea ? (
+          <textarea
+            name={name}
+            required={required}
+            value={value}
+            onChange={onChange}
+            onScroll={handleScroll}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-transparent caret-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all min-h-[130px] resize-y text-sm md:text-base font-sans"
+          />
+        ) : (
+          <input
+            name={name}
+            type={type}
+            required={required}
+            value={value}
+            onChange={onChange}
+            onScroll={handleScroll}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="relative z-10 w-full bg-[#1a1a1a]/40 backdrop-blur-md border border-white/10 rounded-xl px-4 pt-7 pb-3 text-transparent caret-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all text-sm md:text-base font-sans"
+          />
+        )}
+      </div>
     </div>
   );
 };
