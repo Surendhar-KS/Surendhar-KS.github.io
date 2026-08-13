@@ -87,6 +87,7 @@
 
 html {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
   display: none;
@@ -94,4 +95,9 @@ html::-webkit-scrollbar {
 
 body {
   background-color: #faf7f3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
+
+

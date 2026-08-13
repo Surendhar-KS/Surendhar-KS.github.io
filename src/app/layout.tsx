@@ -3,9 +3,24 @@ import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
-  title: "Surendhar K | Software Developer | AI, Cloud & Java",
+  metadataBase: new URL("https://surendhar-ks.github.io"),
+  title: "Surendhar K | Software Developer | AI, Web & Cloud Solutions",
   description:
-    "Surendhar K is a software developer specializing in AI, cloud computing, Java, and modern web technologies. Explore projects, certifications, skills, and experience.",
+    "Surendhar K is a software developer building scalable digital solutions across web development, AI, cloud solutions, and data analytics. Explore projects, experience, certifications, and skills.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 
   openGraph: {
     title: "Surendhar K | Software Developer",
@@ -41,15 +56,31 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Surendhar K",
-    "jobTitle": "Software Developer",
-    "description": "Software Developer focused on AI, Cloud, and Java.",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://surendhar-ks.github.io/#person",
+      "name": "Surendhar K",
+      "url": "https://surendhar-ks.github.io/",
+      "jobTitle": "Software Developer",
+      "description": "Software developer building scalable digital solutions across web development, AI, cloud solutions, and data analytics.",
+      "sameAs": [
+        "https://github.com/surendhar-ks",
+        "https://www.linkedin.com/in/surendhar-ks/"
+      ]
+    }
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://surendhar-ks.github.io/#website",
     "url": "https://surendhar-ks.github.io/",
-    "sameAs": [
-      "https://github.com/surendhar-ks",
-      "https://www.linkedin.com/in/surendhar-ks/"
-    ]
+    "name": "Surendhar K",
+    "description": "Portfolio of Surendhar K, a software developer building digital solutions.",
+    "publisher": {
+      "@id": "https://surendhar-ks.github.io/#person"
+    }
   };
 
   return (
@@ -58,6 +89,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="antialiased">

@@ -9,7 +9,7 @@ export default function HeroSection() {
         
         {/* Title Group */}
         <div 
-          className="relative flex flex-col items-center justify-center w-full mb-8 -mt-8 md:-mt-[80px]" 
+          className="relative flex flex-col items-center justify-center w-full mb-8 -mt-[60px] md:-mt-[140px]" 
         >
           <div className="relative flex flex-col items-center px-2 sm:px-4">
             {/* Star */}
@@ -27,14 +27,17 @@ export default function HeroSection() {
               initial={{ color: '#d1d5db', y: 40, opacity: 0 }}
               animate={{ color: '#111111', y: 0, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[12vw] sm:text-[60px] md:text-[174px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-0 relative"
+              className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[11vw] sm:text-[60px] md:text-[140px] lg:text-[150px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-0 relative"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
-              <span className="sr-only">Software Engineer</span>
+              <span className="sr-only">Surendhar K - Software Developer</span>
               <span aria-hidden="true">
-                <span className="inline-block md:inline whitespace-nowrap">SOFT<span className="ml-[0.06em]">W</span>ARE</span>
+                <span className="inline-block md:inline whitespace-nowrap">SURENDHAR K</span>
                 <br/>
-                <span className="inline-block md:inline whitespace-nowrap">ENGINEER</span>
+                <span className="flex flex-row items-center justify-center gap-[100px] sm:gap-[140px] md:gap-[240px] text-[4.5vw] sm:text-[24px] md:text-[50px] lg:text-[60px] mt-6 md:mt-12 w-full">
+                  <span>SOFTWARE</span>
+                  <span>DEVELOPER</span>
+                </span>
               </span>
             </motion.h1>
             
@@ -43,9 +46,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.5, rotate: 0, y: 20 }}
               animate={{ opacity: 1, scale: 1, rotate: 24, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 sm:right-2 md:-right-[115px] -bottom-6 sm:-bottom-8 md:-bottom-[50px] w-[32px] sm:w-[45px] md:w-[100px] z-[50] drop-shadow-2xl"
+              className="absolute right-4 sm:right-6 md:-right-[60px] -bottom-2 sm:-bottom-4 md:-bottom-[10px] w-[32px] sm:w-[45px] md:w-[100px] z-[50] drop-shadow-2xl"
             >
-              <img src="/images/lightning.webp" alt="Lightning" className="w-full h-auto" />
+              <img src="/images/lightning.webp" alt="Lightning" className="w-full h-auto animate-pulse" />
             </motion.div>
           </div>
         </div>
@@ -59,9 +62,6 @@ export default function HeroSection() {
         >
           <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[28px] sm:text-[32px] md:text-[68px] tracking-[-1.36px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
             ©2026
-          </div>
-          <div className="font-['Archivo:Regular',sans-serif] font-normal text-[#111] text-[14px] md:text-[18px] tracking-[-0.72px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
-            SURENDHAR K
           </div>
         </motion.div>
         

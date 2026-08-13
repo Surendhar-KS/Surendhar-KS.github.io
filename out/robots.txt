@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://surendhar-ks.github.io/sitemap.xml
