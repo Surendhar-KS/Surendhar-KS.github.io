@@ -26,7 +26,7 @@ export default function RootLayout({
     "description": "Software Developer focused on AI, Cloud, and Java.",
     "url": "https://surendhar-ks.github.io/",
     "sameAs": [
-      "https://github.com/SURENDHAR-725",
+      "https://github.com/surendhar-ks",
       "https://www.linkedin.com/in/surendhar-ks/"
     ]
   };
