@@ -90,7 +90,7 @@ export default function ScrollAvatar() {
   const startScale = isMobile ? 0.85 : 1
   const endScale = isMobile ? 1.35 : 2.15
 
-  const progress = reduced ? 1 : smooth(clamp(scrollY / pinLength))
+  const progress = reduced ? 1 : clamp(scrollY / pinLength)
   const scale = startScale + (endScale - startScale) * progress
   // A single half-turn: starts showing the front view, lands on the back view.
   const rotateY = 180 * progress
@@ -105,6 +105,7 @@ export default function ScrollAvatar() {
       style={{
         transform: `translateY(${-release}px)`,
         perspective: '1600px',
+        willChange: 'transform',
       }}
     >
       <div className="w-full h-full">
@@ -120,6 +121,7 @@ export default function ScrollAvatar() {
               transform: `scale(${scale}) rotateY(${rotateY}deg)`,
               transformOrigin: 'bottom center',
               transformStyle: 'preserve-3d',
+              willChange: 'transform',
             }}
           >
             {/* Front view */}
