@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     "Surendhar K is a software developer specializing in AI, cloud computing, Java, and modern web technologies. Explore projects, certifications, skills, and experience.",
 
   openGraph: {
-    title: "Surendhar K | Software Developer | AI, Cloud & Java",
+    title: "Surendhar K | Software Developer",
     description:
-      "Explore Surendhar K's projects, technical skills, certifications, and experience in AI, cloud computing, Java, and modern web technologies.",
+      "I build scalable, intelligent and impactful digital solutions that help businesses grow.",
     url: "https://surendhar-ks.github.io/",
     siteName: "Surendhar K Portfolio",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "https://surendhar-ks.github.io/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Surendhar K - Software Developer Portfolio",
+        alt: "Surendhar K - Software Developer",
       },
     ],
     locale: "en_US",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Surendhar K | Software Developer | AI, Cloud & Java",
+    title: "Surendhar K | Software Developer",
     description:
-      "Explore Surendhar K's projects, skills, certifications, and experience.",
+      "I build scalable, intelligent and impactful digital solutions that help businesses grow.",
     images: ["https://surendhar-ks.github.io/og-image.png"],
   },
 };
