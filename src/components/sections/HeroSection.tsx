@@ -4,20 +4,20 @@ import ScrollAvatar from "../ScrollAvatar";
 
 export default function HeroSection() {
   return (
-    <div className="flex min-h-[100svh] lg:h-[900px] w-full items-center justify-center relative shrink-0 pt-16 pb-20 md:py-0" data-name="Hero Section">
-      <div className="flex h-full w-full max-w-[1180px] items-center justify-center relative shrink-0 px-4 sm:px-6 md:px-0">
+    <div className="flex min-h-[100vh] lg:h-[900px] w-full items-center justify-center relative shrink-0" data-name="Hero Section">
+      <div className="flex h-full w-full max-w-[1180px] items-center relative shrink-0">
         
         {/* Title Group */}
         <div 
-          className="relative flex flex-col items-center justify-center w-full mb-6 sm:mb-8 -mt-4 md:-mt-[80px]" 
+          className="relative flex flex-col items-center justify-center w-full mb-8 -mt-8 md:-mt-[80px]" 
         >
-          <div className="relative flex flex-col items-center px-1 sm:px-4">
+          <div className="relative flex flex-col items-center px-2 sm:px-4">
             {/* Star */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.5, rotate: -20, y: 20 }}
               animate={{ opacity: 1, scale: 1, rotate: 3, y: 0 }}
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -left-1 xs:left-0 sm:-left-4 md:-left-[115px] -top-9 xs:-top-11 sm:-top-12 md:-top-[60px] w-[36px] xs:w-[44px] sm:w-[50px] md:w-[110px] z-10"
+              className="absolute left-0 sm:left-2 md:-left-[115px] -top-9 sm:-top-12 md:-top-[60px] w-[36px] sm:w-[50px] md:w-[110px] z-10"
             >
               <img src="/images/star.webp" alt="Star" className="w-full h-auto drop-shadow-2xl animate-pulse" />
             </motion.div>
@@ -27,13 +27,14 @@ export default function HeroSection() {
               initial={{ color: '#d1d5db', y: 40, opacity: 0 }}
               animate={{ color: '#111111', y: 0, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[9.5vw] xs:text-[11vw] sm:text-[54px] md:text-[174px] leading-[0.88] tracking-[-0.04em] text-center m-0 z-0 relative select-none"
+              className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[12vw] sm:text-[60px] md:text-[174px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-0 relative"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
               <span className="sr-only">Software Engineer</span>
-              <span aria-hidden="true" className="flex flex-col items-center justify-center">
-                <span className="block whitespace-nowrap w-full">SOFTWARE</span>
-                <span className="block whitespace-nowrap w-full">ENGINEER</span>
+              <span aria-hidden="true">
+                <span className="inline-block md:inline whitespace-nowrap">SOFT<span className="ml-[0.06em]">W</span>ARE</span>
+                <br/>
+                <span className="inline-block md:inline whitespace-nowrap">ENGINEER</span>
               </span>
             </motion.h1>
             
@@ -42,7 +43,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.5, rotate: 0, y: 20 }}
               animate={{ opacity: 1, scale: 1, rotate: 24, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -right-1 xs:right-0 sm:-right-4 md:-right-[115px] -bottom-6 xs:-bottom-8 sm:-bottom-10 md:-bottom-[50px] w-[32px] xs:w-[40px] sm:w-[45px] md:w-[100px] z-[50] drop-shadow-2xl"
+              className="absolute right-0 sm:right-2 md:-right-[115px] -bottom-6 sm:-bottom-8 md:-bottom-[50px] w-[32px] sm:w-[45px] md:w-[100px] z-[50] drop-shadow-2xl"
             >
               <img src="/images/lightning.webp" alt="Lightning" className="w-full h-auto" />
             </motion.div>
@@ -54,12 +55,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }} 
-          className="absolute bottom-5 sm:bottom-6 md:bottom-[20px] left-0 right-0 flex items-end justify-between px-5 sm:px-6 md:px-0"
+          className="absolute bottom-[20px] left-0 right-0 flex items-end justify-between px-6 md:px-0"
         >
-          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[24px] xs:text-[28px] sm:text-[32px] md:text-[68px] tracking-[-1.36px] leading-none select-none" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[28px] sm:text-[32px] md:text-[68px] tracking-[-1.36px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
             ©2026
           </div>
-          <div className="font-['Archivo:Regular',sans-serif] font-normal text-[#111] text-[13px] xs:text-[14px] md:text-[18px] tracking-[-0.72px] leading-none select-none" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <div className="font-['Archivo:Regular',sans-serif] font-normal text-[#111] text-[14px] md:text-[18px] tracking-[-0.72px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
             SURENDHAR K
           </div>
         </motion.div>
