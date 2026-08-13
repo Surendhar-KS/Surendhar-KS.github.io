@@ -5,7 +5,7 @@ import ScrollAvatar from "../ScrollAvatar";
 
 export default function HeroBioSections() {
   return (
-    <div id="about" className="relative w-full" data-name="Hero & Bio Sections">
+    <div id="about" className="relative w-full overflow-x-clip" data-name="Hero & Bio Sections">
       
       {/* Sticky Avatar Track (underneath) */}
       <div className="absolute inset-0 pointer-events-none z-0">
