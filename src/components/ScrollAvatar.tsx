@@ -107,7 +107,7 @@ export default function ScrollAvatar() {
         perspective: '1600px',
       }}
     >
-      <div className="w-full h-full md:-translate-x-1/2">
+      <div className="w-full h-full">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
