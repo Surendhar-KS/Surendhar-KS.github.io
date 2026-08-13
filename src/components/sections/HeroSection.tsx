@@ -30,7 +30,10 @@ export default function HeroSection() {
               className="font-['Archivo:ExtraBold',sans-serif] font-extrabold text-[15vw] sm:text-[60px] md:text-[174px] leading-[0.85] tracking-[-0.04em] text-center m-0 z-0 relative"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
-              SOFT<span className="ml-[0.06em]">W</span>ARE<br/>ENGINEER
+              <span className="sr-only">Software Engineer</span>
+              <span aria-hidden="true">
+                SOFT<span className="ml-[0.06em]">W</span>ARE<br/>ENGINEER
+              </span>
             </motion.h1>
             
             {/* Lightning Bolt */}
