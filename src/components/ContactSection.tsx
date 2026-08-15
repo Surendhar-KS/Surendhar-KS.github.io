@@ -167,7 +167,7 @@ export default function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="font-['Archivo',sans-serif] font-extrabold text-[68px] md:text-[88px] tracking-[-0.04em] text-[#111] leading-[0.9] mb-6">
+            <h2 className="font-['Archivo',sans-serif] font-extrabold text-[48px] sm:text-[68px] md:text-[88px] tracking-[-0.04em] text-[#111] leading-[0.9] mb-6">
               Let's <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#111] to-[#666]">talk.</span>
             </h2>

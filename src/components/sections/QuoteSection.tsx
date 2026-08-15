@@ -5,10 +5,10 @@ function WordSpan({ text }: { text: string }) {
   return (
     <div className="blur-[0px] content-stretch flex items-start relative shrink-0" data-name="span">
       <div
-        className="[word-break:break-word] flex flex-col font-['Archivo',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[24px] md:text-[36px] tracking-[-0.72px] whitespace-nowrap"
+        className="[word-break:break-word] flex flex-col font-['Archivo',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[20px] sm:text-[24px] md:text-[36px] tracking-[-0.72px] whitespace-nowrap"
         style={{ fontVariationSettings: '"wdth" 100' }}
       >
-        <p className="leading-[40px] md:leading-[50px]">{text}</p>
+        <p className="leading-[32px] sm:leading-[40px] md:leading-[50px]">{text}</p>
       </div>
     </div>
   );
@@ -34,7 +34,7 @@ export default function QuoteSection() {
         For example, height 1350px means the content sticks for 1350 - 900 = 450px of scroll. 
       */}
       <div
-        className="content-stretch flex flex-col h-[1350px] items-center max-w-[1180px] w-full relative shrink-0"
+        className="content-stretch flex flex-col h-[900px] md:h-[1350px] items-center max-w-[1180px] w-full relative shrink-0"
         data-name="Container"
       >
         {/* 

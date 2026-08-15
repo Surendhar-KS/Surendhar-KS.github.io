@@ -87,7 +87,7 @@ export const ExperienceSection: React.FC = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-              className="flex flex-row overflow-hidden text-5xl md:text-7xl font-extrabold text-white tracking-tighter"
+              className="flex flex-row overflow-hidden text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tighter"
             >
               {Array.from("Experience.").map((letter, i) => (
                 <motion.span

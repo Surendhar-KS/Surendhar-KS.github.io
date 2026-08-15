@@ -85,16 +85,16 @@ export default function Footer() {
           
           {/* Left: Massive Typography */}
           <div className="flex flex-col">
-            <h2 className="font-['Archivo',sans-serif] font-bold text-[14vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-white">
+            <h2 className="font-['Archivo',sans-serif] font-bold text-[12vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-white">
               SCALING
             </h2>
             <div className="flex items-center gap-4 sm:gap-8">
               <div className="hidden sm:block h-[2px] bg-white/10 flex-1 max-w-[80px] lg:max-w-[120px]" />
-              <h2 className="font-['Archivo',sans-serif] font-bold text-[14vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700 italic pr-4">
+              <h2 className="font-['Archivo',sans-serif] font-bold text-[12vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700 italic pr-4">
                 SOFTWARE
               </h2>
             </div>
-            <h2 className="font-['Archivo',sans-serif] font-bold text-[14vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-white">
+            <h2 className="font-['Archivo',sans-serif] font-bold text-[12vw] xl:text-[9vw] leading-[0.85] tracking-[-0.04em] text-white">
               FOR GROWTH.
             </h2>
           </div>
@@ -109,7 +109,7 @@ export default function Footer() {
               className="group flex flex-col items-start xl:items-end relative"
               whileHover="hover"
             >
-              <span className="font-['Archivo',sans-serif] text-2xl sm:text-3xl md:text-4xl text-white font-medium transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/40">
+              <span className="font-['Archivo',sans-serif] text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-medium transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/40 break-all sm:break-normal">
                 ksurendhar725@gmail.com
               </span>
               <motion.div

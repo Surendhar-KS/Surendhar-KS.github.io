@@ -9,7 +9,7 @@ export default function BioSection() {
         
         {/* Left Side: Hey! I'm Surendhar... */}
         <div className="flex flex-col h-auto lg:h-full justify-between items-start w-full lg:max-w-[300px] lg:w-[300px] gap-6 lg:gap-0">
-          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[48px] sm:text-[64px] lg:text-[76px] tracking-[-1.52px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[36px] sm:text-[48px] md:text-[64px] lg:text-[76px] tracking-[-1.52px] leading-none" style={{ fontVariationSettings: '"wdth" 100' }}>
             Hey!
           </div>
           <div className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#111] text-[20px] lg:text-[22px] tracking-[-0.88px] leading-[1.4] text-balance" style={{ fontVariationSettings: '"wdth" 100' }}>
