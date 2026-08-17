@@ -150,7 +150,7 @@ export default function ScrollAvatar() {
             >
               <div className="size-full">
                 <img
-                  alt="Portrait of Surendhar K, back view"
+                  alt=""
                   width="450"
                   height="450"
                   decoding="async"

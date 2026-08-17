@@ -286,7 +286,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
               ref={hintRef}
               className="absolute inset-x-0 top-[8%] flex flex-col items-center gap-2 text-[#111]/70 pointer-events-none [will-change:opacity,transform]"
             >
-              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-semibold font-['Archivo',sans-serif]">
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-semibold font-sans">
                 {scrollHint}
               </span>
               <div className="w-[1px] h-[25px] md:h-[40px] bg-gradient-to-b from-[#111]/40 to-transparent" />

@@ -5,7 +5,7 @@ function WordSpan({ text }: { text: string }) {
   return (
     <div className="blur-[0px] content-stretch flex items-start relative shrink-0" data-name="span">
       <div
-        className="[word-break:break-word] flex flex-col font-['Archivo',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[20px] sm:text-[24px] md:text-[36px] tracking-[-0.72px] whitespace-nowrap"
+        className="[word-break:break-word] flex flex-col font-sans font-medium justify-center leading-[0] relative shrink-0 text-[#111] text-[20px] sm:text-[24px] md:text-[36px] tracking-[-0.72px] whitespace-nowrap"
         style={{ fontVariationSettings: '"wdth" 100' }}
       >
         <p className="leading-[32px] sm:leading-[40px] md:leading-[50px]">{text}</p>

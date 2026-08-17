@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
+import { Archivo } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-archivo',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surendhar-ks.github.io"),
   title: "Surendhar K | Software Developer | AI, Web & Cloud Solutions",
   description:
-    "Software developer building AI-powered web applications, cloud solutions, and scalable digital products. Explore my projects, skills, experience, and services.",
+    "Software developer building AI-powered web applications, cloud solutions, and scalable digital products.",
   alternates: {
     canonical: "/",
   },
@@ -99,7 +106,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
-      <body className="antialiased">
+      <body className={`antialiased ${archivo.variable}`}>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

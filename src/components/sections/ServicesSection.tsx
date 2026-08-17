@@ -22,7 +22,7 @@ function ServiceRow({ title, tags, index }: { title: string, tags: string[], ind
         <motion.div 
           variants={{ hover: { x: 10 } }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="[word-break:break-word] flex flex-row items-center gap-4 font-['Archivo:Medium',sans-serif] font-medium justify-start relative shrink-0 text-white group-hover:text-[#111] text-[24px] sm:text-[28px] lg:text-[32px] tracking-[-0.56px] lg:tracking-[-0.64px] transition-colors duration-500" style={{ fontVariationSettings: '"wdth" 100' }}
+          className="[word-break:break-word] flex flex-row items-center gap-4 font-sans font-medium font-medium justify-start relative shrink-0 text-white group-hover:text-[#111] text-[24px] sm:text-[28px] lg:text-[32px] tracking-[-0.56px] lg:tracking-[-0.64px] transition-colors duration-500" style={{ fontVariationSettings: '"wdth" 100' }}
         >
           <p className="leading-[1.2] lg:leading-[38.4px] text-left">{title}</p>
           <motion.svg 
@@ -46,7 +46,7 @@ function ServiceRow({ title, tags, index }: { title: string, tags: string[], ind
         {tags.map((tag, i) => (
           <div key={`tag-group-${i}`} className="flex items-center gap-[10px]">
             <div className="relative shrink-0">
-              <div className="[word-break:break-word] flex flex-col font-['Archivo',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[rgba(255,255,255,0.5)] group-hover:text-[rgba(17,17,17,0.9)] text-[16px] lg:text-[18px] tracking-[-0.72px] whitespace-nowrap transition-colors duration-500" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <div className="[word-break:break-word] flex flex-col font-sans font-normal justify-center leading-[0] relative shrink-0 text-[rgba(255,255,255,0.5)] group-hover:text-[rgba(17,17,17,0.9)] text-[16px] lg:text-[18px] tracking-[-0.72px] whitespace-nowrap transition-colors duration-500" style={{ fontVariationSettings: '"wdth" 100' }}>
                 <p className="leading-[25.2px]">{tag}</p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function ServicesSection() {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-              className="[word-break:break-word] flex flex-row overflow-hidden font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-white text-[48px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}
+              className="[word-break:break-word] flex flex-row overflow-hidden font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-white text-[48px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}
             >
               {Array.from("Services").map((letter, i) => (
                 <motion.span

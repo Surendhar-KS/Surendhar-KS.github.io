@@ -2,32 +2,31 @@
 import { motion } from "framer-motion";
 import { InfiniteSlider } from '@/components/core/infinite-slider';
 const icons = {
-    huggingface: "https://cdn.simpleicons.org/huggingface/FFD21E",
-    tensorflow: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
-    opencv: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
-
-  java: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-  python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-  sql: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-  aws: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-  terraform: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg",
-  docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  kubernetes: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
-  githubactions: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-  linux: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
-  vscode: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-  git: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-  github: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-  postman: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-  supabase: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
-  githubcopilot: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-  claude: "https://cdn.simpleicons.org/anthropic/111111",
-  cursor: "https://cdn.simpleicons.org/cursor/111111",
-  antigravity: "https://upload.wikimedia.org/wikipedia/commons/0/05/Google_Messages_logo.svg",
-  react: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  netlify: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg",
-  vercel: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+    huggingface: "/icons/huggingface.svg",
+    tensorflow: "/icons/tensorflow.svg",
+    opencv: "/icons/opencv.svg",
+  java: "/icons/java.svg",
+  python: "/icons/python.svg",
+  sql: "/icons/sql.svg",
+  aws: "/icons/aws.svg",
+  terraform: "/icons/terraform.svg",
+  docker: "/icons/docker.svg",
+  kubernetes: "/icons/kubernetes.svg",
+  githubactions: "/icons/githubactions.svg",
+  linux: "/icons/linux.svg",
+  vscode: "/icons/vscode.svg",
+  git: "/icons/git.svg",
+  github: "/icons/github.svg",
+  postman: "/icons/postman.svg",
+  supabase: "/icons/supabase.svg",
+  githubcopilot: "/icons/githubcopilot.svg",
+  claude: "/icons/claude.svg",
+  cursor: "/icons/cursor.svg",
+  antigravity: "/icons/antigravity.svg",
+  react: "/icons/react.svg",
+  typescript: "/icons/typescript.svg",
+  netlify: "/icons/netlify.svg",
+  vercel: "/icons/vercel.svg",
 };
 
 function SkillIcon({ name, src, index }: { name: string, src: string, index: number }) {
@@ -61,7 +60,7 @@ function SkillIcon({ name, src, index }: { name: string, src: string, index: num
           alt={name} 
           className="size-[28px] object-contain transition-transform duration-500 group-hover:scale-[1.15] drop-shadow-sm group-hover:drop-shadow-md" 
         />
-        <span className="text-[10px] font-bold text-[#111]/60 whitespace-nowrap transition-all duration-300 group-hover:text-[#111]">{name}</span>
+        <span className="text-[10px] font-bold text-[#111]/75 whitespace-nowrap transition-all duration-300 group-hover:text-[#111]">{name}</span>
       </motion.div>
     </motion.div>
   );
@@ -80,8 +79,8 @@ function SkillBox({ title, description, skills, index }: { title: string, descri
       <div className="absolute inset-0 bg-gradient-to-br from-[#111]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"></div>
       
       <div className="flex flex-col gap-3 w-full relative z-10">
-        <h3 className="text-[22px] font-semibold text-[#111] tracking-tight font-['Archivo:SemiBold',sans-serif]">{title}</h3>
-        <p className="text-[15px] text-[#111]/60 font-['Archivo:Regular',sans-serif] leading-[1.6]">{description}</p>
+        <h3 className="text-[22px] font-semibold text-[#111] tracking-tight font-sans font-semibold">{title}</h3>
+        <p className="text-[15px] text-[#111]/60 font-sans font-normal leading-[1.6]">{description}</p>
       </div>
 
       <div className="flex flex-wrap gap-3 w-full relative z-10 mt-auto">
@@ -148,7 +147,7 @@ export default function TechnologiesSection() {
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-['Archivo:SemiBold',sans-serif] text-[38px] font-semibold tracking-[-0.96px] text-transparent bg-clip-text bg-gradient-to-br from-[#111] to-[#444] sm:text-[46px] lg:text-[72px] lg:tracking-[-1.44px] leading-[0.95]"
+          className="font-sans font-semibold text-[38px] font-semibold tracking-[-0.96px] text-transparent bg-clip-text bg-gradient-to-br from-[#111] to-[#444] sm:text-[46px] lg:text-[72px] lg:tracking-[-1.44px] leading-[0.95]"
         >
           Tools and Technologies
         </motion.h2>

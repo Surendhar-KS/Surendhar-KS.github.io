@@ -17,7 +17,7 @@ function Container2() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center relative size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] text-center tracking-[1.4px] uppercase whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] text-center tracking-[1.4px] uppercase whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[20px]">FEATURES</p>
         </div>
       </div>
@@ -39,10 +39,10 @@ function Container1() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0" data-name="Container">
       <BackgroundBorder />
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[52px] text-black text-center tracking-[-1.3px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-medium font-medium justify-center leading-[0] relative shrink-0 text-[52px] text-black text-center tracking-[-1.3px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[65px]">Workflows That Stay in Motion</p>
       </div>
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[20px] text-[rgba(0,0,0,0.6)] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[20px] text-[rgba(0,0,0,0.6)] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[28px]">From creation to collaboration to delivery — without breaking context.</p>
       </div>
     </div>
@@ -373,7 +373,7 @@ function Container7() {
           <Container15 />
           <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[31.291px] items-center justify-center left-[calc(50%+11.87px)] top-[333.84px] w-[131.251px]">
             <div className="flex-none rotate-[174.98deg]">
-              <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative text-[#7a8a9e] text-[13px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <div className="[word-break:break-word] flex flex-col font-sans font-medium font-medium justify-center leading-[0] relative text-[#7a8a9e] text-[13px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
                 <p className="leading-[19.5px]">100+ Apps Integration</p>
               </div>
             </div>
@@ -429,7 +429,7 @@ function Heading1() {
   return (
     <div className="relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-medium font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[28px]">Cloud Practitioner</p>
         </div>
       </div>
@@ -1033,7 +1033,7 @@ function BackgroundBorder6() {
   return (
     <div className="-translate-y-1/2 absolute bg-[#f9fafb] left-0 rounded-[26843500px] size-[32px] top-[calc(50%-0.01px)]" data-name="Background+Border">
       <div className="content-stretch flex items-center justify-center overflow-clip p-px relative rounded-[inherit] size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-black text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-black text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[20px]">📋</p>
         </div>
       </div>
@@ -1045,7 +1045,7 @@ function BackgroundBorder6() {
 function Container40() {
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.65px] relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[12.5px] mb-0">New hire onboarding for John</p>
         <p className="leading-[12.5px]">Doe.</p>
       </div>
@@ -1082,7 +1082,7 @@ function Container38() {
 function Margin20() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[194.84px] pl-[8px] top-[23.03px]" data-name="Margin">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(0,0,0,0.4)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(0,0,0,0.4)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[13.5px]">11:00</p>
       </div>
     </div>
@@ -1110,7 +1110,7 @@ function BackgroundBorderShadowAlignFlexStart5() {
 function Container43() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.79px] right-[0.02px] top-[-0.8px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[#032d42] text-[12px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[#032d42] text-[12px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[16px]">IT Provisioning</p>
       </div>
     </div>
@@ -1120,7 +1120,7 @@ function Container43() {
 function Container44() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(3,45,66,0.8)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(3,45,66,0.8)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[12.5px]">Laptop and software assigned.</p>
       </div>
     </div>
@@ -1148,7 +1148,7 @@ function OverlayBorder3() {
   return (
     <div className="-translate-y-1/2 absolute bg-[rgba(3,45,66,0.1)] left-0 rounded-[26843500px] size-[32px] top-1/2" data-name="Overlay+Border">
       <div className="content-stretch flex items-center justify-center overflow-clip p-px relative rounded-[inherit] size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#032d42] text-[14px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[#032d42] text-[14px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[20px]">💻</p>
         </div>
       </div>
@@ -1169,7 +1169,7 @@ function Container41() {
 function Margin22() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[194.85px] pl-[8px] top-[20.61px]" data-name="Margin">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(3,45,66,0.6)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(3,45,66,0.6)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[13.5px]">11:05</p>
       </div>
     </div>
@@ -1198,7 +1198,7 @@ function BackgroundBorder7() {
   return (
     <div className="-translate-y-1/2 absolute bg-[#f9fafb] left-0 rounded-[26843500px] size-[32px] top-[calc(50%-0.01px)]" data-name="Background+Border">
       <div className="content-stretch flex items-center justify-center overflow-clip p-px relative rounded-[inherit] size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-black text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-black text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[20px]">🏢</p>
         </div>
       </div>
@@ -1210,7 +1210,7 @@ function BackgroundBorder7() {
 function Container47() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.79px] right-0 top-[-0.8px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[12px] text-black whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[12px] text-black whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[16px]">Facilities</p>
       </div>
     </div>
@@ -1220,7 +1220,7 @@ function Container47() {
 function Container48() {
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.65px] relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[12.5px] mb-0">Security badge ready for</p>
         <p className="leading-[12.5px]">pickup.</p>
       </div>
@@ -1257,7 +1257,7 @@ function Container45() {
 function Margin24() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[194.84px] pl-[8px] top-[26.01px]" data-name="Margin">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(0,0,0,0.4)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(0,0,0,0.4)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[13.5px]">11:30</p>
       </div>
     </div>
@@ -1286,7 +1286,7 @@ function OverlayBorder4() {
   return (
     <div className="bg-[rgba(3,45,66,0.1)] relative rounded-[26843500px] shrink-0 size-[32px]" data-name="Overlay+Border">
       <div className="content-stretch flex items-center justify-center overflow-clip p-px relative rounded-[inherit] size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#032d42] text-[14px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[#032d42] text-[14px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[20px]">👤</p>
         </div>
       </div>
@@ -1298,7 +1298,7 @@ function OverlayBorder4() {
 function Container51() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.79px] right-0 top-[-0.8px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[#032d42] text-[12px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[#032d42] text-[12px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[16px]">Manager</p>
       </div>
     </div>
@@ -1308,7 +1308,7 @@ function Container51() {
 function Container52() {
   return (
     <div className="content-stretch flex flex-col items-start pb-[12.9px] relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(3,45,66,0.8)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(3,45,66,0.8)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[12.5px]">Welcome kit ordered! Ready for</p>
       </div>
     </div>
@@ -1347,7 +1347,7 @@ function Margin26() {
   return (
     <div className="relative shrink-0" data-name="Margin">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pl-[8px] relative size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(3,45,66,0.6)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[9px] text-[rgba(3,45,66,0.6)] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[13.5px]">11:45</p>
         </div>
       </div>
@@ -2547,7 +2547,7 @@ function Heading2() {
   return (
     <div className="relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-medium font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[28px]">{`CSA & CIS - DF`}</p>
         </div>
       </div>
@@ -2641,7 +2641,7 @@ function Margin68() {
 function Container96() {
   return (
     <div className="absolute content-stretch flex flex-col items-start pb-[3.2px] pt-[8.8px] right-[12px] top-[8px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#f80000] text-[8px] tracking-[0.4px] uppercase whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-bold font-bold justify-center leading-[0] relative shrink-0 text-[#f80000] text-[8px] tracking-[0.4px] uppercase whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[12px]">ORACLE</p>
       </div>
     </div>
@@ -2651,7 +2651,7 @@ function Container96() {
 function Heading3() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-bold font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[21px]">Oracle Cloud</p>
       </div>
     </div>
@@ -2687,7 +2687,7 @@ function Container98() {
 function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-bold font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[21px]">Verified</p>
       </div>
     </div>
@@ -2697,7 +2697,7 @@ function Heading4() {
 function Container100() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[13.5px]">Credential</p>
       </div>
     </div>
@@ -2720,7 +2720,7 @@ function Container99() {
 function Heading5() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-bold font-bold justify-center leading-[0] relative shrink-0 text-[14px] text-black tracking-[-0.35px] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[21px]">OCI</p>
       </div>
     </div>
@@ -2730,7 +2730,7 @@ function Heading5() {
 function Container102() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Archivo:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+      <div className="[word-break:break-word] flex flex-col font-sans font-normal font-normal justify-center leading-[0] relative shrink-0 text-[10px] text-[rgba(0,0,0,0.6)] w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
         <p className="leading-[13.5px]">Cloud Technologies</p>
       </div>
     </div>
@@ -2929,7 +2929,7 @@ function Heading6() {
   return (
     <div className="relative shrink-0 w-full" data-name="Heading 4">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <div className="[word-break:break-word] flex flex-col font-['Archivo:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
+        <div className="[word-break:break-word] flex flex-col font-sans font-medium font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black w-full" style={{ fontVariationSettings: '"wdth" 100' }}>
           <p className="leading-[28px]">Generative AI Professional</p>
         </div>
       </div>

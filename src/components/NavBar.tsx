@@ -26,7 +26,7 @@ function RollingLink({ label, onSelect, isOverDark }: { label: string; onSelect:
       className={`nav-roll group flex h-[36px] cursor-pointer items-center justify-center overflow-hidden rounded-[8px] px-[16px] py-[8px] transition-all duration-300 hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 ${isOverDark ? 'bg-[#111] focus-visible:outline-[#111]' : 'bg-[#faf7f3] focus-visible:outline-[#faf7f3]'}`}
     >
       <span
-        className={`flex w-max select-none overflow-hidden font-['Archivo:Medium',sans-serif] text-[16px] font-medium leading-[1.2em] tracking-[-0.02em] transition-colors duration-300 ${isOverDark ? 'text-[#faf7f3]' : 'text-[#111]'}`}
+        className={`flex w-max select-none overflow-hidden font-sans font-medium text-[16px] font-medium leading-[1.2em] tracking-[-0.02em] transition-colors duration-300 ${isOverDark ? 'text-[#faf7f3]' : 'text-[#111]'}`}
         style={{ textShadow: `0 1.2em 0 ${isOverDark ? '#faf7f3' : '#111'}` }}
       >
         {[...label].map((char, index) => (
@@ -54,30 +54,39 @@ export default function NavBar() {
   const navRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
+    let frame = 0;
     const handleScroll = () => {
-      if (!navRef.current) return;
-      
-      const navRect = navRef.current.getBoundingClientRect();
-      const navCenterY = navRect.top + (navRect.height / 2);
-      
-      const darkSections = document.querySelectorAll('[data-theme="dark"]');
-      let overDark = false;
-      
-      for (let i = 0; i < darkSections.length; i++) {
-        const rect = darkSections[i].getBoundingClientRect();
-        if (navCenterY >= rect.top && navCenterY <= rect.bottom) {
-          overDark = true;
-          break;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (!navRef.current) return;
+        
+        const navRect = navRef.current.getBoundingClientRect();
+        const navCenterY = navRect.top + (navRect.height / 2);
+        
+        // Caching the query globally could be better, but doing it in rAF at least prevents layout thrashing
+        const darkSections = document.querySelectorAll('[data-theme="dark"]');
+        let overDark = false;
+        
+        for (let i = 0; i < darkSections.length; i++) {
+          const rect = darkSections[i].getBoundingClientRect();
+          if (navCenterY >= rect.top && navCenterY <= rect.bottom) {
+            overDark = true;
+            break;
+          }
         }
-      }
-      
-      setIsOverDark(overDark);
+        
+        setIsOverDark(overDark);
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -145,7 +154,7 @@ export default function NavBar() {
                   setOpen(false)
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
-                className={`cursor-pointer font-['Archivo:SemiBold',sans-serif] text-[20px] font-semibold tracking-[-0.04em] whitespace-nowrap pl-3 transition-colors duration-300 ${isOverDark ? 'text-[#111]' : 'text-[#faf7f3]'}`}
+                className={`cursor-pointer font-sans font-semibold text-[20px] font-semibold tracking-[-0.04em] whitespace-nowrap pl-3 transition-colors duration-300 ${isOverDark ? 'text-[#111]' : 'text-[#faf7f3]'}`}
               >
                 Surendhar
               </motion.button>
@@ -162,7 +171,7 @@ export default function NavBar() {
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
-                className={`cursor-pointer font-['Archivo:SemiBold',sans-serif] text-[18px] font-semibold tracking-[-0.04em] whitespace-nowrap pl-3 transition-colors duration-300 ${isOverDark ? 'text-[#111]' : 'text-[#faf7f3]'}`}
+                className={`cursor-pointer font-sans font-semibold text-[18px] font-semibold tracking-[-0.04em] whitespace-nowrap pl-3 transition-colors duration-300 ${isOverDark ? 'text-[#111]' : 'text-[#faf7f3]'}`}
               >
                 SK
               </motion.button>

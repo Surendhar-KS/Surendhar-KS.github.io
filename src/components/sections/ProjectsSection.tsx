@@ -48,12 +48,12 @@ export default function ProjectsSection() {
             <div className="pointer-events-auto flex items-start w-full relative">
               <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
                 <div className="blur-[0px] content-stretch flex items-start mb-[-0.4px] relative shrink-0" data-name="span">
-                  <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[#111] text-[40px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[#111] text-[40px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
                     <p className="leading-[1] md:leading-[76px]">Curated</p>
                   </div>
                 </div>
                 <div className="blur-[0px] content-stretch flex items-start relative shrink-0" data-name="span">
-                  <div className="[word-break:break-word] flex flex-col font-['Archivo:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[#111] text-[40px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  <div className="[word-break:break-word] flex flex-col font-sans font-semibold font-semibold justify-center leading-[0] relative shrink-0 text-[#111] text-[40px] md:text-[76px] tracking-[-1.52px] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
                     <p className="leading-[1] md:leading-[76px]">Projects</p>
                   </div>
                 </div>
