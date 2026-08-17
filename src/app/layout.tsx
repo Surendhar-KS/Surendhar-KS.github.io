@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://surendhar-ks.github.io"),
   title: "Surendhar K | Software Developer | AI, Web & Cloud Solutions",
   description:
-    "Surendhar K is a software developer building scalable digital solutions across web development, AI, cloud solutions, and data analytics. Explore projects, experience, certifications, and skills.",
+    "Software developer building AI-powered web applications, cloud solutions, and scalable digital products. Explore my projects, skills, experience, and services.",
   alternates: {
     canonical: "/",
   },
