@@ -132,6 +132,9 @@ export default function ScrollAvatar() {
             >
               <img
                 alt="Portrait of Surendhar K, front view"
+                width="450"
+                height="450"
+                decoding="async"
                 className="absolute left-0 top-[-8.79%] h-[117.57%] w-full max-w-none"
                 src={imgPortrait}
               />
@@ -148,6 +151,9 @@ export default function ScrollAvatar() {
               <div className="size-full">
                 <img
                   alt="Portrait of Surendhar K, back view"
+                  width="450"
+                  height="450"
+                  decoding="async"
                   className="absolute left-0 top-[-8.79%] h-[117.57%] w-full max-w-none"
                   src={imgPortraitBack}
                 />

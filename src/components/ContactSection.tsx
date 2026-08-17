@@ -59,6 +59,7 @@ const FloatingInput = ({
   return (
     <div className="relative w-full mb-5">
       <motion.label
+        htmlFor={name}
         initial={false}
         animate={{
           y: active ? -24 : 0,
@@ -74,7 +75,9 @@ const FloatingInput = ({
         {renderAnimatedText()}
         {textarea ? (
           <textarea
+            id={name}
             name={name}
+            aria-label={label}
             required={required}
             value={value}
             onChange={onChange}
@@ -85,7 +88,9 @@ const FloatingInput = ({
           />
         ) : (
           <input
+            id={name}
             name={name}
+            aria-label={label}
             type={type}
             required={required}
             value={value}
@@ -101,16 +106,18 @@ const FloatingInput = ({
   );
 };
 
-const MagneticSocial = ({ href, children }: { href: string, children: React.ReactNode }) => {
+const MagneticSocial = ({ href, ariaLabel, children }: { href: string; ariaLabel: string; children: React.ReactNode }) => {
   return (
     <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={ariaLabel}
       className="inline-flex items-center justify-center size-12 rounded-full bg-[#111] text-white border border-white/10 hover:border-white/30 transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
+      <span className="sr-only">{ariaLabel}</span>
       {children}
     </motion.a>
   );
@@ -184,17 +191,17 @@ export default function ContactSection() {
             transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
           >
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <MagneticSocial href="https://www.linkedin.com/in/surendhar-ks/">
+              <MagneticSocial href="https://www.linkedin.com/in/surendhar-ks/" ariaLabel="LinkedIn Profile">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </MagneticSocial>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <MagneticSocial href="https://github.com/surendhar-ks">
+              <MagneticSocial href="https://github.com/surendhar-ks" ariaLabel="GitHub Profile">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </MagneticSocial>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <MagneticSocial href="mailto:ksurendhar725@gmail.com">
+              <MagneticSocial href="mailto:ksurendhar725@gmail.com" ariaLabel="Send Email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </MagneticSocial>
             </motion.div>

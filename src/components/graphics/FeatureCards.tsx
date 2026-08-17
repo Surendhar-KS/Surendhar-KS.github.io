@@ -453,7 +453,8 @@ function Group2() {
 function ButtonViewCredential() {
   const onOpen = useContext(CertContext);
   return (
-    <button onClick={onOpen} className="absolute cursor-pointer hover:scale-105 transition-transform bg-white left-[276px] rounded-[4792.022px] top-[28.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+    <button onClick={onOpen} aria-label="View AWS Credential" className="absolute cursor-pointer hover:scale-105 transition-transform bg-white left-[276px] rounded-[4792.022px] top-[28.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+      <span className="sr-only">View AWS Credential</span>
       <div aria-hidden className="absolute border-[#ed7100] border-[0.479px] border-solid inset-0 pointer-events-none rounded-[4792.022px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[7.668px] py-[4.793px] relative size-full">
         <Group2 />
@@ -2587,7 +2588,8 @@ function Group3() {
 function ButtonViewCredential1() {
   const onOpen = useContext(CertContext);
   return (
-    <button onClick={onOpen} className="absolute cursor-pointer hover:scale-105 transition-transform bg-white content-stretch flex items-center justify-center left-[276px] px-[7.668px] py-[4.793px] rounded-[4792.022px] top-[52.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+    <button onClick={onOpen} aria-label="View ServiceNow Credential" className="absolute cursor-pointer hover:scale-105 transition-transform bg-white content-stretch flex items-center justify-center left-[276px] px-[7.668px] py-[4.793px] rounded-[4792.022px] top-[52.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+      <span className="sr-only">View ServiceNow Credential</span>
       <div aria-hidden className="absolute border-[#032d42] border-[0.479px] border-solid inset-0 pointer-events-none rounded-[4792.022px]" />
       <Group3 />
     </button>
@@ -2975,7 +2977,8 @@ function Group4() {
 function ButtonViewCredential2() {
   const onOpen = useContext(CertContext);
   return (
-    <button onClick={onOpen} className="absolute cursor-pointer hover:scale-105 transition-transform bg-white content-stretch flex items-center justify-center left-[276px] px-[7.668px] py-[4.793px] rounded-[4792.022px] top-[52.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+    <button onClick={onOpen} aria-label="View Oracle Credential" className="absolute cursor-pointer hover:scale-105 transition-transform bg-white content-stretch flex items-center justify-center left-[276px] px-[7.668px] py-[4.793px] rounded-[4792.022px] top-[52.58px] border-none outline-none shadow-sm z-50 pointer-events-auto" data-name="Button - View Credential">
+      <span className="sr-only">View Oracle Credential</span>
       <div aria-hidden className="absolute border-[#c74634] border-[0.479px] border-solid inset-0 pointer-events-none rounded-[4792.022px]" />
       <Group4 />
     </button>

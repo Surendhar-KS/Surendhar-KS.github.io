@@ -43,7 +43,7 @@ export default function FeatureSection() {
             viewport={{ once: false }}
             className="px-4 py-1.5 rounded-full bg-white shadow-sm border border-black/5 flex items-center justify-center"
           >
-            <span className="text-sm font-semibold tracking-widest text-black/60 uppercase">Certifications</span>
+            <span className="text-sm font-semibold tracking-widest text-black/80 uppercase">Certifications</span>
           </motion.div>
           
           <motion.h2 
@@ -80,7 +80,7 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-10%" }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-black/60 max-w-2xl"
+            className="text-lg md:text-xl text-black/80 max-w-2xl"
           >
             A showcase of modern software, AI, and cloud solutions built for real-world impact.
           </motion.p>

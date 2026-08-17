@@ -14,16 +14,17 @@ export default function NextPortfolio() {
   return (
     <div className="animated-avatar live-nav min-h-screen w-full overflow-x-clip bg-[#faf7f3]">
       <NavBar />
-      <HeroBioSections />
-      <QuoteSection />
-      <ServicesSection />
-      <TechnologiesSection />
-      <ProjectsSection />
-      <FeatureSection />
-      {/* <CertificationSection /> */}
-      <ExperienceSection />
-      
-      <ContactSection />
+      <main id="main-content">
+        <HeroBioSections />
+        <QuoteSection />
+        <ServicesSection />
+        <TechnologiesSection />
+        <ProjectsSection />
+        <FeatureSection />
+        {/* <CertificationSection /> */}
+        <ExperienceSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   )

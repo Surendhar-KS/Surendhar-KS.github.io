@@ -81,7 +81,7 @@ export default function ProjectsSection() {
                           <div className="content-stretch flex flex-col aspect-[16/9] h-auto items-start justify-center relative rounded-[24px] shrink-0 w-full" data-name="Image">
                             <div className="flex-[1_0_0] min-h-px relative rounded-[28px] w-full">
                               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[24px]">
-                                <img alt={project.alt} className="absolute h-full left-0 max-w-none top-0 w-full object-cover object-top" src={project.image} />
+                                <img alt={project.alt} width="1200" height="675" loading="lazy" decoding="async" className="absolute h-full left-0 max-w-none top-0 w-full object-cover object-top" src={project.image} />
                               </div>
                             </div>
                           </div>

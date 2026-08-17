@@ -151,7 +151,7 @@ export default function Card1() {
 
        {/* Rotating Spheres Container */}
        <div className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] flex items-center justify-center">
-          <motion.div style={{ rotate }} className="relative w-[420px] h-[420px]">
+          <motion.div style={{ rotate, willChange: 'transform' }} className="relative w-[420px] h-[420px]">
              
              {SPHERES.map((sphere, index) => (
                 <div 
@@ -162,6 +162,7 @@ export default function Card1() {
                    <motion.div 
                       style={{ 
                          rotate: counterRotate,
+                         willChange: 'transform',
                          background: `linear-gradient(to bottom right, ${sphere.colorFrom}, ${sphere.colorTo})`,
                          boxShadow: `0 4px 20px ${sphere.shadow}, inset 0 3px 6px rgba(255,255,255,0.7)`
                       }} 

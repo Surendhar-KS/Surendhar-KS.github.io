@@ -134,10 +134,12 @@ export default function NavBar() {
             {open ? (
               <motion.button
                 key="full-logo"
+                aria-label="Surendhar K - Scroll to top"
                 initial={{ opacity: 0, filter: 'blur(4px)', x: -10 }}
                 animate={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                 exit={{ opacity: 0, filter: 'blur(4px)', x: -10 }}
                 transition={{ duration: 0.2 }}
+                style={{ willChange: 'transform, opacity, filter' }}
                 type="button"
                 onClick={() => {
                   setOpen(false)
@@ -150,10 +152,12 @@ export default function NavBar() {
             ) : (
               <motion.button
                 key="short-logo"
+                aria-label="Surendhar K - Scroll to top"
                 initial={{ opacity: 0, filter: 'blur(4px)', x: 10 }}
                 animate={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                 exit={{ opacity: 0, filter: 'blur(4px)', x: 10 }}
                 transition={{ duration: 0.2 }}
+                style={{ willChange: 'transform, opacity, filter' }}
                 type="button"
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' })

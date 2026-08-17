@@ -103,9 +103,10 @@ export default function Card2() {
                    {/* Background circle of the icon */}
                    <motion.div
                       layout
+                      style={{ willChange: 'transform, opacity' }}
                       className={`absolute inset-0 rounded-full transition-all duration-500 ${isActive ? 'bg-white shadow-[0_0_0_4px_rgba(0,187,255,0.5)] scale-110' : 'bg-white scale-100'}`}
                    />
-                   <span className={`relative z-20 transition-colors duration-300 w-5 h-5 flex items-center justify-center ${isActive ? 'text-[#00BBFF]' : 'text-[#8BDEFC]'}`}>
+                   <span style={{ willChange: 'color' }} className={`relative z-20 transition-colors duration-300 w-5 h-5 flex items-center justify-center ${isActive ? 'text-[#00BBFF]' : 'text-[#8BDEFC]'}`}>
                      {item.icon}
                    </span>
                  </div>

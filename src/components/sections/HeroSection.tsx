@@ -21,7 +21,7 @@ export default function HeroSection() {
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="absolute -left-2 sm:-left-4 md:-left-[70px] lg:-left-[100px] xl:-left-[115px] -top-5 sm:-top-7 md:-top-[40px] lg:-top-[50px] xl:-top-[60px] w-[26px] sm:w-[36px] md:w-[65px] lg:w-[95px] xl:w-[110px] z-10 pointer-events-none select-none"
             >
-              <img src="/images/star.webp" alt="Star" className="w-full h-auto drop-shadow-2xl animate-pulse" />
+              <img src="/images/star.webp" alt="Star" width="110" height="110" decoding="async" className="w-full h-auto drop-shadow-2xl animate-pulse" />
             </motion.div>
             
             {/* H1 - SURENDHAR K */}
@@ -42,7 +42,7 @@ export default function HeroSection() {
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute -right-[26px] sm:-right-[34px] md:-right-[55px] lg:-right-[70px] xl:-right-[85px] top-full mt-[6px] sm:mt-[8px] md:mt-[12px] lg:mt-[16px] xl:mt-[20px] w-[20px] sm:w-[28px] md:w-[50px] lg:w-[75px] xl:w-[95px] z-[50] drop-shadow-2xl pointer-events-none select-none inline-block"
               >
-                <img src="/images/lightning.webp" alt="Lightning" className="w-full h-auto animate-pulse" />
+                <img src="/images/lightning.webp" alt="Lightning" width="95" height="95" fetchPriority="high" decoding="async" className="w-full h-auto animate-pulse" />
               </motion.span>
             </motion.h1>
 
@@ -51,7 +51,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#555] text-[3.2vw] sm:text-[16px] md:text-[24px] lg:text-[30px] xl:text-[36px] tracking-[0.2em] md:tracking-[0.3em] text-center mt-3 sm:mt-4 md:mt-6 lg:mt-8 uppercase select-none"
+              className="font-['Archivo:SemiBold',sans-serif] font-semibold text-[#333] text-[3.2vw] sm:text-[16px] md:text-[24px] lg:text-[30px] xl:text-[36px] tracking-[0.2em] md:tracking-[0.3em] text-center mt-3 sm:mt-4 md:mt-6 lg:mt-8 uppercase select-none"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
               SOFTWARE DEVELOPER

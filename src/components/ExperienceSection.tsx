@@ -142,6 +142,7 @@ export const ExperienceSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -15, filter: "blur(8px)" }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ willChange: 'transform, opacity, filter' }}
                   className="w-full relative overflow-hidden rounded-[32px] p-[1px] group shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
                 >
                   <Spotlight
